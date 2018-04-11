@@ -12,7 +12,6 @@ import Library4997.MasqWrappers.MasqLinearOpMode;
 public class MECHV5 extends MasqLinearOpMode implements Constants {
     double currentRelicPower = LIFT_UP, position = 0;
     boolean disabled = false;
-    boolean intakeState = false;
     Direction direction = Direction.FORWARD;
     public void runLinearOpMode() throws InterruptedException {
         robot.mapHardware(hardwareMap);
@@ -50,12 +49,10 @@ public class MECHV5 extends MasqLinearOpMode implements Constants {
             if (controller1.rightBumper()) {
                 robot.intake.motor1.setStallDetection(false);
                 robot.intake.setPower(0);
-                intakeState = false;
             }
             else if (controller1.rightTriggerPressed()) {
                 robot.intake.setPower(INTAKE);
                 robot.intake.motor1.setStallDetection(true);
-                intakeState = true;
             }
             if (controller1.x()) robot.jewelArmRed.setPosition(JEWEL_RED_IN);
             if (controller2.b()) robot.relicGripper.setPosition(CLAW_OPENED);

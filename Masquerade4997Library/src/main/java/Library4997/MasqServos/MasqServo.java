@@ -1,11 +1,10 @@
 package Library4997.MasqServos;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
-
 import com.qualcomm.robotcore.hardware.Servo;
-import Library4997.MasqUtilities.MasqHardware;
-import Library4997.MasqSensors.MasqClock;
+
 import Library4997.MasqSensors.MasqLimitSwitch;
+import Library4997.MasqUtilities.MasqHardware;
 
 /**
  * Created by Archish on 10/28/16.
@@ -14,8 +13,6 @@ import Library4997.MasqSensors.MasqLimitSwitch;
 public class MasqServo implements MasqHardware{
     private Servo servo;
     private String nameServo;
-    MasqClock clock = new MasqClock();
-    private double targetPosition;
     private double max = 1, min = 0;
     private MasqLimitSwitch limMin, limMax;
     private boolean limDetection;
@@ -29,7 +26,6 @@ public class MasqServo implements MasqHardware{
         servo.setDirection(direction);
     }
     public void setPosition (double position) {
-        targetPosition = position;
         position = ((max - min) * position) + min;
         servo.setPosition(position);
     }
@@ -46,16 +42,8 @@ public class MasqServo implements MasqHardware{
     }
     public void setMax(double max){this.max = max;}
     public void setMin(double min){this.min = min;}
-    public void scaleRange (double min, double max) {servo.scaleRange(min,max);}
     public void sleep (int time) throws InterruptedException {
         servo.wait(time);
-    }
-    public boolean isStalled(int time) {
-        boolean isStalled = false;
-        double prePos = servo.getPosition();
-        if ((servo.getPosition() == prePos && servo.getPosition() != targetPosition)
-                && !clock.elapsedTime(time, MasqClock.Resolution.SECONDS)) isStalled = true;
-        return isStalled;
     }
     public String getName() {
         return nameServo;
@@ -64,7 +52,6 @@ public class MasqServo implements MasqHardware{
     public String[] getDash() {
         return new String[]{
                 "Current Position:" + Double.toString(servo.getPosition()),
-                "Stalled:" + Boolean.toString(isStalled(1))
         };
     }
 }

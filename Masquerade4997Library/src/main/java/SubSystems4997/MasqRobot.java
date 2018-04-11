@@ -6,10 +6,10 @@ import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity;
 
+import Library4997.MasqDriveTrains.MasqTankDrive;
 import Library4997.MasqMotors.MasqEncoder;
 import Library4997.MasqMotors.MasqMotor;
 import Library4997.MasqMotors.MasqMotorSystem;
-import Library4997.MasqMotors.MasqTankDrive;
 import Library4997.MasqSensors.MasqAdafruitIMU;
 import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqSensors.MasqColorSensor;
@@ -29,6 +29,7 @@ import SubSystems4997.SubSystems.Flipper;
 import SubSystems4997.SubSystems.Gripper;
 
 import static android.R.attr.x;
+
 
 
 /**
@@ -792,12 +793,6 @@ public class MasqRobot implements PID_CONSTANTS {
         driveTrain.leftDrive.motor2.setPower(leftBack  * direction.value);
         driveTrain.rightDrive.motor1.setPower(rightFront  * direction.value);
         driveTrain.rightDrive.motor2.setPower(rightBack  * direction.value);
-        /*dash.create("ANGLE: ", Math.toDegrees(Math.atan2(y, x)));
-        dash.create("FRONT LEFT: ", leftFront);
-        dash.create("FRONT RIGHT: ", rightFront);
-        dash.create("BACK RIGHT: ", rightBack);
-        dash.create("BACK LEFT: ", leftBack);
-        dash.update();*/
     }
     public void MECHV2(MasqController c, Direction direction) {
         double x = -c.leftStickY();
@@ -843,8 +838,8 @@ public class MasqRobot implements PID_CONSTANTS {
     public void TANK(MasqController c){
         double left = c.leftStickX();
         double right = c.rightStickY();
-        double leftRate = driveTrain.leftDrive.getRate();
-        double rightRate = driveTrain.rightDrive.getRate();
+        double leftRate = driveTrain.leftDrive.getVelocity();
+        double rightRate = driveTrain.rightDrive.getVelocity();
         double maxRate = Math.max(Math.abs(leftRate/left), Math.abs(rightRate/right));
         leftRate /= maxRate;
         rightRate /= maxRate;

@@ -201,7 +201,7 @@ public class MasqMotor implements PID_CONSTANTS, MasqHardware {
             return previousAcceleration;
         }
     }
-    private boolean getStalled() {
+    private synchronized boolean getStalled() {
        return Math.abs(getVelocity()) < 10;
     }
     public String getName() {
@@ -263,20 +263,14 @@ public class MasqMotor implements PID_CONSTANTS, MasqHardware {
                 "Acceleration: " + Double.toString(getAcceleration())};
     }
 
-    public synchronized boolean isStalled() {
-        return stalled;
-    }
-
     public void setStalledAction(Runnable action) {
         stallAction = action;
     }
     public void setUnStalledAction(Runnable action) {
         unStalledAction = action;
     }
-    public void disableStallDetection() {
-        stallDetection = false;
-    }
-    public void setStallDetection(boolean bool) {stallDetection = bool;}
+    public void setStallDetection(boolean stallDetection) {
+        this.stallDetection = stallDetection;}
     private boolean getStallDetection () {return stallDetection;}
     public void enableStallDetection() {
         stallDetection = true;
