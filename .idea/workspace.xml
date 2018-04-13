@@ -10,26 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d8b3b5b-94cb-4707-ab7a-f016bba43558" name="Default" comment="MasqDocs">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqMechanumDrive.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqWrappers/MasqControllerV2/MasqControllerV2.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/MECHV6.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqTeleOpRecoder/ButtonValues.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqTeleOpRecoder/CodeSharer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqTeleOpRecoder/ControllerValues.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqTeleOpRecoder/GhostController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqTeleOpRecoder/GhostRecorder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqTeleOpRecoder/StickValues.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/DirectionV2.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/MasqSerializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqWrappers/MasqControllerv2.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqTankDrive.java" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqTankDrive.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/MECHV5.java" afterPath="$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/MECHV5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotor.java" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotorSystem.java" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotorSystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqServos/MasqServo.java" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqServos/MasqServo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/MasqSensor.java" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/MasqSensor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/SubSystems4997/MasqRobot.java" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/SubSystems4997/MasqRobot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masquerade4997Code/Masquerade4997Code.iml" afterPath="$PROJECT_DIR$/Masquerade4997Code/Masquerade4997Code.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masquerade4997Library/Masquerade4997Library.iml" afterPath="$PROJECT_DIR$/Masquerade4997Library/Masquerade4997Library.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqMechanumDrive.java" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqMechanumDrive.java" />
     </list>
     <list id="8d78c8f9-ba4f-4bbb-bbf4-13a676c4c2bf" name="New changelist" comment="" />
     <ignored path="MasqLib.iws" />
@@ -126,15 +111,9 @@
       <file leaf-file-name="MECHV5.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/MECHV5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="862">
+            <state relative-caret-position="1416">
               <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-              <folding>
-                <element signature="e#712#853#0" expanded="true" />
-                <element signature="e#852#853#0" expanded="true" />
-                <marker date="1523466885000" expanded="false" signature="1118:1287" ph="{...}" />
-                <marker date="1523466885000" expanded="false" signature="1939:2058" ph="{...}" />
-                <marker date="1523466885000" expanded="false" signature="2115:2238" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -142,7 +121,7 @@
       <file leaf-file-name="MasqMotorSystem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotorSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="1944">
               <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
                 <element signature="method#getAcceleration#0;class#MasqMotorSystem#0" expanded="false" />
@@ -174,7 +153,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MasqControllerV2.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MasqControllerV2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqWrappers/MasqControllerV2/MasqControllerV2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="766">
@@ -194,7 +173,7 @@
       <file leaf-file-name="MasqTankDrive.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqTankDrive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
+            <state relative-caret-position="1320">
               <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -210,11 +189,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MasqMechanumDrive.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MasqMechanumDrive.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqMechanumDrive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1006">
-              <caret line="126" column="28" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
+            <state relative-caret-position="129">
+              <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="109" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#runUsingEncoder#0;class#MasqMechanumDrive#0" expanded="false" />
@@ -222,10 +201,6 @@
                 <element signature="method#setEncoderCounts#0;class#MasqMechanumDrive#0" expanded="false" />
                 <element signature="e#4898#4899#0" expanded="true" />
                 <element signature="e#4935#4936#0" expanded="true" />
-                <element signature="e#4982#4983#0" expanded="true" />
-                <element signature="e#5018#5019#0" expanded="true" />
-                <element signature="e#5077#5078#0" expanded="true" />
-                <element signature="e#5119#5120#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -234,7 +209,7 @@
       <file leaf-file-name="MasqMotor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
+            <state relative-caret-position="4032">
               <caret line="274" column="39" selection-start-line="274" selection-start-column="39" selection-end-line="274" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -254,7 +229,7 @@
       <file leaf-file-name="MasqRobot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/SubSystems4997/MasqRobot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="6960">
               <caret line="759" column="8" selection-start-line="759" selection-start-column="8" selection-end-line="794" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -313,10 +288,6 @@
                 <element signature="method#sleep#0;class#MasqRobot#0" expanded="false" />
                 <element signature="method#sleep#1;class#MasqRobot#0" expanded="false" />
                 <element signature="method#sleep#2;class#MasqRobot#0" expanded="false" />
-                <marker date="1523468782000" expanded="false" signature="6040:6134" ph="{...}" />
-                <marker date="1523468782000" expanded="true" signature="18399:19621" ph="{...}" />
-                <marker date="1523468782000" expanded="false" signature="34496:35015" ph="{...}" />
-                <marker date="1523468782000" expanded="false" signature="35517:36034" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -4609,10 +4580,10 @@
         <option value="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqServos/MasqServo.java" />
         <option value="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqTankDrive.java" />
         <option value="$PROJECT_DIR$/Masquerade4997Library/src/main/java/SubSystems4997/MasqRobot.java" />
-        <option value="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqMechanumDrive.java" />
         <option value="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotor.java" />
         <option value="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotorSystem.java" />
         <option value="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqWrappers/MasqControllerV2/MasqControllerV2.java" />
+        <option value="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqMechanumDrive.java" />
       </list>
     </option>
   </component>
@@ -4646,48 +4617,91 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Production">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Android Instrumentation Tests" />
-        <subPane subId="New changelist" />
-        <subPane subId="Changed Files" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Masquerade4997Library">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Default" />
-      </pane>
       <pane id="Scratches">
         <subPane />
       </pane>
-      <pane id="PackagesPane">
+      <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MasqLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MasqLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MasqLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MasqLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MasqLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Masquerade4997Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MasqLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MasqLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Masquerade4997Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MasqLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MasqLib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Masquerade4997Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teamcode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -4956,91 +4970,48 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MasqLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasqLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasqLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasqLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasqLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Masquerade4997Code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasqLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasqLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Masquerade4997Code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasqLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MasqLib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Masquerade4997Code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="teamcode" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Production">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Android Instrumentation Tests" />
+        <subPane subId="New changelist" />
+        <subPane subId="Changed Files" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Masquerade4997Library">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Default" />
       </pane>
     </panes>
   </component>
@@ -5896,7 +5867,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49574015" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986766" sideWeight="0.8913738" order="13" side_tool="false" content_ui="tabs" />
@@ -5907,11 +5878,11 @@
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.88764644" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986766" sideWeight="0.61874336" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986766" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.92119277" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32986766" sideWeight="0.92119277" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961479" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.75803405" sideWeight="0.33226836" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14909478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="777" y="89" width="366" height="1039" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14909478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="777" y="89" width="366" height="1039" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11288605" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961479" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -6233,14 +6204,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/SubSystems4997/SubSystems/BlockDetector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/SubSystems4997/SubSystems/BlockDetector.java" />
     <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/SubSystems4997/SubSystems/Flipper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-170">
@@ -6257,14 +6221,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/DirectionV2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/DirectionV2.java" />
     <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/Direction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -6287,7 +6244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -6299,14 +6255,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/MasqSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2042">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/MasqSerializer.java" />
     <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/MasqToggleException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -6315,14 +6264,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqWrappers/MasqControllerv2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqWrappers/MasqControllerv2.java" />
     <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqUtilities/MasqUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="622">
@@ -6342,14 +6284,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/MECHV6.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/MECHV6.java" />
     <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqServos/MasqServo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
@@ -6369,21 +6304,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/TeleOp/MECHV5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
+        <state relative-caret-position="1416">
           <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-          <folding>
-            <element signature="e#712#853#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-            <marker date="1523466885000" expanded="false" signature="1118:1287" ph="{...}" />
-            <marker date="1523466885000" expanded="false" signature="1939:2058" ph="{...}" />
-            <marker date="1523466885000" expanded="false" signature="2115:2238" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -6391,13 +6319,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="2516" column="32" selection-start-line="2516" selection-start-column="32" selection-end-line="2516" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqTankDrive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
+        <state relative-caret-position="1320">
           <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -6414,7 +6341,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/SubSystems4997/MasqRobot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="6960">
           <caret line="759" column="8" selection-start-line="759" selection-start-column="8" selection-end-line="794" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -6473,36 +6400,13 @@
             <element signature="method#sleep#0;class#MasqRobot#0" expanded="false" />
             <element signature="method#sleep#1;class#MasqRobot#0" expanded="false" />
             <element signature="method#sleep#2;class#MasqRobot#0" expanded="false" />
-            <marker date="1523468782000" expanded="false" signature="6040:6134" ph="{...}" />
-            <marker date="1523468782000" expanded="true" signature="18399:19621" ph="{...}" />
-            <marker date="1523468782000" expanded="false" signature="34496:35015" ph="{...}" />
-            <marker date="1523468782000" expanded="false" signature="35517:36034" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqMechanumDrive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1006">
-          <caret line="126" column="28" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#runUsingEncoder#0;class#MasqMechanumDrive#0" expanded="false" />
-            <element signature="method#runWithoutEncoders#0;class#MasqMechanumDrive#0" expanded="false" />
-            <element signature="method#setEncoderCounts#0;class#MasqMechanumDrive#0" expanded="false" />
-            <element signature="e#4898#4899#0" expanded="true" />
-            <element signature="e#4935#4936#0" expanded="true" />
-            <element signature="e#4982#4983#0" expanded="true" />
-            <element signature="e#5018#5019#0" expanded="true" />
-            <element signature="e#5077#5078#0" expanded="true" />
-            <element signature="e#5119#5120#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotorSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="1944">
           <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
             <element signature="method#getAcceleration#0;class#MasqMotorSystem#0" expanded="false" />
@@ -6523,7 +6427,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
+        <state relative-caret-position="4032">
           <caret line="274" column="39" selection-start-line="274" selection-start-column="39" selection-end-line="274" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -6558,6 +6462,21 @@
             <element signature="method#startUpdate#0;class#MasqControllerV2#0" expanded="false" />
             <element signature="e#2881#3483#0" expanded="true" />
             <element signature="e#3482#3483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqMechanumDrive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="109" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#runUsingEncoder#0;class#MasqMechanumDrive#0" expanded="false" />
+            <element signature="method#runWithoutEncoders#0;class#MasqMechanumDrive#0" expanded="false" />
+            <element signature="method#setEncoderCounts#0;class#MasqMechanumDrive#0" expanded="false" />
+            <element signature="e#4898#4899#0" expanded="true" />
+            <element signature="e#4935#4936#0" expanded="true" />
           </folding>
         </state>
       </provider>

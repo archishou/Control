@@ -114,12 +114,11 @@ public class MasqMechanumDrive implements MasqSubSystem, MasqHardware {
     public void DriverControl(MasqController controller) {
         double x = -controller.leftStickY();
         double y = controller.leftStickX();
-        double xR = - controller.rightStickX();
+        double xR = -controller.rightStickX();
         double angle = Math.toDegrees(Math.atan2(y, x));
         double speedMagnitude = Math.hypot(x, y);
-        if (controller.leftTriggerPressed()) setPowerAtAngle(angle, speedMagnitude/3, xR);
+        if (controller.leftTriggerPressed()) setPowerAtAngle(angle, speedMagnitude / 3, xR);
         else setPowerAtAngle(angle, speedMagnitude, xR);
-
     }
 
     @Override
