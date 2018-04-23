@@ -6,10 +6,10 @@ import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity;
 
+import Library4997.MasqDriveTrains.MasqMechanumDrive;
 import Library4997.MasqMotors.MasqEncoder;
 import Library4997.MasqMotors.MasqMotor;
 import Library4997.MasqMotors.MasqMotorSystem;
-import Library4997.MasqMotors.MasqTankDrive;
 import Library4997.MasqSensors.MasqAdafruitIMU;
 import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqSensors.MasqColorSensor;
@@ -34,7 +34,7 @@ import SubSystems4997.SubSystems.Gripper;
 //TODO make MasqRobot abstract to support multiple copies of a robot, for test bot, main bot, so forth
 public class MasqRobot implements PID_CONSTANTS {
     public MasqRobot () {}
-    public MasqTankDrive driveTrain;
+    public MasqMechanumDrive driveTrain;
     public MasqMotorSystem intake;
     public MasqMotor lift, relicLift;
     public MasqAdafruitIMU imu;
@@ -64,7 +64,7 @@ public class MasqRobot implements PID_CONSTANTS {
         flipper = new Flipper(this.hardwareMap);
         redRotator = new MasqServo("redRotator", this.hardwareMap);
         lift = new MasqMotor("lift", DcMotor.Direction.REVERSE, this.hardwareMap);
-        driveTrain = new MasqTankDrive(this.hardwareMap);
+        driveTrain = new MasqMechanumDrive(this.hardwareMap);
         relicAdjuster = new MasqServo("relicAdjuster", this.hardwareMap);
         imu = new MasqAdafruitIMU("imuHubOne", this.hardwareMap);
         jewelArmRed = new MasqServo("jewelArmRed", this.hardwareMap);
@@ -245,22 +245,6 @@ public class MasqRobot implements PID_CONSTANTS {
     }
     public void driveAbsoluteAngle(double distance, int angle, double speed){driveAbsoluteAngle(distance, angle, speed, Direction.FORWARD);}
     public void driveAbsoluteAngle(double distance, int angle) {driveAbsoluteAngle(distance, angle, 0.5);}
-
-    public void runToPosition(int distance, Direction direction, double speed, double timeOut, int sleepTime) {
-        driveTrain.setDistance(distance);
-        driveTrain.runToPosition(direction, speed, timeOut);
-        sleep(sleepTime);
-    }
-    public void runToPosition(int distance, Direction direction, double speed, double timeOut) {
-        runToPosition(distance, direction, speed, timeOut, MasqUtils.DEFAULT_SLEEP_TIME);
-    }
-    public void runToPosition(int distance, Direction direction, double speed) {
-        runToPosition(distance, direction, speed, MasqUtils.DEFAULT_TIMEOUT);
-    }
-    public void runToPosition(int distance, Direction direction) {
-        runToPosition(distance, direction, 0.7);
-    }
-    public void runToPosition(int distance) {runToPosition(distance, Direction.FORWARD);}
 
     public void turnRelative(double angle, Direction direction, double timeOut, int sleepTime, double kp, double ki, double kd) {
         //serializer.createFile(new String[]{"Error", "Proprtional", "Intergral", "Derivitive", "Left Power", " Right Power"}, "TURNPID");
@@ -809,8 +793,8 @@ public class MasqRobot implements PID_CONSTANTS {
     public void TANK(MasqController c){
         double left = c.leftStickX();
         double right = c.rightStickY();
-        double leftRate = driveTrain.leftDrive.getRate();
-        double rightRate = driveTrain.rightDrive.getRate();
+        double leftRate = driveTrain.leftDrive.getVelocity();
+        double rightRate = driveTrain.rightDrive.getVelocity();
         double maxRate = Math.max(Math.abs(leftRate/left), Math.abs(rightRate/right));
         leftRate /= maxRate;
         rightRate /= maxRate;
