@@ -1,7 +1,6 @@
 package Library4997.MasqUtilities;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
@@ -39,15 +38,6 @@ public class MasqUtils implements API_KEYS {
     public static void setLinearOpMode(MasqLinearOpMode pLinearOpMode) {
         linearOpMode = pLinearOpMode;
     }
-    public static double getControllerOutput(double kp, double ki, double kd, double error) {
-        double timeChange = clock.milliseconds();
-        clock.reset();
-        integral = (integral + error) * timeChange;
-        double derivative = (error - prevError) / timeChange;
-        prevError = error;
-        double out = (kp* error) + (ki * integral) + (kd * derivative);
-        return Range.clip(out, -1.0, +1.0);
-    }
     public static Telemetry getTelemetry() {
         return linearOpMode.telemetry;
     }
@@ -58,8 +48,8 @@ public class MasqUtils implements API_KEYS {
         return linearOpMode.hardwareMap;
     }
     public class KP {
-        public static final double TURN = +0.06;
-        public static final double DRIVE_ANGULAR = +0.07;
+        public static final double TURN = +0.058;
+        public static final double DRIVE_ANGULAR = +0.05;
         public static final double DRIVE_ENCODER = .7;
         public static final double GO_ENCODER = .9;
         public static final double MOTOR_TELEOP = +0.1;

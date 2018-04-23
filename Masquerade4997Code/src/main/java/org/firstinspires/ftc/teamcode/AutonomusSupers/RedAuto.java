@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.AutonomusSupers;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
-import org.firstinspires.ftc.teamcode.Autonomus.Constants;
+import org.firstinspires.ftc.teamcode.AutonomusWorlds.Constants;
 
 import Library4997.MasqUtilities.Direction;
 import Library4997.MasqUtilities.MasqUtils;
@@ -57,7 +57,7 @@ public class RedAuto extends MasqLinearOpMode implements Constants {
         else if (MasqUtils.VuMark.isRight(vuMark)) {robot.drive(2, POWER_OPTIMAL, Direction.BACKWARD, 2);}
         else if (MasqUtils.VuMark.isUnKnown(vuMark)) robot.drive(4, POWER_OPTIMAL, Direction.BACKWARD, 3);
         robot.jewelArmRed.setPosition(JEWEL_RED_HOVER);
-        robot.stop(robot.jewelColorRed, .2, Direction.BACKWARD);
+        //robot.stop(robot.jewelColorRed, .2, Direction.BACKWARD);
         robot.jewelArmRed.setPosition(JEWEL_RED_IN);
         double endAngle = robot.imu.getAbsoluteHeading();
         robot.drive(1, POWER_LOW, Direction.BACKWARD, 1);

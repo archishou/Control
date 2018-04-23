@@ -156,6 +156,11 @@ public class MasqMotorSystem implements PID_CONSTANTS, MasqHardware {
         for (MasqMotor m : motors) total += m.getCurrentPosition();
         return total / numMotors;
     }
+    public double getAbsolutePosition ()  {
+        int total = 0;
+        for (MasqMotor m : motors) total += m.getAbsolutePosition();
+        return total / numMotors;
+    }
 
     private synchronized boolean getStalled() {
         return Math.abs(getVelocity()) < 10;

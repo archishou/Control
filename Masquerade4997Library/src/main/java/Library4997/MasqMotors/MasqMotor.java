@@ -47,7 +47,8 @@ public class MasqMotor implements PID_CONSTANTS, MasqHardware {
         public void run() {
 
         }
-    }, unStalledAction = new Runnable() {
+    },
+            unStalledAction = new Runnable() {
         @Override
         public void run() {
 
@@ -173,6 +174,9 @@ public class MasqMotor implements PID_CONSTANTS, MasqHardware {
         currentPosition = motor.getCurrentPosition() - zeroEncoderPosition;
         return currentPosition;
     }
+    public double getAbsolutePosition () {
+        return motor.getCurrentPosition();
+    }
     public double getPower() {return currentPower;}
     public double getVelocity() {
         double deltaPosition = getCurrentPosition() - prevPos;
@@ -208,17 +212,6 @@ public class MasqMotor implements PID_CONSTANTS, MasqHardware {
         return nameMotor;
     }
     public void setClosedLoop(boolean closedLoop) {this.closedLoop = closedLoop;}
-    public void doHold () {
-        if (holdPositionMode) {
-            double tChange = (System.nanoTime() - previousTime) / 1e9;
-            double error = targetPosition - getCurrentPosition();
-            holdItergral += error * tChange;
-            holdDerivitive = (error - holdPreviousError) / tChange;
-            motor.setPower(direction * ((error * holdKp) +
-                    (holdItergral * ki) + (holdDerivitive * kd)));
-            holdPreviousError = error;
-        }
-    }
     private double findPower(double power){
         if (holdPositionMode) {
             double tChange = (System.nanoTime() - previousTime) / 1e9;
