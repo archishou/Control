@@ -17,30 +17,168 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d8b3b5b-94cb-4707-ab7a-f016bba43558" name="Default" comment="ideas">
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/Masquerade4997Library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/Masquerade4997Library.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqControlSystems/MasqPurePursuit/MasqPath.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqControlSystems/MasqPurePursuit/MasqPath.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqDriveTrains/MasqDriveTrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqDriveTrains/MasqDriveTrain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotorSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqMotors/MasqMotorSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqResources/MasqUtils$KP.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqResources/MasqUtils$KP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqRobot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqSensors/MasqLimitSwitch.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqSensors/MasqLimitSwitch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqWrappers/MasqLinearOpMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/classes/debug/Library4997/MasqWrappers/MasqLinearOpMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/intermediate-jars/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/intermediate-jars/debug/classes.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqControlSystems/MasqPID/MasqPIDController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqControlSystems/MasqPID/MasqPIDController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqControlSystems/MasqPurePursuit/MasqPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqControlSystems/MasqPurePursuit/MasqPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqDriveTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqDriveTrains/MasqDriveTrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotorSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotorSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqResources/MasqUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqResources/MasqUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqRobot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqSensors/MasqLimitSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqSensors/MasqLimitSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqWrappers/MasqLinearOpMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqWrappers/MasqLinearOpMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Control.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DogeCV/DogeCV.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DogeCV/DogeCV.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/FtcRobotController.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/FtcRobotController.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/attr/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/attr/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/manifests/full/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/packaged_res/debug/values-sw720dp-land-v13/values-sw720dp-land-v13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/packaged_res/debug/values-sw720dp-land-v13/values-sw720dp-land-v13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/packaged_res/debug/values-w820dp-v13/values-w820dp-v13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/packaged_res/debug/values-w820dp-v13/values-w820dp-v13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/packaged_res/debug/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/packaged_res/debug/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/symbols/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MasqLib.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/Masquerade4997Code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/Masquerade4997Code.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/generated/source/buildConfig/debug/org/firstinspires/ftc/teamcode/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/generated/source/buildConfig/debug/org/firstinspires/ftc/teamcode/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/generated/source/r/debug/org/firstinspires/ftc/teamcode/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/generated/source/r/debug/org/firstinspires/ftc/teamcode/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/values-sw720dp-land-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/values-sw720dp-land-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/values-v11.json" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/values-v11.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/values-v14.json" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/values-v14.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/values-w820dp-v13.json" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/values-w820dp-v13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/multi-v2/values.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/manifests/full/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-hdpi-v4_button_shape.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-hdpi-v4_button_shape.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_launcher.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_launcher.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_launcher.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_launcher.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ic_launcher.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ic_launcher.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-xhdpi-v4_icon_menu.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-xhdpi-v4_icon_menu.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-xhdpi-v4_icon_robotcontroller.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-xhdpi-v4_icon_robotcontroller.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_launcher.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_launcher.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable_black_border.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable_black_border.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable_button_shape.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable_button_shape.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable_feedback_shape_orange.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable_feedback_shape_orange.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable_icon_menu.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable_icon_menu.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable_icon_robotcontroller.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/drawable_icon_robotcontroller.png.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_blocks.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_blocks.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_config_wifi_direct.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_config_wifi_direct.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_configure_from_template.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_configure_from_template.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_configuration.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_configuration.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_controller.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_controller.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_lynx_address_update.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_lynx_address_update.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_lynx_fw_update.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_lynx_fw_update.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_wifi_channel_selector.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_wifi_channel_selector.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_wifi_remembered_groups.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_ftc_wifi_remembered_groups.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_generic_settings.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_generic_settings.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_inspection.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_inspection.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_load.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_load.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_program_and_manage.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_program_and_manage.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_programming_mode.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_programming_mode.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_swap_usb_devices.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_swap_usb_devices.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_view_logs.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_activity_view_logs.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_analog_input_device.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_analog_input_device.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_analog_inputs.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_analog_inputs.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_analog_output_device.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_analog_output_device.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_analog_outputs.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_analog_outputs.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_banner_parent.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_banner_parent.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_button_list.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_button_list.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_color_list_preference_line_item.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_color_list_preference_line_item.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_device_interface_module.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_device_interface_module.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_digital_device.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_digital_device.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_digital_device_lynx.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_digital_device_lynx.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_digital_devices.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_digital_devices.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_feedback.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_feedback.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_file_info.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_file_info.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_fragment_wifi_mute.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_fragment_wifi_mute.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_gray_line.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_gray_line.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_header.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_header.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_i2c_device.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_i2c_device.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_i2cs.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_i2cs.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_info_button.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_info_button.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_item_list_parent.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_item_list_parent.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_legacy.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_legacy.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_loading_indicator_overlay.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_loading_indicator_overlay.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_lynx_module.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_lynx_module.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_lynx_module_configure_address.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_lynx_module_configure_address.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_lynx_module_configure_address_spin_item.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_lynx_module_configure_address_spin_item.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_lynx_usb_device.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_lynx_usb_device.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_matrices.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_matrices.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_matrix_devices.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_matrix_devices.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_motor.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_motor.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_motor_controller_banner.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_motor_controller_banner.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_motor_list.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_motor_list.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_port_attached_row.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_port_attached_row.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_pwm_device.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_pwm_device.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_pwms.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_pwms.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_red_line.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_red_line.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_servo.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_servo.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_servo_controller_banner.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_servo_controller_banner.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_servo_list.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_servo_list.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_simple_device.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_simple_device.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_template_info.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_template_info.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_webcam_device.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/layout_webcam_device.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/menu_ftc_robot_controller.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/menu_ftc_robot_controller.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/menu_main_menu.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/menu_main_menu.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/menu_menu_server.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/menu_menu_server.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_chimeconnect.wav.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_chimeconnect.wav.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_chimedisconnect.wav.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_chimedisconnect.wav.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_color_fragment_shader.glsl.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_color_fragment_shader.glsl.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_cube_mesh_fragment_shader.glsl.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_cube_mesh_fragment_shader.glsl.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_cube_mesh_vertex_shader.glsl.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_cube_mesh_vertex_shader.glsl.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_errormessage.wav.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_errormessage.wav.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_format_convert.bc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_format_convert.bc.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_gold.wav.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_gold.wav.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_nxtstartupsound.wav.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_nxtstartupsound.wav.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_silver.wav.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_silver.wav.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_simple_vertex_shader.glsl.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_simple_vertex_shader.glsl.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_texture_fragment_shader.glsl.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_texture_fragment_shader.glsl.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_texture_vertex_shader.glsl.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_texture_vertex_shader.glsl.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_warningmessage.wav.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/raw_warningmessage.wav.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/values-sw720dp-land-v13_values-sw720dp-land-v13.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/values-sw720dp-land-v13_values-sw720dp-land-v13.arsc.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/values-v11_values-v11.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/values-v11_values-v11.arsc.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/values-v14_values-v14.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/values-v14_values-v14.arsc.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/values-w820dp-v13_values-w820dp-v13.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/values-w820dp-v13_values-w820dp-v13.arsc.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/values_values.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/values_values.arsc.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_advanced_rc_settings.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_advanced_rc_settings.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_app_settings.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_app_settings.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_builtinwebcamcalibrations.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_builtinwebcamcalibrations.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_device_filter.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_device_filter.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_ftc_about_activity.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_ftc_about_activity.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_ftc_about_activity_rc.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_ftc_about_activity_rc.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_k9legacybot.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_k9legacybot.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_k9usbbot.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_k9usbbot.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_maxmodules.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_maxmodules.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_pushbot.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_pushbot.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_pushbotsens.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_pushbotsens.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_rev_scoot.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_rev_scoot.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_squarebot.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_squarebot.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_teamwebcamcalibrations.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/merged/debug/xml_teamwebcamcalibrations.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/intermediates/symbols/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Code/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Code/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/generated/source/buildConfig/debug/team4997lib/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/generated/source/buildConfig/debug/team4997lib/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/attr/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/attr/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/incremental/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/incremental/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/manifests/full/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/intermediates/symbols/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Masquerade4997Library/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Masquerade4997Library/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/generated/source/aidl/debug/org/opencv/engine/OpenCVEngineInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/generated/source/aidl/debug/org/opencv/engine/OpenCVEngineInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/generated/source/buildConfig/debug/org/opencv/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/generated/source/buildConfig/debug/org/opencv/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/attr/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/attr/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/incremental/compileDebugAidl/dependency.store" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/incremental/compileDebugAidl/dependency.store" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/incremental/packageDebugResources/merged.dir/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/incremental/packageDebugResources/merged.dir/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/incremental/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/incremental/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/manifests/aapt/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/manifests/full/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/packaged_res/debug/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/packaged_res/debug/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/intermediates/symbols/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openCVLibrary3/openCVLibrary3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/openCVLibrary3/openCVLibrary3.iml" afterDir="false" />
     </list>
     <list id="8d78c8f9-ba4f-4bbb-bbf4-13a676c4c2bf" name="New changelist" comment="" />
     <ignored path="MasqLib.iws" />
@@ -126,33 +264,20 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1998881215">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="MasqLib" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/Robots/Falcon/Autonomus/CraterSide80Auto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-              <folding>
-                <element signature="docComment;class#CraterSide80Auto#0" />
-                <element signature="e#3040#3192#0" expanded="true" />
-                <element signature="e#3191#3192#0" expanded="true" />
-                <element signature="e#3194#3707#0" expanded="true" />
-                <element signature="e#3706#3707#0" expanded="true" />
-                <element signature="e#3824#4069#0" expanded="true" />
-                <element signature="e#4068#4069#0" expanded="true" />
-                <element signature="e#4071#4219#0" expanded="true" />
-                <element signature="e#4218#4219#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -6693,9 +6818,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="51" />
+    <option name="y" value="50" />
     <option name="width" value="1920" />
-    <option name="height" value="1177" />
+    <option name="height" value="1178" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -6709,28 +6834,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="MasqLib" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FtcRobotController" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="MasqLib" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FtcRobotController" type="616d4139:PackageViewModuleNode" />
-              <item name="org.firstinspires" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="MasqLib" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FtcRobotController" type="616d4139:PackageViewModuleNode" />
-              <item name="org.firstinspires" type="1f31426a:PackageElementNode" />
-              <item name="ftc.robotcontroller" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -6820,7 +6924,28 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MasqLib" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FtcRobotController" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="MasqLib" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FtcRobotController" type="616d4139:PackageViewModuleNode" />
+              <item name="org.firstinspires" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="MasqLib" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FtcRobotController" type="616d4139:PackageViewModuleNode" />
+              <item name="org.firstinspires" type="1f31426a:PackageElementNode" />
+              <item name="ftc.robotcontroller" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -7548,10 +7673,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" x="777" y="89" width="366" height="1039" id="Project" order="0" sideWeight="0.4992948" visible="true" weight="0.1682641" />
+      <window_info content_ui="combo" x="777" y="89" width="366" height="1039" id="Project" order="0" sideWeight="0.4992948" visible="true" weight="0.16778524" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24961479" />
       <window_info id="Captures" order="2" side_tool="true" weight="0.24961479" />
       <window_info id="Capture Tool" order="3" />
@@ -7567,13 +7691,13 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49574015" weight="0.0" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4169329" weight="0.0" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.61874336" side_tool="true" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.40201342" weight="0.32907802" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5979866" side_tool="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.8690096" weight="0.0" />
       <window_info anchor="bottom" id="Android Monitor" order="11" sideWeight="0.88764644" weight="0.32956687" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.3289225" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.38125667" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.3805369" weight="0.32907802" />
       <window_info anchor="bottom" id="Gradle Console" order="14" sideWeight="0.33226836" side_tool="true" weight="0.75803405" />
       <window_info anchor="bottom" id="Inspection Results" order="15" sideWeight="0.62406814" weight="0.0" />
       <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.8578275" weight="0.08003767" />
@@ -7793,13 +7917,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqControlSystems/MasqPID/MasqPIDPackage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="985">
-          <caret line="196" column="16" selection-start-line="196" selection-start-column="16" selection-end-line="196" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqControlSystems/MasqPID/MasqPIDPackage.java" />
     <entry file="file://$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/Robots/Falcon/Test/ConstantsProgrammer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -7868,12 +7986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding>
-            <element signature="e#941#942#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1223#1224#0" expanded="true" />
-            <element signature="e#1259#1260#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -7962,13 +8074,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/Robots/Falcon/TeleOp/MECH.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/Robots/Falcon/TeleOp/MECH.java" />
     <entry file="file://$PROJECT_DIR$/Masquerade4997Library/src/main/java/Library4997/MasqMotors/MasqMotor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -7980,15 +8086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
-          <folding>
-            <element signature="docComment;class#Falcon#0" />
-            <element signature="method#mapHardware#0;class#Falcon#0" />
-            <element signature="method#startOpenCV#0;class#Falcon#0" />
-            <element signature="method#update#0;class#Falcon#0" />
-            <element signature="method#turnTillGold#0;class#Falcon#0" />
-            <element signature="method#shake#0;class#Falcon#0" />
-            <element signature="method#getBlockPlacement#0;class#Falcon#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -7996,38 +8093,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="148" column="20" lean-forward="true" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
-          <folding>
-            <element signature="docComment;class#MasqRobot#0" />
-            <element signature="e#1519#1594#0" />
-            <element signature="e#1599#4084#0" />
-            <element signature="e#4089#4258#0" />
-            <element signature="e#4263#4404#0" />
-            <element signature="e#4409#4538#0" />
-            <element signature="e#4543#4635#0" />
-            <element signature="e#4640#4730#0" />
-            <element signature="e#4735#4793#0" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/Robots/Falcon/Autonomus/CraterSide80Auto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-          <folding>
-            <element signature="docComment;class#CraterSide80Auto#0" />
-            <element signature="e#3040#3192#0" expanded="true" />
-            <element signature="e#3191#3192#0" expanded="true" />
-            <element signature="e#3194#3707#0" expanded="true" />
-            <element signature="e#3706#3707#0" expanded="true" />
-            <element signature="e#3824#4069#0" expanded="true" />
-            <element signature="e#4068#4069#0" expanded="true" />
-            <element signature="e#4071#4219#0" expanded="true" />
-            <element signature="e#4218#4219#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Masquerade4997Code/src/main/java/org/firstinspires/ftc/teamcode/Robots/Falcon/Autonomus/CraterSide80Auto.java" />
   </component>
   <component name="gradleExecuteTaskHistory">
     <option value="$PROJECT_DIR$" />
