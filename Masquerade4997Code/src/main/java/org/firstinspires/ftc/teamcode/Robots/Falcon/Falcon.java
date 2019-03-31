@@ -4,16 +4,16 @@ import com.disnodeteam.dogecv.CameraViewDisplay;
 import com.disnodeteam.dogecv.DogeCV;
 import com.disnodeteam.dogecv.DogeForia;
 import com.disnodeteam.dogecv.detectors.roverrukus.GoldAlignDetector;
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
+import org.firstinspires.ftc.teamcode.Robots.Falcon.FalconSubSystems.MasqElevator;
 import org.firstinspires.ftc.teamcode.Robots.Falcon.FalconSubSystems.MasqRotator;
 import org.firstinspires.ftc.teamcode.Robots.Falcon.Resources.BlockPlacement;
 
 import Library4997.MasqControlSystems.MasqPID.MasqPIDPackage;
 import Library4997.MasqControlSystems.MasqPurePursuit.MasqPositionTracker;
-import Library4997.MasqDriveTrains.MasqDriveTrain;
+import Library4997.MasqDriveTrains.MasqMechanumDriveTrain;
 import Library4997.MasqMotors.MasqMotor;
 import Library4997.MasqResources.MasqHelpers.Direction;
 import Library4997.MasqResources.MasqHelpers.MasqMotorModel;
@@ -23,7 +23,7 @@ import Library4997.MasqSensors.MasqAdafruitIMU;
 import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqSensors.MasqLimitSwitch;
 import Library4997.MasqSensors.MasqVoltageSensor;
-import Library4997.MasqServos.MasqCRServo;
+import Library4997.MasqServos.MasqCRServoSystem;
 import Library4997.MasqServos.MasqServo;
 import Library4997.MasqWrappers.DashBoard;
 
@@ -36,14 +36,13 @@ public class Falcon extends MasqRobot {
     public MasqAdafruitIMU imu;
     public MasqLimitSwitch limitTop, limitBottom;
     public MasqRotator rotator;
-    public MasqMotor lift;
-    public MasqServo markerDump;
+    public MasqElevator lift;
     public MasqServo dumper;
-    public MasqCRServo collector;
+    public MasqCRServoSystem collector;
     public MasqVoltageSensor voltageSensor;
     public MasqClock clock;
     public MasqMotor hang;
-    public MasqLimitSwitch magSwitch;
+    public MasqLimitSwitch rotateTopLimit, rotateDownLimit;
     private boolean startOpenCV = true;
     public GoldAlignDetector goldAlignDetector;
     public DogeForia dogeForia;
@@ -51,22 +50,21 @@ public class Falcon extends MasqRobot {
         voltageSensor = new MasqVoltageSensor(hardwareMap);
         dash = DashBoard.getDash();
         imu = new MasqAdafruitIMU("imu", hardwareMap);
-        magSwitch = new MasqLimitSwitch("magSwitch", hardwareMap);
-        limitBottom = new MasqLimitSwitch("limitBottom", hardwareMap);
-        limitTop = new MasqLimitSwitch("limitTop", hardwareMap);
-        driveTrain = new MasqDriveTrain(hardwareMap, MasqMotorModel.ORBITAL20);
-        tracker = new MasqPositionTracker(driveTrain.leftDrive, driveTrain.rightDrive, imu);
+        driveTrain = new MasqMechanumDriveTrain(hardwareMap, MasqMotorModel.ORBITAL20);
         rotator = new MasqRotator(hardwareMap);
-        lift = new MasqMotor("lift", MasqMotorModel.ORBITAL20, DcMotor.Direction.REVERSE, hardwareMap);
+        lift = new MasqElevator(hardwareMap);
         dumper = new MasqServo("dumper", hardwareMap);
-        collector = new MasqCRServo("collector", hardwareMap);
+        collector = new MasqCRServoSystem("collector", "collector2", hardwareMap);
         hang = new MasqMotor("hang", MasqMotorModel.ORBITAL20, hardwareMap);
-        markerDump = new MasqServo("markerDump", hardwareMap);
-        lift.resetEncoder();
+        rotateTopLimit = new MasqLimitSwitch("limitTop", hardwareMap);
+        rotateDownLimit = new MasqLimitSwitch("limitBottom", hardwareMap);
+        driveTrain.resetEncoders();
         hang.setClosedLoop(true);
         hang.setKp(0.01);
         hang.setLimits(limitBottom, limitTop);
+        tracker = new MasqPositionTracker(hang, rotator.rotator.motor1, imu);
         if (startOpenCV) startOpenCV(hardwareMap);
+        driveTrain.setTracker(tracker);
     }
     @Override
     public MasqPIDPackage pidPackage() {
@@ -78,8 +76,8 @@ public class Falcon extends MasqRobot {
         pidPackage.setKpMotorTeleOpLeft(0.0001);
         pidPackage.setKpMotorTeleOpRight(0.0001);
         /*-------------------------------------------------*/
-        pidPackage.setKpTurn(0.015);
-        pidPackage.setKpDriveEncoder(2);
+        pidPackage.setKpTurn(0.01);
+        pidPackage.setKpDriveEncoder(1.5);
         pidPackage.setKpDriveAngular(0.015);
         /*-------------------------------------------------*/
         pidPackage.setKiMotorAutoLeft(0.0000);
@@ -144,8 +142,8 @@ public class Falcon extends MasqRobot {
     }
 
     public BlockPlacement getBlockPlacement (int block) {
-        if (!goldAlignDetector.isFound()) return BlockPlacement.LEFT;
-        else if (block > 150) return BlockPlacement.CENTER;
+        if (block > 450) return BlockPlacement.LEFT;
+        else if (block > 250) return BlockPlacement.CENTER;
         else return BlockPlacement.RIGHT;
     }
 

@@ -102,5 +102,50 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: :RobotCore-release:@aar" level="project" />
     <orderEntry type="module" module-name="openCVLibrary3" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+    <orderEntry type="module" module-name="openCVLibrary3" />
+>>>>>>> upstream/master
   </component>
 </module>

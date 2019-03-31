@@ -1,4 +1,4 @@
-package Library4997.MasqControlSystems.MasqPurePursuit;
+package Library4997.MasqResources.MasqMath;
 
 import Library4997.MasqResources.MasqHelpers.MasqHardware;
 

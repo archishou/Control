@@ -1,4 +1,4 @@
-package Library4997.MasqControlSystems.MasqPurePursuit;
+package Library4997.MasqResources.MasqMath;
 
 import Library4997.MasqResources.MasqHelpers.MasqHardware;
 
@@ -58,12 +58,19 @@ public class MasqVector implements MasqHardware{
         return (this.getX() * v.getX()) + (this.getY() * v.getY());
     }
 
-    public double angle(MasqVector v) {
+    public double angleRad(MasqVector v) {
         return (dotProduct(v)) / (v.getMagnitude() * this.getMagnitude());
+    }
+    public double angleDeg(MasqVector v) {
+        return Math.toDegrees(dotProduct(v)) / (v.getMagnitude() * this.getMagnitude());
     }
 
     public double distanceToVector(MasqVector point) {
         return Math.hypot(point.getX() - getX(), point.getY() - getY());
+    }
+
+    public boolean equal(double radius, MasqVector v) {
+        return distanceToVector(v) < radius;
     }
 
     public double getDirection () {
