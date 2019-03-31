@@ -17,6 +17,7 @@ import Library4997.MasqDriveTrains.MasqMechanumDriveTrain;
 import Library4997.MasqMotors.MasqMotor;
 import Library4997.MasqResources.MasqHelpers.Direction;
 import Library4997.MasqResources.MasqHelpers.MasqMotorModel;
+import Library4997.MasqResources.MasqMath.MasqPoint;
 import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqRobot;
 import Library4997.MasqSensors.MasqAdafruitIMU;
@@ -26,6 +27,10 @@ import Library4997.MasqSensors.MasqVoltageSensor;
 import Library4997.MasqServos.MasqCRServoSystem;
 import Library4997.MasqServos.MasqServo;
 import Library4997.MasqWrappers.DashBoard;
+
+import static java.lang.Math.PI;
+import static java.lang.Math.atan;
+import static java.lang.Math.sqrt;
 
 /**
  * Created by Archishmaan Peyyety on 6/2/18.
@@ -46,6 +51,11 @@ public class Falcon extends MasqRobot {
     private boolean startOpenCV = true;
     public GoldAlignDetector goldAlignDetector;
     public DogeForia dogeForia;
+    public static double defaultx = 8;
+    public static double defaulty = 25.63;
+    public static double defaultz = 27.929;
+    public static double liftz = 16.929;
+
     public void mapHardware(HardwareMap hardwareMap) {
         voltageSensor = new MasqVoltageSensor(hardwareMap);
         dash = DashBoard.getDash();
@@ -145,6 +155,19 @@ public class Falcon extends MasqRobot {
         if (block > 450) return BlockPlacement.LEFT;
         else if (block > 250) return BlockPlacement.CENTER;
         else return BlockPlacement.RIGHT;
+    }
+    public static double LiftExtension (MasqPoint masqPoint) {
+        double robotx = defaultx + masqPoint.getX();
+        double roboty = defaulty + masqPoint.getY();
+
+        return sqrt(robotx*robotx + roboty*roboty + defaultz*defaultz);
+    }
+
+    public static double RotaterAngle (MasqPoint masqPoint) {
+        double robotx = defaultx + masqPoint.getX();
+        double roboty = defaulty + masqPoint.getY();
+
+        return 180 - 180*atan(liftz/sqrt(robotx*robotx + roboty*roboty))/PI;
     }
 
 }
