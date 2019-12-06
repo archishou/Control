@@ -21,19 +21,19 @@ public class MasqMotorSystem implements MasqHardware {
     private double currentPower = 0;
     private double slowDown = 0;
     private String systemName;
-    private MasqMotorModel encoder = MasqMotorModel.ORBITAL20;
-    public MasqMotorSystem(String name1, DcMotor.Direction direction, String name2, DcMotor.Direction direction2, String systemName, HardwareMap hardwareMap, MasqMotorModel encoder) {
+    private MasqMotorModel model = MasqMotorModel.ORBITAL20;
+    public MasqMotorSystem(String name1, DcMotor.Direction direction, String name2, DcMotor.Direction direction2, String systemName, HardwareMap hardwareMap, MasqMotorModel model) {
         this.systemName = systemName;
-        motor1 = new MasqMotor(name1, encoder, direction, hardwareMap);
-        motor2 = new MasqMotor(name2, encoder, direction2, hardwareMap);
+        motor1 = new MasqMotor(name1, model, direction, hardwareMap);
+        motor2 = new MasqMotor(name2, model, direction2, hardwareMap);
         motor3 = null;
         motors = Arrays.asList(motor1, motor2);
         numMotors = 2;//
     }
-    public MasqMotorSystem(String name1, String name2, String systemName, HardwareMap hardwareMap, MasqMotorModel encoder) {
+    public MasqMotorSystem(String name1, String name2, String systemName, HardwareMap hardwareMap, MasqMotorModel model) {
         this.systemName = systemName;
-        motor1 = new MasqMotor(name1, encoder, DcMotor.Direction.FORWARD, hardwareMap);
-        motor2 = new MasqMotor(name2, encoder, DcMotor.Direction.FORWARD, hardwareMap);
+        motor1 = new MasqMotor(name1, model, DcMotor.Direction.FORWARD, hardwareMap);
+        motor2 = new MasqMotor(name2, model, DcMotor.Direction.FORWARD, hardwareMap);
         motor3 = null;
         motors = Arrays.asList(motor1, motor2);
         numMotors = 2;
@@ -41,31 +41,31 @@ public class MasqMotorSystem implements MasqHardware {
     public MasqMotorSystem(String name1, DcMotor.Direction direction,
                            String name2, DcMotor.Direction direction2,
                            String name3, DcMotor.Direction direction3, String systemName,
-                           HardwareMap hardwareMap, MasqMotorModel encoder) {
+                           HardwareMap hardwareMap, MasqMotorModel model) {
         this.systemName = systemName;
-        motor1 = new MasqMotor(name1, encoder, direction, hardwareMap);
-        motor2 = new MasqMotor(name2, encoder, direction2, hardwareMap);
-        motor3 = new MasqMotor(name3, encoder, direction3, hardwareMap);
+        motor1 = new MasqMotor(name1, model, direction, hardwareMap);
+        motor2 = new MasqMotor(name2, model, direction2, hardwareMap);
+        motor3 = new MasqMotor(name3, model, direction3, hardwareMap);
         motors = Arrays.asList(motor1, motor2, motor3);
         numMotors = 3;
     }
-    public MasqMotorSystem(String name1, String name2, String name3, String systemName, HardwareMap hardwareMap, MasqMotorModel encoder) {
+    public MasqMotorSystem(String name1, String name2, String name3, String systemName, HardwareMap hardwareMap, MasqMotorModel model) {
         this.systemName = systemName;
-        motor1 = new MasqMotor(name1, encoder, DcMotor.Direction.FORWARD, hardwareMap);
-        motor2 = new MasqMotor(name2, encoder, DcMotor.Direction.FORWARD, hardwareMap);
-        motor3 = new MasqMotor(name3, encoder, DcMotor.Direction.FORWARD, hardwareMap);
+        motor1 = new MasqMotor(name1, model, DcMotor.Direction.FORWARD, hardwareMap);
+        motor2 = new MasqMotor(name2, model, DcMotor.Direction.FORWARD, hardwareMap);
+        motor3 = new MasqMotor(name3, model, DcMotor.Direction.FORWARD, hardwareMap);
         motors = Arrays.asList(motor1, motor2, motor3);
         numMotors = 3;
     }
-    public MasqMotorSystem(String name1, String name2, MasqMotorModel encoder, HardwareMap hardwareMap) {
-        motor1 = new MasqMotor(name1, encoder, DcMotor.Direction.FORWARD, hardwareMap);
-        motor2 = new MasqMotor(name2, encoder, DcMotor.Direction.FORWARD, hardwareMap);
+    public MasqMotorSystem(String name1, String name2, MasqMotorModel model, HardwareMap hardwareMap) {
+        motor1 = new MasqMotor(name1, model, DcMotor.Direction.FORWARD, hardwareMap);
+        motor2 = new MasqMotor(name2, model, DcMotor.Direction.FORWARD, hardwareMap);
         motors = Arrays.asList(motor1, motor2);
         numMotors = 2;
     }
-    public MasqMotorSystem(String name1,DcMotor.Direction d1, String name2, DcMotor.Direction d2, MasqMotorModel encoder, HardwareMap hardwareMap) {
-        motor1 = new MasqMotor(name1, encoder, d1, hardwareMap);
-        motor2 = new MasqMotor(name2, encoder, d2, hardwareMap);
+    public MasqMotorSystem(String name1, DcMotor.Direction d1, String name2, DcMotor.Direction d2, MasqMotorModel model, HardwareMap hardwareMap) {
+        motor1 = new MasqMotor(name1, model, d1, hardwareMap);
+        motor2 = new MasqMotor(name2, model, d2, hardwareMap);
         motors = Arrays.asList(motor1, motor2);
         numMotors = 2;
     }
@@ -210,12 +210,14 @@ public class MasqMotorSystem implements MasqHardware {
         return kd;
     }
 
-    public MasqMotorModel getEncoder() {
-        return encoder;
+    public MasqMotorModel getModel() {
+        return model;
     }
-
-    public void setEncoder(MasqMotorModel encoder) {
-        this.encoder = encoder;
+    public double getClicksPerInch() {
+        return motor1.encoder.getClicksPerInch();
+    }
+    public void setModel(MasqMotorModel model) {
+        this.model = model;
     }
 
     public String getName() {

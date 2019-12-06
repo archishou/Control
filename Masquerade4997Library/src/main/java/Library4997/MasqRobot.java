@@ -14,7 +14,6 @@ import Library4997.MasqResources.MasqMath.MasqPoint;
 import Library4997.MasqResources.MasqMath.MasqVector;
 import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqSensors.MasqClock;
-import Library4997.MasqSensors.MasqColorSensor;
 import Library4997.MasqWrappers.DashBoard;
 import Library4997.MasqWrappers.MasqController;
 import Library4997.MasqWrappers.MasqPredicate;
@@ -85,13 +84,11 @@ public abstract class MasqRobot {
         double clicksRemaining;
         double angularError,
                 powerAdjustment, power, leftPower, rightPower, maxPower;
-        boolean bool;
         do {
             clicksRemaining = (int) (targetClicks - Math.abs(driveTrain.getCurrentPosition()));
             power = driveController.getOutput(clicksRemaining) * speed;
-            power = Range.clip(power, -1.0, +1.0);
-            angularError = MasqUtils.adjustAngle(targetAngle - tracker.getHeading());
-            powerAdjustment = angleController.getOutput(MasqUtils.adjustAngle(angularError));
+            angularError = /*MasqUtils.adjustAngle(targetAngle - tracker.getHeading())*/0;
+            powerAdjustment = /*angleController.getOutput(angularError)*/0;
             powerAdjustment = Range.clip(powerAdjustment, -1.0, +1.0);
             leftPower = direction.value * (power - powerAdjustment);
             rightPower = direction.value * (power + powerAdjustment);
@@ -105,6 +102,10 @@ public abstract class MasqRobot {
             dash.create("RIGHT POWER: ", rightPower);
             dash.create("ERROR: ", clicksRemaining);
             dash.create("HEADING: ", tracker.getHeading());
+            dash.create("FL: ", driveTrain.leftDrive.motor1.encoder.getInches());
+            dash.create("FR: ", driveTrain.rightDrive.motor1.encoder.getInches());
+            dash.create("BL: ", driveTrain.leftDrive.motor2.encoder.getInches());
+            dash.create("BR: ", driveTrain.rightDrive.motor2.encoder.getInches());
             dash.update();
         } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.05));
         driveTrain.stopDriving();
