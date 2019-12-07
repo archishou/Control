@@ -51,7 +51,7 @@ public class Masqalorian extends MasqRobot {
         resetServos();
         lift.encoder.setWheelDiameter(1);
         MasqUtils.driveController = new MasqPIDController(0.005,0,0);
-        MasqUtils.angleController = new MasqPIDController(0.01,0,0);
+        MasqUtils.angleController = new MasqPIDController(0.025,0,0);
         MasqUtils.turnController = new MasqPIDController(0.015,0,0);
         MasqUtils.velocityTeleController = new MasqPIDController(0.002, 0, 0);
         MasqUtils.velocityAutoController = new MasqPIDController(0.002, 0, 0);

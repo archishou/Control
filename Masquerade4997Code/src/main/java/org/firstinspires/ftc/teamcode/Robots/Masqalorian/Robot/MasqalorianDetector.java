@@ -21,7 +21,7 @@ import MasqCV.detectors.skystone.SkystoneDetector;
 public class MasqalorianDetector {
     private OpenCvWebcam webcam;
     private SkystoneDetector skystoneDetector;
-    private int offset = 0;
+    public int offset = 0;
 
     public MasqalorianDetector(HardwareMap hwMap){
         int cameraMonitorViewId = hwMap.appContext.getResources().getIdentifier("cameraMonitorViewId", "id", hwMap.appContext.getPackageName());

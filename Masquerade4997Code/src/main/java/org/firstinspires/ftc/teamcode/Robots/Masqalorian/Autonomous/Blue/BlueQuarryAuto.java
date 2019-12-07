@@ -6,6 +6,8 @@ import org.firstinspires.ftc.teamcode.Robots.Masqalorian.Robot.Masqalorian;
 import org.firstinspires.ftc.teamcode.Robots.Masqalorian.Robot.MasqalorianDetector;
 
 import Library4997.MasqResources.MasqHelpers.Direction;
+import Library4997.MasqResources.MasqHelpers.Strafe;
+import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqWrappers.MasqLinearOpMode;
 
 /**
@@ -23,7 +25,10 @@ public class BlueQuarryAuto extends MasqLinearOpMode {
         MasqalorianDetector.SkystonePosition position = robot.detector.getPosition();
 
         while(!opModeIsActive()) {
+            position = robot.detector.getPosition();
             dash.create("Position: ", position);
+            dash.create("x: ", MasqUtils.getCenterPoint(robot.detector.getFoundRect()));
+            dash.create("offset: ", robot.detector.offset);
             dash.update();
         }
         waitForStart();
@@ -42,21 +47,14 @@ public class BlueQuarryAuto extends MasqLinearOpMode {
     public void runStoneLeft() {
         robot.strafe(Math.hypot(15,18),Math.toDegrees(Math.atan2(-18,15)));
         robot.intake.setVelocity(1);
-        robot.drive(15);
+        robot.drive(20);
+        robot.drive(5,0.5);
         sleep(1);
         robot.intake.setVelocity(0);
         robot.blockPusher.setPosition(0);
         robot.blockGrabber.setPosition(0);
-        dash.create(1);
-        dash.update();
-        robot.drive(10, Direction.BACKWARD);
-        /*robot.driveTrain.stopDriving();
-        dash.create(2);
-        dash.update();
-        sleep(10);
-        dash.create(3);
-        dash.update();
-        robot.strafe(90, Strafe.LEFT,500);
+        robot.drive(20, Direction.BACKWARD);
+        robot.strafe(30, Strafe.LEFT,4);
         robot.blockPusher.setPosition(1);
         robot.drive(5);
         robot.foundationHook.lower();
@@ -102,8 +100,8 @@ public class BlueQuarryAuto extends MasqLinearOpMode {
         robot.blockRotater.setPosition(0);
         sleep();
         robot.lift.runToPosition(0,0.5);
-        robot.strafe(20,Strafe.RIGHT);
-        robot.drive(15);*/
+        robot.strafe(20, Strafe.RIGHT);
+        robot.drive(15);
     }
     public void runStoneMiddle() {}
     public void runStoneRight() {}

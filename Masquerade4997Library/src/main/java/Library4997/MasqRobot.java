@@ -43,18 +43,18 @@ public abstract class MasqRobot {
         MasqClock timeoutTimer = new MasqClock();
         driveTrain.resetEncoders();
         double targetClicks = (int)(distance * driveTrain.getEncoder().getClicksPerInch());
-        double clicksRemaining;
+        double clicksRemaining; 
         double power, angularError, targetAngle = tracker.getHeading(), powerAdjustment;
         do {
-            clicksRemaining = (int) (targetClicks - Math.abs(driveTrain.getCurrentPositionPositive()));
+            clicksRemaining = (int) (targetClicks - Math.abs(driveTrain.rightDrive.motor1.getCurrentPosition()));
             power = driveController.getOutput(clicksRemaining) * speed;
-            power = Range.clip(power, -1.0, +1.0);
             angularError = MasqUtils.adjustAngle(targetAngle - tracker.getHeading());
-            powerAdjustment = angleController.getOutput(MasqUtils.adjustAngle(angularError));
-            powerAdjustment = Range.clip(powerAdjustment, -1.0, +1.0);
+            powerAdjustment = angleController.getOutput(angularError);
             driveTrain.setVelocityMECH(angle, power, tracker.getHeading(), powerAdjustment);
             dash.create("ERROR: ", clicksRemaining);
             dash.create("HEADING: ", tracker.getHeading());
+            dash.create("ADJUSTMENT: ", powerAdjustment);
+            dash.create("ANGULAR ERROR: ", angularError);
             dash.update();
         } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.05));
         driveTrain.stopDriving();
@@ -70,7 +70,7 @@ public abstract class MasqRobot {
         strafe(distance, angle, 1);
     }
     public void strafe(double distance, double angle) {
-        strafe(distance, angle,1,0.7);
+        strafe(distance, angle,2,0.7);
     }
     public void strafe(double distance, double angle, double timeout) {
         strafe(distance, angle, timeout, 0.7);
@@ -87,11 +87,16 @@ public abstract class MasqRobot {
         do {
             clicksRemaining = (int) (targetClicks - Math.abs(driveTrain.getCurrentPosition()));
             power = driveController.getOutput(clicksRemaining) * speed;
-            angularError = /*MasqUtils.adjustAngle(targetAngle - tracker.getHeading())*/0;
-            powerAdjustment = /*angleController.getOutput(angularError)*/0;
-            powerAdjustment = Range.clip(powerAdjustment, -1.0, +1.0);
-            leftPower = direction.value * (power - powerAdjustment);
-            rightPower = direction.value * (power + powerAdjustment);
+            angularError = MasqUtils.adjustAngle(targetAngle - tracker.getHeading());
+            powerAdjustment = angleController.getOutput(angularError);
+            if (Math.abs(powerAdjustment) > 5) {
+                leftPower = direction.value * (power - powerAdjustment);
+                rightPower = direction.value * (power + powerAdjustment);
+            }
+            else {
+                leftPower = direction.value*power;
+                rightPower = direction.value*power;
+            }
             maxPower = MasqUtils.max(Math.abs(leftPower), Math.abs(rightPower));
             if (maxPower > 1.0) {
                 leftPower /= maxPower;
@@ -102,20 +107,17 @@ public abstract class MasqRobot {
             dash.create("RIGHT POWER: ", rightPower);
             dash.create("ERROR: ", clicksRemaining);
             dash.create("HEADING: ", tracker.getHeading());
-            dash.create("FL: ", driveTrain.leftDrive.motor1.encoder.getInches());
-            dash.create("FR: ", driveTrain.rightDrive.motor1.encoder.getInches());
-            dash.create("BL: ", driveTrain.leftDrive.motor2.encoder.getInches());
-            dash.create("BR: ", driveTrain.rightDrive.motor2.encoder.getInches());
+            dash.create("ANGULAR ERROR: ", angularError);
             dash.update();
         } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.05));
         driveTrain.stopDriving();
         sleep(sleepTime);
     }
-    public void drive(double distance, double speed, Direction strafe, double timeout) {
-        drive(distance, speed, strafe, timeout, MasqUtils.DEFAULT_SLEEP_TIME);
+    public void drive(double distance, double speed, Direction direction, double timeout) {
+        drive(distance, speed, direction, timeout, MasqUtils.DEFAULT_SLEEP_TIME);
     }
-    public void drive(double distance, double speed, Direction strafe) {
-        drive(distance, speed, strafe, MasqUtils.DEFAULT_TIMEOUT);
+    public void drive(double distance, double speed, Direction direction) {
+        drive(distance, speed, direction, MasqUtils.DEFAULT_TIMEOUT);
     }
     public void drive(double distance, Direction direction, double timeout) {
         drive(distance, 1, direction, timeout);
@@ -123,6 +125,9 @@ public abstract class MasqRobot {
     public void drive(double distance, double speed){drive(distance, speed, Direction.FORWARD);}
     public void drive(double distance, Direction direction) {drive(distance, 0.5, direction);}
     public void drive(double distance) {drive(distance, 0.5);}
+    public void drive (double distance, double speed, double timeout) {
+        drive(distance, speed,Direction.FORWARD, timeout);
+    }
 
     public void driveAbsoluteAngle(double distance, int angle, double speed, Direction direction, double timeout, double sleepTime) {
         MasqClock timeoutTimer = new MasqClock();
