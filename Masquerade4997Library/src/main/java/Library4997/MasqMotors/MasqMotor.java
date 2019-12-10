@@ -115,7 +115,7 @@ public class MasqMotor implements MasqHardware {
         motor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         setVelocity(speed);
         while (opModeIsActive() && motor.isBusy() &&
-                !clock.elapsedTime(5, MasqClock.Resolution.SECONDS)) {}
+                !clock.elapsedTime(3, MasqClock.Resolution.SECONDS)) {}
         setVelocity(0);
         motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }

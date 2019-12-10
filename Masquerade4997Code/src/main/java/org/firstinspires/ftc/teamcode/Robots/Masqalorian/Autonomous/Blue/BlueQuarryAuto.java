@@ -20,19 +20,22 @@ public class BlueQuarryAuto extends MasqLinearOpMode {
     @Override
     public void runLinearOpMode() throws InterruptedException {
         robot.init(hardwareMap);
+        robot.blockRotater.setPosition(0);
         robot.initializeAutonomous();
+        robot.detector.start();
+        robot.detector.setClippingMargins(100,80,110,70);
 
         MasqalorianDetector.SkystonePosition position = robot.detector.getPosition();
 
         while(!opModeIsActive()) {
             position = robot.detector.getPosition();
             dash.create("Position: ", position);
-            dash.create("x: ", MasqUtils.getCenterPoint(robot.detector.getFoundRect()));
-            dash.create("offset: ", robot.detector.offset);
+            dash.create("HEADING: ", robot.tracker.getHeading());
             dash.update();
         }
-        waitForStart();
 
+        waitForStart();
+        robot.tracker.reset();
         robot.foundationHook.mid();
         robot.blockPusher.setPosition(1);
         sleep();
@@ -40,69 +43,42 @@ public class BlueQuarryAuto extends MasqLinearOpMode {
         if(position == MasqalorianDetector.SkystonePosition.LEFT) runStoneLeft();
         else if (position == MasqalorianDetector.SkystonePosition.MIDDLE) runStoneMiddle();
         else if (position == MasqalorianDetector.SkystonePosition.RIGHT) runStoneRight();
-        sleep(25);
 
         robot.detector.stop();
     }
-    public void runStoneLeft() {
-        robot.strafe(Math.hypot(15,18),Math.toDegrees(Math.atan2(-18,15)));
+
+    private void runStoneLeft() {
+        robot.strafe(38, -45);
         robot.intake.setVelocity(1);
-        robot.drive(20);
-        robot.drive(5,0.5);
-        sleep(1);
+        robot.drive(42);
+        sleep(0.6);
         robot.intake.setVelocity(0);
+        robot.drive(30, Direction.BACKWARD);
         robot.blockPusher.setPosition(0);
         robot.blockGrabber.setPosition(0);
-        robot.drive(20, Direction.BACKWARD);
-        robot.strafe(30, Strafe.LEFT,4);
-        robot.blockPusher.setPosition(1);
-        robot.drive(5);
+        robot.strafe(80, Strafe.LEFT, 4);
+        robot.drive(17);
         robot.foundationHook.lower();
         sleep(1);
-        robot.drive(30,Direction.BACKWARD);
+        robot.drive(60,0.5,Direction.BACKWARD,4);
         robot.foundationHook.raise();
-        sleep(1);
-        robot.strafe(30,Strafe.RIGHT);
-        robot.foundationHook.mid();
-        robot.drive(15);
-        robot.turnAbsolute(90);
-        robot.lift.runToPosition(15,0.5);
-        robot.blockRotater.setPosition(1);
-        sleep();
-        robot.lift.runToPosition(0,0.5);
-        robot.blockGrabber.setPosition(1);
-        sleep();
-        robot.lift.runToPosition(15,0.5);
-        robot.blockRotater.setPosition(0);
-        sleep();
-        robot.lift.runToPosition(0,0.5);
-        robot.strafe(20,Strafe.RIGHT);
-        robot.turnAbsolute(0);
-        robot.strafe(84,Strafe.RIGHT);
-        robot.intake.setVelocity(1);
-        robot.drive(5);
-        sleep(15);
-        robot.intake.setVelocity(0);
-        robot.blockPusher.setPosition(0);
-        robot.blockGrabber.setPosition(0);
-        robot.drive(5,Direction.BACKWARD);
-        robot.strafe(84,Strafe.LEFT);
         robot.blockPusher.setPosition(1);
-        robot.turnAbsolute(90);
-        robot.strafe(20,Strafe.LEFT);
-        robot.lift.runToPosition(15,0.5);
-        robot.blockRotater.setPosition(1);
+        sleep(1);
+        robot.strafe(35,Strafe.RIGHT,2,0.7);
+        robot.drive(20,0.6);
         sleep();
+        robot.turnAbsolute(90,1);
+        robot.drive(10,Direction.BACKWARD);
+        robot.lift.runToPosition(12,0.5);
+        robot.blockRotater.setPosition(1);
+        sleep(1);
         robot.lift.runToPosition(0,0.5);
         robot.blockGrabber.setPosition(1);
         sleep();
-        robot.lift.runToPosition(15,0.5);
-        robot.blockRotater.setPosition(0);
-        sleep();
-        robot.lift.runToPosition(0,0.5);
-        robot.strafe(20, Strafe.RIGHT);
-        robot.drive(15);
+        robot.strafe(3,Strafe.LEFT,0.5);
+        robot.drive(20);
+
     }
-    public void runStoneMiddle() {}
-    public void runStoneRight() {}
+    private void runStoneMiddle() {}
+    private void runStoneRight() {}
 }

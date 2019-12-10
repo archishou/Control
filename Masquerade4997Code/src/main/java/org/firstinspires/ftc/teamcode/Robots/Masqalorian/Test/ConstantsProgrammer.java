@@ -23,7 +23,7 @@ public class ConstantsProgrammer extends MasqLinearOpMode {
         robot.init(hardwareMap);
 
         while (!opModeIsActive()) {
-            dash.create("Hello");
+            dash.create("HEADING: ", robot.tracker.getHeading());
             dash.update();
         }
 

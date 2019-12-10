@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 import org.firstinspires.ftc.teamcode.Robots.Masqalorian.Robot.Masqalorian;
 
-import Library4997.MasqResources.MasqHelpers.Strafe;
+import Library4997.MasqResources.MasqHelpers.Direction;
 import Library4997.MasqWrappers.MasqLinearOpMode;
 
 /**
@@ -17,17 +17,19 @@ public class TestAuto extends MasqLinearOpMode {
     @Override
     public void runLinearOpMode() throws InterruptedException {
         robot.init(hardwareMap);
+        robot.blockRotater.setPosition(0);
         robot.initializeAutonomous();
 
         while (!opModeIsActive()) {
-            dash.create("Hello");
+            dash.create("HEADING: ", robot.tracker.getHeading());
             dash.update();
         }
 
         waitForStart();
+
         robot.foundationHook.raise();
         robot.blockPusher.setPosition(1);
         sleep(1);
-        robot.strafe(90, Strafe.LEFT,500);
+        robot.turnAbsolute(90,500);
     }
 }

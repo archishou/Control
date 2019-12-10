@@ -24,7 +24,7 @@ public class StateMachineTest extends MasqLinearOpMode {
         robot.initializeAutonomous();
 
         while (!opModeIsActive()) {
-            dash.create("Hello");
+            dash.create("HEADING: ", robot.tracker.getHeading());
             dash.update();
         }
 
@@ -34,7 +34,7 @@ public class StateMachineTest extends MasqLinearOpMode {
             switch (state){
                 case FULL_DRIVER:
                     robot.MECH(controller1);
-                    if (controller1.leftBumper()) state = State.ARM_AUTOMATION;
+                    if (!controller1.leftBumper()) state = State.ARM_AUTOMATION;
                     else break;
                 case ARM_AUTOMATION:
                     robot.foundationHook.lower();

@@ -10,20 +10,27 @@ import Library4997.MasqWrappers.MasqLinearOpMode;
 @TeleOp(name = "TestBotTeleop", group = "Testbot")
 public class TestbotTeleop extends MasqLinearOpMode {
     private TestRobot robot = new TestRobot();
+
     @Override
     public void runLinearOpMode() {
         robot.init(hardwareMap);
         robot.initializeTeleop();
+
         while (!opModeIsActive()) {
             dash.create("Hello");
             dash.update();
         }
+
         waitForStart();
+
         while (opModeIsActive()) {
             robot.MECH(controller1);
-            /*if (controller1.leftTriggerPressed()) robot.intake.setVelocity(-1);
+
+            if (controller1.leftTriggerPressed()) robot.intake.setVelocity(-1);
             else if (controller1.rightTriggerPressed()) robot.intake.setVelocity(-1);
-            else robot.intake.setVelocity(0);*/
+            else robot.intake.setVelocity(0);
+
+            robot.lift.setVelocity(controller1.leftStickY());
 
             controller1.update();
         }

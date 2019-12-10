@@ -137,8 +137,10 @@ public class MasqDriveTrain implements MasqHardware {
     public String[] getDash() {
         return new String[]{
                 "Rate "+ getRate(),
-                "Left Position: " + leftDrive.getAbsolutePosition(),
-                "Right Position: " + rightDrive.getAbsolutePosition(),
+                "Left 1 Position: " + leftDrive.motor1.getAbsolutePosition(),
+                "Left 2 Position: " + leftDrive.motor2.getAbsolutePosition(),
+                "Right 1 Position: " + rightDrive.motor1.getAbsolutePosition(),
+                "Right 2 Position: " + rightDrive.motor2.getAbsolutePosition(),
         };
     }
 }

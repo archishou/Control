@@ -6,7 +6,7 @@ package Library4997.MasqResources.MasqHelpers;
 
 public enum MasqMotorModel {
     ORBITAL20, NEVEREST40, NEVEREST60, USDIGITAL_E4T, REVHDHEX40, NEVERREST_CLASSIC, NEVERREST256, REVHDHEX20;
-        public static double DEFAULT_CPR = 537.6;
+        public static double DEFAULT_CPR = 560;
         public static double CPR(MasqMotorModel motorModel) {
             switch (motorModel){
                 case ORBITAL20:
