@@ -66,7 +66,7 @@ public class Masqalorian extends MasqRobot {
         blockGrabber.scaleRange(0, 0.5);
         blockRotater.scaleRange(0.02, 0.7);
         capper.scaleRange(0.5,1);
-        blockStopper.scaleRange(0.25,1);
+        blockStopper.scaleRange(0.35,1);
     }
 
     private void resetServos() {
@@ -74,8 +74,6 @@ public class Masqalorian extends MasqRobot {
         blockGrabber.setPosition(1);
         foundationHook.lower();
         capper.setPosition(0);
-        blockStopper.setPosition(0);
+        blockStopper.setPosition(1);
     }
-
-
 }

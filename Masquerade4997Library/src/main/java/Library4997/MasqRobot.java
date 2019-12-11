@@ -18,13 +18,7 @@ import Library4997.MasqWrappers.DashBoard;
 import Library4997.MasqWrappers.MasqController;
 import Library4997.MasqWrappers.MasqPredicate;
 
-import static Library4997.MasqResources.MasqUtils.DEFAULT_SLEEP_TIME;
-import static Library4997.MasqResources.MasqUtils.angleController;
-import static Library4997.MasqResources.MasqUtils.driveController;
-import static Library4997.MasqResources.MasqUtils.turnController;
-import static Library4997.MasqResources.MasqUtils.velocityAutoController;
-import static Library4997.MasqResources.MasqUtils.velocityTeleController;
-
+import static Library4997.MasqResources.MasqUtils.*;
 
 /**
  * MasqRobot--> Contains all hardware and methods to runLinearOpMode the robot.
