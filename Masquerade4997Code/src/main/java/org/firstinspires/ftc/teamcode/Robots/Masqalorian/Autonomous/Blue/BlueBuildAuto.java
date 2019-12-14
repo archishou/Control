@@ -9,6 +9,9 @@ import Library4997.MasqResources.MasqHelpers.Direction;
 import Library4997.MasqResources.MasqHelpers.Strafe;
 import Library4997.MasqWrappers.MasqLinearOpMode;
 
+import static Library4997.MasqResources.MasqHelpers.Strafe.LEFT;
+import static Library4997.MasqResources.MasqHelpers.Strafe.RIGHT;
+
 /**
  * Created by Keval Kataria on 9/15/2019
  */
@@ -30,8 +33,7 @@ public class BlueBuildAuto extends MasqLinearOpMode {
         waitForStart();
 
         robot.foundationHook.raise();
-        robot.blockPusher.setPosition(1);
-        robot.strafe(15, Strafe.LEFT);
+        robot.strafe(15, LEFT);
         sleep();
         robot.drive(40);
         robot.foundationHook.lower();
@@ -39,9 +41,11 @@ public class BlueBuildAuto extends MasqLinearOpMode {
         robot.drive(50, 0.5 ,Direction.BACKWARD,3);
         robot.foundationHook.raise();
         sleep();
-        robot.strafe(33,Strafe.RIGHT,3);
+        robot.strafe(37,RIGHT,2.5);
         robot.foundationHook.mid();
-        robot.drive(27);
-        robot.strafe(22,Strafe.RIGHT);
+        robot.drive(23);
+        robot.strafe(10,LEFT);
+        sleep(1);
+        robot.strafe(30,RIGHT);
     }
 }

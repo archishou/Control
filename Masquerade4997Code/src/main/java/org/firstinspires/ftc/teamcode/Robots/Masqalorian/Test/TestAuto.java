@@ -4,8 +4,9 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 import org.firstinspires.ftc.teamcode.Robots.Masqalorian.Robot.Masqalorian;
 
-import Library4997.MasqResources.MasqHelpers.Direction;
 import Library4997.MasqWrappers.MasqLinearOpMode;
+
+import static Library4997.MasqResources.MasqHelpers.Strafe.*;
 
 /**
  * Created by Keval Kataria on 11/3/2019
@@ -30,6 +31,20 @@ public class TestAuto extends MasqLinearOpMode {
         robot.foundationHook.raise();
         robot.blockPusher.setPosition(1);
         sleep(1);
-        robot.turnAbsolute(90,500);
+        robot.strafe(20, -135);
+        sleep();
+        robot.strafe(20,135);
+        sleep();
+        robot.strafe(20,LEFT);
+        sleep();
+        robot.strafe(20,RIGHT);
+        sleep();
+        robot.strafe(20,45);
+        sleep();
+        robot.strafe(20,-135);
+        sleep();
+        robot.strafe(20,FORWARD);
+        sleep();
+        robot.strafe(20,BACKWARD);
     }
 }

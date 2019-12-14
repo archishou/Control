@@ -6,6 +6,9 @@ import org.firstinspires.ftc.teamcode.Robots.Masqalorian.Robot.Masqalorian;
 
 import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqWrappers.MasqLinearOpMode;
+import java.lang.*;
+
+import static Library4997.MasqResources.MasqUtils.toggle;
 
 /**
  * Created by Keval Kataria on 9/14/2019
@@ -39,10 +42,10 @@ public class MasqalorianTeleop extends MasqLinearOpMode {
             if (controller1.rightBumper() || controller1.leftBumper()) {robot.MECH(controller1,0.5, 0.3);}
             else {robot.MECH(controller1,1, 0.6);}
 
-            if (Math.abs(robot.lift.encoder.getInches()) > 10) MasqUtils.toggle(controller2.yOnPress(), robot.blockRotater, prevRotater);
-            MasqUtils.toggle(controller2.xOnPress(), robot.blockGrabber, prevGrabber);
-            MasqUtils.toggle(controller2.aOnPress(), robot.blockPusher,prevPusher);
-            MasqUtils.toggle(controller2.dPadUpOnPress(), robot.capper, prevCapper);
+            if (Math.abs(robot.lift.getEncoder().getInches()) > 10) toggle(controller2.yOnPress(),robot.blockRotater,prevRotater);
+            toggle(controller2.xOnPress(), robot.blockGrabber, prevGrabber);
+            toggle(controller2.aOnPress(), robot.blockPusher,prevPusher);
+            toggle(controller2.dPadUpOnPress(), robot.capper, prevCapper);
             robot.foundationHook.DriverControl(controller1);
 
             if (controller1.leftTriggerPressed()) robot.intake.setVelocity(-1);

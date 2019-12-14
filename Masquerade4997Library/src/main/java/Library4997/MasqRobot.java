@@ -8,6 +8,7 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import Library4997.MasqControlSystems.MasqPID.MasqPIDController;
 import Library4997.MasqControlSystems.MasqPurePursuit.MasqPositionTracker;
 import Library4997.MasqDriveTrains.MasqMechanumDriveTrain;
+import Library4997.MasqMotors.MasqMotor;
 import Library4997.MasqResources.MasqHelpers.Direction;
 import Library4997.MasqResources.MasqHelpers.Strafe;
 import Library4997.MasqResources.MasqMath.MasqPoint;
@@ -34,14 +35,14 @@ public abstract class MasqRobot {
 
     public static boolean opModeIsActive() {return MasqUtils.opModeIsActive();}
 
-    public void strafe(double distance, double angle, double timeout, double speed) {
+    public void strafe(double distance, double angle, double timeout, double speed, MasqMotor motor) {
         MasqClock timeoutTimer = new MasqClock();
         driveTrain.resetEncoders();
         double targetClicks = (int)(distance * driveTrain.getEncoder().getClicksPerInch());
         double clicksRemaining; 
         double power, angularError, targetAngle = tracker.getHeading(), powerAdjustment;
         do {
-            clicksRemaining = (int) (targetClicks - Math.abs(driveTrain.rightDrive.motor1.getCurrentPosition()));
+            clicksRemaining = (int) (targetClicks - Math.abs(motor.getCurrentPosition()));
             power = driveController.getOutput(clicksRemaining) * speed;
             angularError = MasqUtils.adjustAngle(targetAngle - tracker.getHeading());
             powerAdjustment = angleController.getOutput(angularError);
@@ -51,24 +52,27 @@ public abstract class MasqRobot {
             dash.create("ADJUSTMENT: ", powerAdjustment);
             dash.create("ANGULAR ERROR: ", angularError);
             dash.update();
-        } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.05));
+        } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 1 || clicksRemaining/targetClicks > 0.05));
         driveTrain.stopDriving();
         sleep(MasqUtils.DEFAULT_SLEEP_TIME);
     }
     public void strafe(double distance, Strafe angle, double timeout, double speed) {
-        strafe(distance, angle.value, timeout, speed);
+        strafe(distance, angle.value, timeout, speed,driveTrain.rightDrive.motor1);
     }
     public void strafe(double distance, Strafe angle, double timeout) {
-        strafe(distance, angle.value, timeout,0.7);
+        strafe(distance, angle.value, timeout,0.5,driveTrain.rightDrive.motor1);
     }
     public void strafe (double distance, Strafe angle) {
         strafe(distance, angle, 1);
     }
     public void strafe(double distance, double angle) {
-        strafe(distance, angle,2,0.7);
+        strafe(distance, angle,2);
     }
     public void strafe(double distance, double angle, double timeout) {
-        strafe(distance, angle, timeout, 0.7);
+        strafe(distance, angle, timeout,0.5,driveTrain.rightDrive.motor1);
+    }
+    public void strafe(double distance, double angle, MasqMotor motor) {
+        strafe(distance,angle, DEFAULT_TIMEOUT,0.5,motor);
     }
 
     public void drive(double distance, double speed, Direction direction, double timeout, double sleepTime) {
@@ -95,10 +99,11 @@ public abstract class MasqRobot {
             dash.create("LEFT POWER: ", leftPower);
             dash.create("RIGHT POWER: ", rightPower);
             dash.create("ERROR: ", clicksRemaining);
+            dash.create("TARGET: ", targetClicks);
             dash.create("HEADING: ", tracker.getHeading());
             dash.create("ANGULAR ERROR: ", angularError);
             dash.update();
-        } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.01));
+        } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 1 || clicksRemaining/targetClicks > 0.05));
         driveTrain.stopDriving();
         sleep(sleepTime);
     }

@@ -58,7 +58,7 @@ public class MasqMechanumDriveTrain extends MasqDriveTrain implements MasqHardwa
         double rightBack = (Math.sin(adjustedAngle) * speed * MasqUtils.MECH_DRIVE_MULTIPLIER);
         leftFront -= turnAdjustment;
         leftBack -= turnAdjustment;
-        rightBack += turnAdjustment;
+        rightFront += turnAdjustment;
         rightBack += turnAdjustment;
         double max = Math.max(Math.max(Math.abs(leftFront), Math.abs(leftBack)), Math.max(Math.abs(rightFront), Math.abs(rightBack)));
         if (max > 1) {

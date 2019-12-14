@@ -57,7 +57,7 @@ public class Masqalorian extends MasqRobot {
         MasqUtils.velocityAutoController = new MasqPIDController(0.002, 0, 0);
         driveTrain.setClosedLoop(true);
         lift.setClosedLoop(true);
-        lift.setKp(0.005);
+        lift.setKp(0.001);
         driveTrain.resetEncoders();
     }
 

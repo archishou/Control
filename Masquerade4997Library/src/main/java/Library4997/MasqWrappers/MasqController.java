@@ -12,7 +12,7 @@ public class MasqController implements Runnable{
     private String name;
     private Gamepad gamepad;
     private boolean close = false;
-    private boolean
+    public boolean
             aPrev = false, bPrev = false, xPrev = false, yPrev = false,
             leftBumperPrev = false, rightBumperPrev = false, rightTriggerPrev = false,
             leftTriggerPrev = false, dPadUpPrev = false, dPadDownPrev = false, dPadRightPrev = false, dPadLeftPrev = false;
@@ -25,6 +25,36 @@ public class MasqController implements Runnable{
     public boolean x() {return gamepad.x;}
     public boolean y() {return gamepad.y;}
     public boolean b() {return gamepad.b;}
+
+    public void aOffPress(Runnable action) {
+        if(a()) {
+            while(a()) {}
+            Thread thread = new Thread(action);
+            thread.start();
+        }
+    }
+    public void bOffPress(Runnable action) {
+        if(a()) {
+            while(a()) {}
+            Thread thread = new Thread(action);
+            thread.start();
+        }
+    }
+    public void xOffPress(Runnable action) {
+        if(a()) {
+            while(a()) {}
+            Thread thread = new Thread(action);
+            thread.start();
+        }
+    }
+    public void yOffPress(Runnable action) {
+        if(a()) {
+            while(a()) {}
+            Thread thread = new Thread(action);
+            thread.start();
+        }
+    }
+
 
     public boolean aOnPress() {return a() && !aPrev;}
     public boolean bOnPress() {return b() && !bPrev;}

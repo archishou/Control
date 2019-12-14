@@ -11,6 +11,7 @@ import org.opencv.core.Rect;
 import java.util.Locale;
 
 import Library4997.MasqControlSystems.MasqPID.MasqPIDController;
+import Library4997.MasqMotors.MasqMotor;
 import Library4997.MasqServos.MasqServo;
 import Library4997.MasqServos.MasqServoSystem;
 import Library4997.MasqWrappers.MasqLinearOpMode;
@@ -58,7 +59,6 @@ public class MasqUtils {
         while (angle <= -180) angle += 360;
         return angle;
     }
-
     public static boolean tolerance(double value1, double value2, double tolerance) {
         return Math.abs(value1 - value2) < tolerance;
     }
@@ -113,18 +113,23 @@ public class MasqUtils {
             thread.start();
         }
     }
-    public void toggle (boolean button, double current, double prev, double value1, double value2, Runnable action1, Runnable action2) {
+    public static void toggle(MasqServo servo) {
+        if (servo.getPosition()==1) servo.setPosition(0);
+        else if (servo.getPosition()==0) servo.setPosition(1);
+    }
+    public static void toggle (boolean button, double current, double prev, double value1, double value2, Runnable action1, Runnable action2) {
         if (button && tolerance(current, prev, 0.01))  {
             if (current == value1) new Thread(action1).start();
             else if (current == value2) new Thread (action2).start();
         }
     }
-    public void toggle(boolean button, MasqServo servo, double prevPos, double tolerance) {
+    public static void toggle(boolean button, MasqServo servo, double prevPos, double tolerance) {
         if (button && tolerance(servo.getPosition(), prevPos, tolerance)) {
             if (servo.getPosition() == 0) servo.setPosition(1);
             else if (servo.getPosition() ==1) servo.setPosition(0);
         }
     }
+
     public static Double formatAngle(AngleUnit angleUnit, double angle) {
         return Double.valueOf(formatDegrees(AngleUnit.DEGREES.fromUnit(angleUnit, angle)));
     }
