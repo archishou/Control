@@ -14,8 +14,8 @@ import static Library4997.MasqResources.MasqHelpers.Strafe.RIGHT;
 /**
  * Created by Keval Kataria on 12/1/2019
  */
-@Autonomous(name = "BlueFullQuarry", group = "MarkOne")
-public class BlueFullQuarryAuto extends MasqLinearOpMode {
+@Autonomous(name = "BlueQuarry", group = "MarkOne")
+public class BlueQuarryAuto extends MasqLinearOpMode {
     private MarkOne robot = new MarkOne();
 
     @Override

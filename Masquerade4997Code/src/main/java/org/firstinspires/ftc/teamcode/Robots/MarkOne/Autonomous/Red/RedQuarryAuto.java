@@ -15,8 +15,8 @@ import static Library4997.MasqResources.MasqUtils.*;
 /**
  * Created by Keval Kataria on 12/1/2019
  */
-@Autonomous(name = "RedFullQuarry", group = "MarkOne")
-public class RedFullQuarryAuto extends MasqLinearOpMode {
+@Autonomous(name = "RedQuarry", group = "MarkOne")
+public class RedQuarryAuto extends MasqLinearOpMode {
     private MarkOne robot = new MarkOne();
 
     @Override
