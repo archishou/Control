@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Library4997.MasqControlSystems.MasqPurePursuit.MasqWayPoint;
-import Library4997.MasqResources.MasqHelpers.Direction;
 import Library4997.MasqResources.MasqMath.MasqPoint;
 import Library4997.MasqWrappers.MasqLinearOpMode;
 
@@ -35,9 +34,9 @@ public class BlueStoneAuto extends MasqLinearOpMode{
         robot.initializeAutonomous();
         stones.add(null);
 
-        stones.add(new MasqPoint(-17,30,90));
+        stones.add(new MasqPoint(-17,31,90));
         stones.add(new MasqPoint(-7,29,90));
-        stones.add(new MasqPoint(0,29,90));
+        stones.add(new MasqPoint(0,31,90));
 
         stones.add(new MasqPoint(7.5,29,90));
         stones.add(new MasqPoint(12,30,90));
@@ -56,47 +55,48 @@ public class BlueStoneAuto extends MasqLinearOpMode{
         robot.sideGrabber.rightOpen(0);
         robot.sideGrabber.leftClose(0);
         if (position == LEFT) runSimultaneously(
-                () -> mainAuto(stones.get(1), stones.get(4)),
+                () -> mainAuto(stones.get(1), stones.get(4), stones.get(2), stones.get(3)),
                 () -> robot.cv.stop()
         );
         else if (position == MIDDLE) runSimultaneously(
-                () -> mainAuto(stones.get(2), stones.get(5)),
+                () -> mainAuto(stones.get(2), stones.get(5), stones.get(1), stones.get(3)),
                 () -> robot.cv.stop()
         );
         else runSimultaneously(
-                () -> mainAuto(stones.get(3), stones.get(6)),
-                () -> robot.cv.stop()
-        );
+                    () -> mainAuto(stones.get(3), stones.get(6), stones.get(1), stones.get(2)),
+                    () -> robot.cv.stop()
+            );
     }
-    private void mainAuto(MasqPoint stone1, MasqPoint stone2) {
+    private void mainAuto(MasqPoint stone1, MasqPoint stone2, MasqPoint stone3, MasqPoint stone4) {
         robot.gotoXY(stone1);
         robot.sideGrabber.rightDown(1);
         robot.sideGrabber.rightClose(1);
-        robot.sideGrabber.rightMid(0);
-        robot.xyPath(bridge1, bridge2, foundation);
+        robot.sideGrabber.rightMid(0.5);
+        robot.xyPath(bridge1, bridge2,foundation);
         robot.sideGrabber.rightLowMid(0);
         robot.sideGrabber.rightOpen(0);
-        robot.xyPath(bridge2,bridge1,
+        robot.xyPath(bridge1,
                 new MasqWayPoint(stone2,0.5,0));
         robot.sideGrabber.rightDown(1);
         robot.sideGrabber.rightClose(1);
-        robot.sideGrabber.rightMid(0);
+        robot.sideGrabber.rightMid(0.5);
         robot.xyPath(bridge1,bridge2,foundation);
         robot.sideGrabber.rightLowMid(0);
         robot.sideGrabber.rightOpen(0);
-        sleep();
-        robot.turnRelative(90, Direction.LEFT);
-        robot.gotoXY(robot.tracker.getGlobalX(), robot.tracker.getGlobalY() + 7,
-                robot.tracker.getHeading(), 1.5, 0.5, 1);
-        robot.gotoXY(new MasqPoint(robot.tracker.getGlobalX()-6,robot.tracker.getGlobalY(),
-                robot.tracker.getHeading()),1.5,0.5,1);
-        robot.foundationHook.lower();
-        sleep(1);
-        robot.gotoXY(new MasqPoint(robot.tracker.getGlobalX(), robot.tracker.getGlobalY()-25,
-                robot.tracker.getHeading()));
-        robot.gotoXY(new MasqPoint(-60, 0, -90),2,0.5,0.5);
-        robot.foundationHook.raise();
-        robot.gotoXY(new MasqPoint(-84, 24, -90));
-        robot.gotoXY(new MasqPoint(-34, 21, -90));
+        robot.xyPath(bridge1,new MasqWayPoint(stone3,0.5,0));
+        robot.sideGrabber.rightDown(1);
+        robot.sideGrabber.rightClose(1);
+        robot.sideGrabber.rightMid(0.5);
+        robot.xyPath(bridge1,bridge2,foundation);
+        robot.sideGrabber.rightLowMid(0);
+        robot.sideGrabber.rightOpen(0);
+        robot.xyPath(bridge1,new MasqWayPoint(stone4,0.5,0));
+        robot.sideGrabber.rightDown(1);
+        robot.sideGrabber.rightClose(1);
+        robot.sideGrabber.rightMid(0.5);
+        robot.xyPath(bridge1,bridge2,foundation);
+        robot.sideGrabber.rightLowMid(0);
+        robot.sideGrabber.rightOpen(0);
+        robot.gotoXY(new MasqPoint(-34, 19, -90));
     }
 }
