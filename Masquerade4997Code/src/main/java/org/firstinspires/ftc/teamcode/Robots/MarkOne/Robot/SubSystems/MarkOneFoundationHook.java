@@ -13,10 +13,9 @@ import Library4997.MasqWrappers.MasqController;
  * Project: MasqLib
  */
 public class MarkOneFoundationHook implements MasqSubSystem {
-    private MasqServoSystem foundationHook;
     public MasqServo leftHook, rightHook;
     public MarkOneFoundationHook(HardwareMap hardwareMap) {
-        foundationHook = new MasqServoSystem("rightHook", "leftHook", hardwareMap);
+        MasqServoSystem foundationHook = new MasqServoSystem("rightHook", "leftHook", hardwareMap);
         rightHook = foundationHook.servo1;
         leftHook = foundationHook.servo2;
         rightHook.scaleRange(0,0.5);
@@ -26,7 +25,7 @@ public class MarkOneFoundationHook implements MasqSubSystem {
     @Override
     public void DriverControl(MasqController controller) {
         if(controller.b()) lower();
-        else raise();
+        else mid();
     }
 
     public void lower() {
@@ -37,7 +36,10 @@ public class MarkOneFoundationHook implements MasqSubSystem {
         rightHook.setPosition(1);
         leftHook.setPosition(0);
     }
-
+    private void mid() {
+        rightHook.setPosition(0.6);
+        leftHook.setPosition(0.4);
+    }
 
     @Override
     public String getName() {

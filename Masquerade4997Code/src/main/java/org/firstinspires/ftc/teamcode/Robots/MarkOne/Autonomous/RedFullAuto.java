@@ -95,9 +95,9 @@ public class RedFullAuto extends MasqLinearOpMode{
                 robot.tracker.getHeading()),1.5,0.5,1.5);
         robot.gotoXY(new MasqPoint(robot.tracker.getGlobalX(), robot.tracker.getGlobalY() - 25,
                 robot.tracker.getHeading()),1.5,0.5,1.5);
-        robot.gotoXY(new MasqPoint(60, 0, 90),2,0.5,0.75);
+        robot.gotoXY(new MasqPoint(75, 0, 90),2,0.5,0.75);
+        robot.sideGrabber.leftClose(0);
         robot.foundationHook.raise();
-        robot.gotoXY(new MasqPoint(74, 27, 90),2,0.5,2);
         robot.gotoXY(new MasqPoint(30, 20, 90));
     }
 }

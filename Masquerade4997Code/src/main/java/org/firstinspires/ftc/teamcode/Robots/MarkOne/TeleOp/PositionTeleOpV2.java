@@ -35,7 +35,7 @@ public class PositionTeleOpV2 extends MasqLinearOpMode {
 
             dash.create("X: ",robot.tracker.getGlobalX());
             dash.create("Y: ",robot.tracker.getGlobalY());
-            dash.create("Raw X: ",robot.x.getCurrentPosition());
+            dash.create("Raw X: ",robot.tapeMeasure.getCurrentPosition());
             dash.create("Raw YL: ",robot.intake.motor2.getCurrentPosition());
             dash.create("Raw YR: ", robot.intake.motor1.getCurrentPosition());
             dash.create("XR stick: ", controller1.rightStickX());

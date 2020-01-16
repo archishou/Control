@@ -29,19 +29,22 @@ public class BlueFullAuto extends MasqLinearOpMode{
             bridge1 = new MasqWayPoint(new MasqPoint(-25,19,90),5,0.9),
             bridge2 = new MasqWayPoint(new MasqPoint(-59,20,90),3,0.7),
             foundation = new MasqWayPoint(new MasqPoint(-90,31,90),4,0.4);
+
     @Override
     public void runLinearOpMode() throws InterruptedException {
         robot.init(hardwareMap);
         robot.initializeAutonomous();
+
         stones.add(null);
 
         stones.add(new MasqPoint(-17,31,90));
         stones.add(new MasqPoint(-7,29,90));
-        stones.add(new MasqPoint(0,31,90));
+        stones.add(new MasqPoint(0,30,90));
 
-        stones.add(new MasqPoint(7.5,29,90));
-        stones.add(new MasqPoint(12,30,90));
-        stones.add(new MasqPoint(22,30,90));
+        stones.add(new MasqPoint(7.5,28,90));
+        stones.add(new MasqPoint(15,30,90));
+        stones.add(new MasqPoint(22,28.5,90));
+
         robot.cv.start();
 
         while(!opModeIsActive()) {
@@ -51,10 +54,12 @@ public class BlueFullAuto extends MasqLinearOpMode{
         }
 
         waitForStart();
+
         robot.sideGrabber.rightUp(0);
         robot.sideGrabber.leftUp(0);
         robot.sideGrabber.rightOpen(0);
         robot.sideGrabber.leftClose(0);
+
         if (position == LEFT) runSimultaneously(
                 () -> mainAuto(stones.get(1), stones.get(4)),
                 () -> robot.cv.stop()
@@ -68,6 +73,7 @@ public class BlueFullAuto extends MasqLinearOpMode{
                 () -> robot.cv.stop()
         );
     }
+
     private void mainAuto(MasqPoint stone1, MasqPoint stone2) {
         robot.gotoXY(stone1);
         robot.sideGrabber.rightDown(1);
@@ -77,7 +83,8 @@ public class BlueFullAuto extends MasqLinearOpMode{
         robot.sideGrabber.rightLowMid(0);
         robot.sideGrabber.rightOpen(0);
         robot.xyPath(bridge2,bridge1,
-                new MasqWayPoint(stone2,0.5,0));
+                new MasqWayPoint(stone2,0.5,0.15));
+        robot.driveTrain.stopDriving();
         robot.sideGrabber.rightDown(1);
         robot.sideGrabber.rightClose(1);
         robot.sideGrabber.rightMid(0);
@@ -85,18 +92,20 @@ public class BlueFullAuto extends MasqLinearOpMode{
         robot.sideGrabber.rightLowMid(0);
         robot.sideGrabber.rightOpen(0);
         sleep();
-        robot.turnRelative(90, Direction.LEFT);
-        robot.gotoXY(robot.tracker.getGlobalX(), robot.tracker.getGlobalY() + 7,
-                robot.tracker.getHeading(), 1.5, 0.5, 1.5);
+        robot.turnRelative(90, Direction.LEFT,1.5);
+        robot.gotoXY(robot.tracker.getGlobalX(), robot.tracker.getGlobalY() + 5,
+                robot.tracker.getHeading(), 1, 0.5, 1.5);
         robot.foundationHook.lower();
         sleep(1);
-        robot.gotoXY(new MasqPoint(robot.tracker.getGlobalX()-6,robot.tracker.getGlobalY(),
+        robot.gotoXY(new MasqPoint(robot.tracker.getGlobalX()-5,robot.tracker.getGlobalY(),
                 robot.tracker.getHeading()),1.5,0.5,1.5);
         robot.gotoXY(new MasqPoint(robot.tracker.getGlobalX(), robot.tracker.getGlobalY()-25,
                 robot.tracker.getHeading()),2,0.5,1.5);
-        robot.gotoXY(new MasqPoint(-60, 0, -90),2,0.5,0.75);
+        robot.gotoXY(new MasqPoint(-75, 0, -90),2,0.5,0.75);
+        robot.sideGrabber.rightClose(0);
         robot.foundationHook.raise();
-        robot.gotoXY(new MasqPoint(-84, 24, -90),2,0.5,2);
+        sleep(1.25);
+        //robot.gotoXY(new MasqPoint(-84, 24, -90),2,0.5,2);
         robot.gotoXY(new MasqPoint(-34, 19, -90));
     }
 }

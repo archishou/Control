@@ -44,7 +44,7 @@ public class RobotTeleOp extends MasqLinearOpMode {
             else robot.intake.setVelocity(0);
 
             robot.lift.setVelocity(controller2.leftStickY());
-            robot.x.setPower(controller2.rightStickY());
+            robot.tapeMeasure.setPower(controller2.rightStickY());
             MasqUtils.toggle(controller2.yOnPress(), robot.blockRotater, prevRotater);
             MasqUtils.toggle(controller2.xOnPress(), robot.blockGrabber, prevGrabber);
             MasqUtils.toggle(controller2.aOnPress(), robot.blockPusher,prevPusher);
@@ -61,7 +61,7 @@ public class RobotTeleOp extends MasqLinearOpMode {
 
             dash.create("X: ",robot.tracker.getGlobalX());
             dash.create("Y: ",robot.tracker.getGlobalY());
-            dash.create("Raw X: ",robot.x.getCurrentPosition());
+            dash.create("Raw X: ",robot.tapeMeasure.getCurrentPosition());
             dash.create("Raw YL: ",robot.intake.motor2.getCurrentPosition());
             dash.create("Raw YR: ", robot.intake.motor1.getCurrentPosition());
             dash.create("XR stick: ", controller1.rightStickX());
