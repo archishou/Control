@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.Robots.MarkOne.Autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.MarkOne;
 import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.CVInterpreter;
@@ -20,6 +21,7 @@ import static org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.CVI
  * Created by Keval Kataria on 1/4/2020
  */
 @Autonomous(name = "Blue Stone", group = "MarkOne")
+@Disabled
 public class BlueStoneAuto extends MasqLinearOpMode{
     private MarkOne robot = new MarkOne();
     private SkystonePosition position;
@@ -27,21 +29,25 @@ public class BlueStoneAuto extends MasqLinearOpMode{
     private MasqWayPoint
             bridge1 = new MasqWayPoint(new MasqPoint(-25,19,90),5,0.9),
             bridge2 = new MasqWayPoint(new MasqPoint(-59,20,90),3,0.7),
-            foundation = new MasqWayPoint(new MasqPoint(-90,31,90),4,0.4);
+            foundation = new MasqWayPoint(new MasqPoint(-94,31,90),4,0.4);
+
     @Override
     public void runLinearOpMode() throws InterruptedException {
         robot.init(hardwareMap);
         robot.initializeAutonomous();
+
         stones.add(null);
 
-        stones.add(new MasqPoint(-17,31,90));
+        stones.add(new MasqPoint(-17,30,90));
         stones.add(new MasqPoint(-7,29,90));
-        stones.add(new MasqPoint(0,31,90));
+        stones.add(new MasqPoint(0,30,90));
 
-        stones.add(new MasqPoint(7.5,29,90));
-        stones.add(new MasqPoint(12,30,90));
-        stones.add(new MasqPoint(22,30,90));
+        stones.add(new MasqPoint(7.5,28,90));
+        stones.add(new MasqPoint(15,30,90));
+        stones.add(new MasqPoint(22,28.5,90));
+
         robot.cv.start();
+
 
         while(!opModeIsActive()) {
             position = CVInterpreter.getPosition(robot.cv.detector);
@@ -71,29 +77,22 @@ public class BlueStoneAuto extends MasqLinearOpMode{
         robot.gotoXY(stone1);
         robot.sideGrabber.rightDown(1);
         robot.sideGrabber.rightClose(1);
-        robot.sideGrabber.rightMid(0.5);
+        robot.sideGrabber.rightMid(1);
         robot.xyPath(bridge1, bridge2,foundation);
         robot.sideGrabber.rightLowMid(0);
         robot.sideGrabber.rightOpen(0);
-        robot.xyPath(bridge1,
+        robot.xyPath(bridge2,bridge1,
                 new MasqWayPoint(stone2,0.5,0));
         robot.sideGrabber.rightDown(1);
         robot.sideGrabber.rightClose(1);
-        robot.sideGrabber.rightMid(0.5);
+        robot.sideGrabber.rightMid(1);
         robot.xyPath(bridge1,bridge2,foundation);
         robot.sideGrabber.rightLowMid(0);
         robot.sideGrabber.rightOpen(0);
-        robot.xyPath(bridge1,new MasqWayPoint(stone3,0.5,0));
+        robot.xyPath(bridge2,bridge1,new MasqWayPoint(stone3,0.5,0));
         robot.sideGrabber.rightDown(1);
         robot.sideGrabber.rightClose(1);
-        robot.sideGrabber.rightMid(0.5);
-        robot.xyPath(bridge1,bridge2,foundation);
-        robot.sideGrabber.rightLowMid(0);
-        robot.sideGrabber.rightOpen(0);
-        robot.xyPath(bridge1,new MasqWayPoint(stone4,0.5,0));
-        robot.sideGrabber.rightDown(1);
-        robot.sideGrabber.rightClose(1);
-        robot.sideGrabber.rightMid(0.5);
+        robot.sideGrabber.rightMid(1);
         robot.xyPath(bridge1,bridge2,foundation);
         robot.sideGrabber.rightLowMid(0);
         robot.sideGrabber.rightOpen(0);

@@ -360,7 +360,7 @@ public abstract class MasqRobot {
             MasqVector initial = new MasqVector(pointsWithRobot.get(index-1).getX(), pointsWithRobot.get(index-1).getY());
             MasqVector pathDisplacement = initial.displacement(target);
             double speed = 1;
-            while (!current.equal(pointsWithRobot.get(index).getRadius(), target) && opModeIsActive() && speed > 0.05) {
+            while (!current.equal(pointsWithRobot.get(index).getRadius(), target) && opModeIsActive() && speed > 0.15) {
                 MasqVector untransformedProjection = new MasqVector(
                         current.projectOnTo(pathDisplacement).getX() - initial.getX(),
                         current.projectOnTo(pathDisplacement).getY() - initial.getY()).projectOnTo(pathDisplacement);

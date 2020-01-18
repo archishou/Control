@@ -77,7 +77,7 @@ public class MarkOne extends MasqRobot {
         driveTrain.setClosedLoop(true);
         driveTrain.resetEncoders();
         lift.setClosedLoop(true);
-        lift.setKp(0.003);
+        lift.setKp(0.007);
         scaleServos();
         resetServos();
         SkystoneDetector detector = new SkystoneDetector();
