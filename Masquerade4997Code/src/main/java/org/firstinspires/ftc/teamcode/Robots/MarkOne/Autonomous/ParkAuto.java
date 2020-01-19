@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
 import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.MarkOne;
 
+import Library4997.MasqResources.MasqMath.MasqPoint;
 import Library4997.MasqWrappers.MasqLinearOpMode;
 
 /**
@@ -23,6 +24,6 @@ public class ParkAuto extends MasqLinearOpMode {
 
         waitForStart();
 
-        robot.drive(24);
+        robot.gotoXY(new MasqPoint(24,0,0));
     }
 }

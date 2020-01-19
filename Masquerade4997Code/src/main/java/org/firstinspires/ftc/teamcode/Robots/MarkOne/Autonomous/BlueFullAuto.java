@@ -28,7 +28,7 @@ public class BlueFullAuto extends MasqLinearOpMode{
     private MasqWayPoint
             bridge1 = new MasqWayPoint(new MasqPoint(-25,19,90),5,0.9),
             bridge2 = new MasqWayPoint(new MasqPoint(-59,20,90),3,0.7),
-            foundation = new MasqWayPoint(new MasqPoint(-94,30,90),3,0.4),
+            foundation = new MasqWayPoint(new MasqPoint(-90,28,90),3,0.4),
             park = new MasqWayPoint(new MasqPoint(-34, 19, -90),0.5,0);
 
     @Override
@@ -79,7 +79,7 @@ public class BlueFullAuto extends MasqLinearOpMode{
         robot.gotoXY(stone1);
         robot.sideGrabber.rightDown(1);
         robot.sideGrabber.rightClose(1);
-        robot.sideGrabber.rightMid(0);
+        robot.sideGrabber.rightMid(1);
         robot.xyPath(bridge1, bridge2, foundation);
         robot.sideGrabber.rightLowMid(0);
         robot.sideGrabber.rightOpen(0);
@@ -89,22 +89,22 @@ public class BlueFullAuto extends MasqLinearOpMode{
         robot.driveTrain.stopDriving();
         robot.sideGrabber.rightDown(1);
         robot.sideGrabber.rightClose(1);
-        robot.sideGrabber.rightMid(0);
+        robot.sideGrabber.rightMid(1);
         robot.xyPath(bridge1,bridge2,foundation);
         robot.sideGrabber.rightLowMid(0);
-        robot.sideGrabber.rightOpen(0);
-        sleep();
+        robot.sideGrabber.rightOpen(0.5);
         robot.turnRelative(90, Direction.LEFT,1.5);
-        robot.gotoXY(robot.tracker.getGlobalX(), robot.tracker.getGlobalY() + 3,
+        robot.gotoXY(robot.tracker.getGlobalX(), robot.tracker.getGlobalY() + 5,
                 robot.tracker.getHeading(), 1, 0.5, 1.5);
         robot.foundationHook.lower();
-        sleep(1);
+        sleep(1.25);
         robot.gotoXY(new MasqPoint(robot.tracker.getGlobalX(), robot.tracker.getGlobalY()-25,
-                robot.tracker.getHeading()),2,0.5,1.5);
-        robot.gotoXY(new MasqPoint(-75, 0, -90),2,0.5,0.75);
+                robot.tracker.getHeading()),2,0.5,2.5);
+        robot.gotoXY(new MasqPoint(-72, 0, -90),3,0.5,1.5);
         robot.sideGrabber.rightClose(0);
         robot.foundationHook.raise();
         sleep(1.25);
-        robot.xyPath(new MasqWayPoint(new MasqPoint(robot.tracker.getGlobalX()-10,robot.tracker.getGlobalY(),robot.tracker.getHeading()),0.5,0),park);
+        robot.gotoXY(new MasqPoint(robot.tracker.getGlobalX()-15,robot.tracker.getGlobalY(),robot.tracker.getHeading()));
+        robot.xyPath(new MasqWayPoint(new MasqPoint(robot.tracker.getGlobalX(),19,-90),0.5,0.2),park);
     }
 }

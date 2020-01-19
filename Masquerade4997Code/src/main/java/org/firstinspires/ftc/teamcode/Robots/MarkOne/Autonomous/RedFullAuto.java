@@ -13,9 +13,12 @@ import Library4997.MasqResources.MasqHelpers.Direction;
 import Library4997.MasqResources.MasqMath.MasqPoint;
 import Library4997.MasqWrappers.MasqLinearOpMode;
 
-import static org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.CVInterpreter.SkystonePosition;
-import static org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.CVInterpreter.SkystonePosition.RIGHT;
-import static org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.CVInterpreter.SkystonePosition.MIDDLE;
+import static org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.CVInterpreter
+        .SkystonePosition;
+import static org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.CVInterpreter
+        .SkystonePosition.MIDDLE;
+import static org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.CVInterpreter
+        .SkystonePosition.RIGHT;
 
 /**
  * Created by Keval Kataria on 1/4/2020
@@ -28,7 +31,8 @@ public class RedFullAuto extends MasqLinearOpMode{
     private MasqWayPoint
             bridge1 = new MasqWayPoint(new MasqPoint(25,19,-90),4,0.9),
             bridge2 = new MasqWayPoint(new MasqPoint(59,20,-90),4,0.7),
-            foundation = new MasqWayPoint(new MasqPoint(85.5,32.5,-90),4,0.4),
+            foundation = new MasqWayPoint(new MasqPoint(85.5,32.5,-90),4,
+                    0.4),
             park = new MasqWayPoint(new MasqPoint(30, 20, 90),0.5,0);
     @Override
     public void runLinearOpMode() throws InterruptedException {
@@ -73,16 +77,17 @@ public class RedFullAuto extends MasqLinearOpMode{
         robot.gotoXY(stone1);
         robot.sideGrabber.leftDown(1);
         robot.sideGrabber.leftClose(1);
-        robot.sideGrabber.leftMid(0);
+        robot.sideGrabber.leftMid(1);
         robot.xyPath(bridge1, bridge2, foundation);
         robot.sideGrabber.leftLowMid(0);
         robot.sideGrabber.leftOpen(0);
         robot.xyPath(bridge2,bridge1,
-                new MasqWayPoint(new MasqPoint(stone2.getX(),stone2.getY()-5,stone2.getH()),0.5,0),
+                new MasqWayPoint(new MasqPoint(stone2.getX(),stone2.getY()-5,stone2.getH()),
+                        0.5,0),
                 new MasqWayPoint(stone2,0.5,0));
         robot.sideGrabber.leftDown(1);
         robot.sideGrabber.leftClose(1);
-        robot.sideGrabber.leftMid(0);
+        robot.sideGrabber.leftMid(1);
         robot.xyPath(bridge1,bridge2,foundation);
         robot.driveTrain.stopDriving();
         robot.sideGrabber.leftLowMid(0);
@@ -95,9 +100,10 @@ public class RedFullAuto extends MasqLinearOpMode{
         sleep(1);
         robot.gotoXY(new MasqPoint(robot.tracker.getGlobalX(), robot.tracker.getGlobalY() - 25,
                 robot.tracker.getHeading()),1.5,0.5,1.5);
-        robot.gotoXY(new MasqPoint(75, 0, 90),3,0.5,0.75);
+        robot.gotoXY(new MasqPoint(72, 0, 90),3,0.5,1.5);
         robot.sideGrabber.leftClose(0);
         robot.foundationHook.raise();
-        robot.xyPath(new MasqWayPoint(new MasqPoint(robot.tracker.getGlobalX()+10,robot.tracker.getGlobalY(),robot.tracker.getHeading()),0.5,0),park);
+        robot.xyPath(new MasqWayPoint(new MasqPoint(robot.tracker.getGlobalX(),20,90),
+                0.5,0.25),park);
     }
 }
