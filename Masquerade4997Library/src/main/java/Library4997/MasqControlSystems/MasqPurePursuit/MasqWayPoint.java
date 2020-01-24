@@ -9,7 +9,7 @@ import Library4997.MasqResources.MasqMath.MasqVector;
  * Project: MasqLib
  */
 public class MasqWayPoint implements MasqHardware {
-    private double x, y, h, radius, minVelocity, maxVelocity, lookAhead, angularCorrectionSpeed;
+    private double x, y, h, radius, minVelocity, maxVelocity, lookAhead, angularCorrectionSpeed, timeout;
 
 
     public MasqWayPoint(MasqPoint p) {
@@ -33,7 +33,14 @@ public class MasqWayPoint implements MasqHardware {
         this.radius = targetRadius;
         this.minVelocity = minVelocity;
     }
-
+    public MasqWayPoint(MasqPoint p, double targetRadius, double minVelocity, double timeout) {
+        this.x = p.getX();
+        this.y = p.getY();
+        this.h = p.getH();
+        this.radius = targetRadius;
+        this.minVelocity = minVelocity;
+        this.timeout = timeout;
+    }
     public MasqWayPoint(MasqPoint p, double radius, double minVelocity, double maxVelocity, double lookAhead, double angularCorrectionSpeed) {
         this.x = p.getX();
         this.y = p.getY();
@@ -123,5 +130,13 @@ public class MasqWayPoint implements MasqHardware {
                 "X: " + Double.toString(getX()),
                 "Y: " + Double.toString(getY())
         };
+    }
+
+    public double getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(double timeout) {
+        this.timeout = timeout;
     }
 }

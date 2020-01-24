@@ -375,8 +375,8 @@ public abstract class MasqRobot {
                 MasqVector lookaheadDisplacement = current.displacement(lookahead);
                 double pathAngle = 90 - Math.toDegrees(Math.atan2(lookaheadDisplacement.getY(), lookaheadDisplacement.getX()));
                 speed = xySpeedController.getOutput(current.displacement(target).getMagnitude());
-                speed = scaleNumber(speed, pointsWithRobot.get(index).getMinVelocity(), 1);
-                driveTrain.setVelocityMECH(pathAngle + tracker.getHeading(), speed * 0.7, pointsWithRobot.get(index).getH());
+                speed = scaleNumber(speed, pointsWithRobot.get(index).getMinVelocity(), 0.7);
+                driveTrain.setVelocityMECH(pathAngle + tracker.getHeading(), speed, pointsWithRobot.get(index).getH());
                 current = new MasqVector(tracker.getGlobalX(), tracker.getGlobalY());
                 tracker.updateSystem();
                 dash.create("X: ", tracker.getGlobalX());
@@ -386,7 +386,7 @@ public abstract class MasqRobot {
                 dash.create("RIGHT POWER: ", driveTrain.rightDrive.getPower());
                 dash.create("Angle: ", pathAngle + tracker.getHeading());
                 dash.create("TargetHeading: ", pointsWithRobot.get(index).getH());
-                dash.create("speed: ", speed * 0.7);
+                dash.create("speed: ", speed);
                 dash.update();
             }
             index++;

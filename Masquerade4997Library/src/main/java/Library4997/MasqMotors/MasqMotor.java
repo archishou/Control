@@ -1,5 +1,7 @@
 package Library4997.MasqMotors;
 
+import android.database.DatabaseErrorHandler;
+
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -10,6 +12,7 @@ import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqSensors.MasqEncoder;
 import Library4997.MasqSensors.MasqLimitSwitch;
+import Library4997.MasqWrappers.DashBoard;
 
 /**
  * This is a custom motor that includes stall detection and telemetry
@@ -210,6 +213,12 @@ public class MasqMotor implements MasqHardware {
         this.error = error;
         rpmIntegral += error * tChange;
         rpmDerivative = (error - rpmPreviousError) / tChange;
+        if (Double.isNaN(rpmDerivative)) {
+            rpmDerivative = 0;
+        }
+        if (Double.isNaN(rpmIntegral)) {
+            rpmIntegral = 0;
+        }
         double p = error*kp;
         double i = rpmIntegral*ki;
         double d = rpmDerivative*kd;
