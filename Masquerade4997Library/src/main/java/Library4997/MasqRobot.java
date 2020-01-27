@@ -26,6 +26,7 @@ import static Library4997.MasqResources.MasqUtils.DEFAULT_TIMEOUT;
 import static Library4997.MasqResources.MasqUtils.angleController;
 import static Library4997.MasqResources.MasqUtils.driveController;
 import static Library4997.MasqResources.MasqUtils.scaleNumber;
+import static Library4997.MasqResources.MasqUtils.tolerance;
 import static Library4997.MasqResources.MasqUtils.turnController;
 import static Library4997.MasqResources.MasqUtils.velocityAutoController;
 import static Library4997.MasqResources.MasqUtils.velocityTeleController;
@@ -183,8 +184,8 @@ public abstract class MasqRobot {
             error = MasqUtils.adjustAngle(targetAngle - tracker.getHeading());
             power = turnController.getOutput(error);
             if (Math.abs(power) >= 1) power /= Math.abs(power);
-            if (left) leftPower = -power;
-            if (right) rightPower = power;
+            if (left) leftPower = power;
+            if (right) rightPower = -power;
             driveTrain.setVelocity(leftPower, rightPower);
             dash.create("TargetAngle", targetAngle);
             dash.create("Heading", tracker.getHeading());
@@ -415,6 +416,7 @@ public abstract class MasqRobot {
                 index < pointsWithRobot.size()) {
             double lookAheadDistance = pointsWithRobot.get(index).getLookAhead();
             travelAngleController.setKp(pointsWithRobot.get(index).getAngularCorrectionSpeed());
+            MasqMechanumDriveTrain.angleCorrectionController.setKp(pointsWithRobot.get(index).getAngularCorrectionSpeed());
             MasqVector target = new MasqVector(pointsWithRobot.get(index).getX(), pointsWithRobot.get(index).getY());
             MasqVector current = new MasqVector(tracker.getGlobalX(), tracker.getGlobalY());
             MasqVector initial = new MasqVector(pointsWithRobot.get(index - 1).getX(), pointsWithRobot.get(index - 1).getY());
