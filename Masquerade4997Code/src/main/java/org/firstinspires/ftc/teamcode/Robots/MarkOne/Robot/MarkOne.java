@@ -68,7 +68,7 @@ public class MarkOne extends MasqRobot {
         MasqUtils.angleController = new MasqPIDController(0.003);
         MasqUtils.turnController = new MasqPIDController(0.01);
         MasqUtils.velocityTeleController = new MasqPIDController(0.001);
-        MasqUtils.velocityAutoController = new MasqPIDController(0.003);
+        MasqUtils.velocityAutoController = new MasqPIDController(0.004);
         MasqUtils.xySpeedController = new MasqPIDController(0.05, 0, 0);
         MasqUtils.xyAngleController = new MasqPIDController(0.02, 0, 0);
         lift.encoder.setWheelDiameter(1);
@@ -80,6 +80,9 @@ public class MarkOne extends MasqRobot {
         lift.setKp(0.007);
         scaleServos();
         resetServos();
+    }
+
+    public void initCamera(HardwareMap hardwareMap) {
         SkystoneDetector detector = new SkystoneDetector();
         detector.setClippingMargins(100,80,110,70);
         cv = new MasqCV(detector, WEBCAM, hardwareMap);
@@ -93,7 +96,7 @@ public class MarkOne extends MasqRobot {
         sideGrabber.scaleServos();
     }
 
-    public void resetServos() {
+    private void resetServos() {
         blockPusher.setPosition(0);
         blockRotater.setPosition(0);
         blockGrabber.setPosition(1);
