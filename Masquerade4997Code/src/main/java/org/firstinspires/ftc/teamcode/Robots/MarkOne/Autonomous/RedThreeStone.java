@@ -40,13 +40,13 @@ public class RedThreeStone extends MasqLinearOpMode{
         robot.initCamera(hardwareMap);
         stones.add(null);
 
-        stones.add(new MasqWayPoint().setPoint(8.75,30,90).setMinVelocity(0).setTargetRadius(0.5));
-        stones.add(new MasqWayPoint().setPoint(0.5,30,90).setMinVelocity(0).setTargetRadius(0.5));
-        stones.add(new MasqWayPoint().setPoint(-6,30,90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(8.75,29.5,90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(0.5,29.5,90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(-6,29.5,90).setMinVelocity(0).setTargetRadius(0.5));
 
-        stones.add(new MasqWayPoint().setPoint(-14,31,90).setMinVelocity(0).setTargetRadius(0.5));
-        stones.add(new MasqWayPoint().setPoint(-22,30,90).setMinVelocity(0).setTargetRadius(0.5));
-        stones.add(new MasqWayPoint().setPoint(-29,31,90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(-14,29.5,90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(-22,29.5,90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(-29,29.5,90).setMinVelocity(0).setTargetRadius(0.5));
 
         while(!opModeIsActive()) {
             position = CVInterpreter.getPosition(robot.cv.detector);
