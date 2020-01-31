@@ -530,7 +530,7 @@ public abstract class MasqRobot {
                 }
                 else {
                     double pathAngleScaled = 1 - (Math.abs(pathAngle) / 180);
-                    speed = speed * pathAngleScaled * pointsWithRobot.get(index).getSpeedBias();
+                    //speed = speed * pathAngleScaled * pointsWithRobot.get(index).getSpeedBias();
                     double leftPower = speed + powerAdjustment;
                     double rightPower = speed - powerAdjustment;
                     driveTrain.setVelocity(leftPower, rightPower);
@@ -547,6 +547,8 @@ public abstract class MasqRobot {
                 }
                 dash.update();
             }
+            if (pointsWithRobot.get(index).getOnComplete() != null)
+                pointsWithRobot.get(index).getOnComplete().run();
             index++;
         }
         driveTrain.stopDriving();

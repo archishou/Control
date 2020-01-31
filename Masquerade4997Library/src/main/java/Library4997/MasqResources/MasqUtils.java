@@ -45,6 +45,8 @@ public class MasqUtils {
     public static MasqPIDController velocityAutoController;
     public static MasqPIDController angleController;
 
+    public static boolean currState=false, prevState=false, taskState=false;
+
     public static void sleep (int milliSeconds) {
         try {Thread.sleep(milliSeconds);}
         catch (InterruptedException e) {e.printStackTrace();}
@@ -102,6 +104,24 @@ public class MasqUtils {
             if (tolerance(servo.getPosition(), 0, 0.01)) servo.setPosition(1);
             else if (tolerance(servo.getPosition(), 1, 0.01)) servo.setPosition(0);
         }
+        /*if(button){
+            currState = true;
+        }
+        else{
+            currState = false;
+            if(prevState){
+                taskState=!taskState;
+            }
+        }
+
+        prevState = currState;
+
+        if(taskState){
+            servo.setPosition(1);
+        }
+        else{
+            servo.setPosition(0);
+        }*/
     }
     public static void toggle(boolean button, MasqServoSystem servoSystem, double prevPos) {
         for (MasqServo servo : servoSystem.servos) {

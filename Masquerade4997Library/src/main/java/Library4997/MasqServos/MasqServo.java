@@ -19,6 +19,10 @@ public class MasqServo implements MasqHardware{
     private MasqLimitSwitch limMin, limMax;
     private boolean limDetection;
     private double adjustedPosition;
+
+    public static boolean currState=false, prevState=false, taskState=false;
+
+
     public MasqServo(String name, HardwareMap hardwareMap) {
         this.nameServo = name;
         servo = hardwareMap.servo.get(name);
@@ -65,5 +69,28 @@ public class MasqServo implements MasqHardware{
         return new String[]{
                 "Current Position:" + servo.getPosition()
         };
+    }
+
+    public void toggle(boolean button) {
+        /*if (tolerance(servo.getPosition(), prevPos,0.01) && button) {
+            if (tolerance(servo.getPosition(), 0, 0.01)) servo.setPosition(1);
+            else if (tolerance(servo.getPosition(), 1, 0.01)) servo.setPosition(0);
+        }*/
+        if (button) {
+            currState = true;
+        } else {
+            currState = false;
+            if (prevState) {
+                taskState = !taskState;
+            }
+        }
+
+        prevState = currState;
+
+        if (taskState) {
+            setPosition(1);
+        } else {
+            setPosition(0);
+        }
     }
 }

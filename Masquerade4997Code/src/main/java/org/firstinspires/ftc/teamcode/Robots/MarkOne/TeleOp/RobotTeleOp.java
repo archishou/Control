@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode.Robots.MarkOne.TeleOp;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.MarkOne;
@@ -8,22 +7,23 @@ import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.MarkOne;
 import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqWrappers.MasqLinearOpMode;
 
+import static Library4997.MasqResources.MasqUtils.toggle;
+
 /**
  * Created by Keval Kataria on 9/14/2019
  */
 @TeleOp(name = "RobotTeleOp", group = "MarkOne")
-@Disabled
 public class RobotTeleOp extends MasqLinearOpMode {
     private MarkOne robot = new MarkOne();
+
+    public static boolean currStateBlockGrabber=false, prevStateBlockGrabber =false, taskStateBlockGrabber =false;
+    public static boolean currStateBlockRotator=false, prevStateBlockRotator =false, taskStateBlockRotator =false;
+    public static boolean currStateCapper=false, prevStateCapper =false, taskStateCapper =false;
 
     @Override
     public void runLinearOpMode() throws InterruptedException {
         robot.init(hardwareMap);
         robot.initializeTeleop();
-
-        double prevGrabber = 1;
-        double prevRotater = 0;
-        double prevCapper = 0;
 
         while(!opModeIsActive()) {
             dash.create("Heading: ", robot.tracker.getHeading());
@@ -32,36 +32,26 @@ public class RobotTeleOp extends MasqLinearOpMode {
 
         waitForStart();
 
-        robot.blockPusher.setPosition(1);
-        double prevPusher = 1;
-
-
         while(opModeIsActive()) {
             if (controller1.rightBumper() || controller1.leftBumper())
                 robot.MECH(controller1,0.5, 0.2);
-            else robot.MECH(controller1,1, 0.4);
+            else robot.MECH(controller1,1, 0.5);
 
             if (controller1.leftTriggerPressed()) robot.intake.setVelocity(-1);
             else if (controller1.rightTriggerPressed()) robot.intake.setVelocity(1);
             else robot.intake.setVelocity(0);
-            if (controller2.rightTriggerPressed()) robot.lift.setVelocity(0.5*controller2.leftStickY());
-            else robot.lift.setVelocity(controller2.leftStickY());
+
+            robot.lift.setVelocity(0.75 * controller2.leftStickY());
 
             robot.tapeMeasure.setPower(controller2.rightStickY());
 
-            MasqUtils.toggle(controller2.yOnPress(), robot.blockRotater, prevRotater);
-            MasqUtils.toggle(controller2.xOnPress(), robot.blockGrabber, prevGrabber);
-            MasqUtils.toggle(controller2.aOnPress(), robot.blockPusher,prevPusher);
-            MasqUtils.toggle(controller2.dPadUpOnPress(), robot.capper, prevCapper);
+            toggleBlockRotator();
+            toggleBlockGrabber();
+            toggleCapper();
 
             robot.foundationHook.DriverControl(controller1);
 
             robot.sideGrabber.teleReset();
-
-            prevGrabber = robot.blockGrabber.getPosition();
-            prevPusher = robot.blockPusher.getPosition();
-            prevRotater = robot.blockRotater.getPosition();
-            prevCapper = robot.capper.getPosition();
 
             dash.create("X: ",robot.tracker.getGlobalX());
             dash.create("Y: ",robot.tracker.getGlobalY());
@@ -74,6 +64,67 @@ public class RobotTeleOp extends MasqLinearOpMode {
 
             controller1.update();
             controller2.update();
+        }
+    }
+
+    public void toggleBlockGrabber() {
+
+        if (controller2.x()) {
+            currStateBlockGrabber = true;
+        } else {
+            currStateBlockGrabber = false;
+            if (prevStateBlockGrabber) {
+                taskStateBlockGrabber = !taskStateBlockGrabber;
+            }
+        }
+
+        prevStateBlockGrabber = currStateBlockGrabber;
+
+        if (taskStateBlockGrabber) {
+            robot.blockGrabber.setPosition(1);
+        } else {
+            robot.blockGrabber.setPosition(0);
+        }
+    }
+
+
+    public void toggleBlockRotator() {
+
+        if (controller2.y()) {
+            currStateBlockRotator = true;
+        } else {
+            currStateBlockRotator = false;
+            if (prevStateBlockRotator) {
+                taskStateBlockRotator = !taskStateBlockRotator;
+            }
+        }
+
+        prevStateBlockRotator = currStateBlockRotator;
+
+        if (taskStateBlockRotator) {
+            robot.blockRotater.setPosition(1);
+        } else {
+            robot.blockRotater.setPosition(0);
+        }
+    }
+
+    public void toggleCapper() {
+
+        if (controller2.dPadUp()) {
+            currStateCapper = true;
+        } else {
+            currStateCapper = false;
+            if (prevStateCapper) {
+                taskStateCapper = !taskStateCapper;
+            }
+        }
+
+        prevStateCapper = currStateCapper;
+
+        if (taskStateCapper) {
+            robot.capper.setPosition(1);
+        } else {
+            robot.capper.setPosition(0);
         }
     }
 }
