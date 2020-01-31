@@ -46,8 +46,8 @@ public class RobotTeleOp extends MasqLinearOpMode {
             robot.tapeMeasure.setPower(controller2.rightStickY());
 
             toggle(controller2.x(),robot.blockGrabber);
-            toggleBlockGrabber(controller2.y(),robot.blockRotater);
-            toggleCapper(controller2.dPadUp(),robot.capper);
+            toggle(controller2.y(),robot.blockRotater);
+            toggle(controller2.dPadUp(),robot.capper);
 
             robot.foundationHook.DriverControl(controller1);
 
@@ -67,7 +67,7 @@ public class RobotTeleOp extends MasqLinearOpMode {
         }
     }
 
-    public void toggleBlockGrabber() {
+    /*public void toggleBlockGrabber() {
 
         if (controller2.x()) {
             currStateBlockGrabber = true;
@@ -126,5 +126,5 @@ public class RobotTeleOp extends MasqLinearOpMode {
         } else {
             robot.capper.setPosition(0);
         }
-    }
+    }*/
 }
