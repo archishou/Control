@@ -45,9 +45,9 @@ public class RobotTeleOp extends MasqLinearOpMode {
 
             robot.tapeMeasure.setPower(controller2.rightStickY());
 
-            toggleBlockRotator();
-            toggleBlockGrabber();
-            toggleCapper();
+            toggle(controller2.x(),robot.blockGrabber);
+            toggleBlockGrabber(controller2.y(),robot.blockRotater);
+            toggleCapper(controller2.dPadUp(),robot.capper);
 
             robot.foundationHook.DriverControl(controller1);
 
