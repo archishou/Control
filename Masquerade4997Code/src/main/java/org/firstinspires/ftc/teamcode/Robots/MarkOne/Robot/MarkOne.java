@@ -19,6 +19,7 @@ import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqRobot;
 import Library4997.MasqServos.MasqServo;
 import Library4997.MasqWrappers.DashBoard;
+import Library4997.MasqWrappers.MasqController;
 
 import static Library4997.MasqCV.MasqCV.Cam.WEBCAM;
 
@@ -36,6 +37,9 @@ public class MarkOne extends MasqRobot {
     public MasqMotorSystem intake;
     public MasqCV cv;
     public MasqPositionTrackerV2 trackerV2;
+    public static boolean currStateBlockGrabber=false, prevStateBlockGrabber =false, taskStateBlockGrabber =false;
+    public static boolean currStateBlockRotator=false, prevStateBlockRotator =false, taskStateBlockRotator =false;
+    public static boolean currStateCapper=false, prevStateCapper =false, taskStateCapper =false;
 
     @Override
     public void mapHardware(HardwareMap hardwareMap) {
@@ -101,5 +105,65 @@ public class MarkOne extends MasqRobot {
         foundationHook.raise();
         sideGrabber.reset();
         capper.setPosition(0);
+    }
+    public void toggleBlockGrabber(MasqController controller) {
+
+        if (controller.x()) {
+            currStateBlockGrabber = true;
+        } else {
+            currStateBlockGrabber = false;
+            if (prevStateBlockGrabber) {
+                taskStateBlockGrabber = !taskStateBlockGrabber;
+            }
+        }
+
+        prevStateBlockGrabber = currStateBlockGrabber;
+
+        if (taskStateBlockGrabber) {
+            blockGrabber.setPosition(1);
+        } else {
+            blockGrabber.setPosition(0);
+        }
+    }
+
+
+    public void toggleBlockRotator(MasqController controller) {
+
+        if (controller.y()) {
+            currStateBlockRotator = true;
+        } else {
+            currStateBlockRotator = false;
+            if (prevStateBlockRotator) {
+                taskStateBlockRotator = !taskStateBlockRotator;
+            }
+        }
+
+        prevStateBlockRotator = currStateBlockRotator;
+
+        if (taskStateBlockRotator) {
+            blockRotater.setPosition(1);
+        } else {
+            blockRotater.setPosition(0);
+        }
+    }
+
+    public void toggleCapper(MasqController controller) {
+
+        if (controller.dPadUp()) {
+            currStateCapper = true;
+        } else {
+            currStateCapper = false;
+            if (prevStateCapper) {
+                taskStateCapper = !taskStateCapper;
+            }
+        }
+
+        prevStateCapper = currStateCapper;
+
+        if (taskStateCapper) {
+            capper.setPosition(1);
+        } else {
+            capper.setPosition(0);
+        }
     }
 }
