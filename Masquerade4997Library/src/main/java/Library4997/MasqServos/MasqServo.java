@@ -4,7 +4,6 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import Library4997.MasqResources.MasqHelpers.MasqHardware;
-import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqSensors.MasqLimitSwitch;
 
 /**
@@ -13,22 +12,19 @@ import Library4997.MasqSensors.MasqLimitSwitch;
 
 public class MasqServo implements MasqHardware{
     private Servo servo;
-    private String nameServo;
-    MasqClock clock = new MasqClock();
+    private String name;
     private double max = 1, min = 0;
     private MasqLimitSwitch limMin, limMax;
     private boolean limDetection;
     private double adjustedPosition;
 
-    public static boolean currState=false, prevState=false, taskState=false;
-
 
     public MasqServo(String name, HardwareMap hardwareMap) {
-        this.nameServo = name;
+        this.name = name;
         servo = hardwareMap.servo.get(name);
     }
     public MasqServo(String name, Servo.Direction direction, HardwareMap hardwareMap){
-        this.nameServo = name;
+        this.name = name;
         servo = hardwareMap.servo.get(name);
         servo.setDirection(direction);
     }
@@ -45,7 +41,7 @@ public class MasqServo implements MasqHardware{
     }
     private boolean limitPressed () {
         if (limDetection) return  limMin.isPressed() || limMax.isPressed();
-        else return false;
+        return false;
     }
     public double getPosition () {
         return servo.getPosition();
@@ -62,7 +58,7 @@ public class MasqServo implements MasqHardware{
         servo.wait(time);
     }
     public String getName() {
-        return nameServo;
+        return name;
     }
 
     public String[] getDash() {
@@ -71,26 +67,4 @@ public class MasqServo implements MasqHardware{
         };
     }
 
-    public void toggle(boolean button) {
-        /*if (tolerance(servo.getPosition(), prevPos,0.01) && button) {
-            if (tolerance(servo.getPosition(), 0, 0.01)) servo.setPosition(1);
-            else if (tolerance(servo.getPosition(), 1, 0.01)) servo.setPosition(0);
-        }*/
-        if (button) {
-            currState = true;
-        } else {
-            currState = false;
-            if (prevState) {
-                taskState = !taskState;
-            }
-        }
-
-        prevState = currState;
-
-        if (taskState) {
-            setPosition(1);
-        } else {
-            setPosition(0);
-        }
-    }
 }
