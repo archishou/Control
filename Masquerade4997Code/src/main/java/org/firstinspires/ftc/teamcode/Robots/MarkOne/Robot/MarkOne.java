@@ -38,7 +38,7 @@ public class MarkOne extends MasqRobot {
     public MasqCV cv;
     public MasqPositionTrackerV2 trackerV2;
     private static boolean prevStateBlockGrabber =false;
-    private static boolean taskStateBlockGrabber =false;
+    private static boolean taskStateBlockGrabber = true;
     private static boolean prevStateBlockRotator =false;
     private static boolean taskStateBlockRotator =false;
     private static boolean prevStateCapper =false;
