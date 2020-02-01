@@ -101,7 +101,7 @@ public class MarkOne extends MasqRobot {
 
     private void resetServos() {
         blockRotater.setPosition(0);
-        blockGrabber.setPosition(0);
+        blockGrabber.setPosition(1);
         foundationHook.raise();
         sideGrabber.reset();
         capper.setPosition(0);
