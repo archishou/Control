@@ -30,16 +30,19 @@ import static Library4997.MasqCV.MasqCV.Cam.WEBCAM;
  */
 public class MarkOne extends MasqRobot {
 
-    public MasqServo blockGrabber, blockRotater, capper;
+    private MasqServo blockGrabber, blockRotater, capper;
     public MarkOneFoundationHook foundationHook;
     public MarkOneSideGrabber sideGrabber;
     public MasqMotor lift, tapeMeasure;
     public MasqMotorSystem intake;
     public MasqCV cv;
     public MasqPositionTrackerV2 trackerV2;
-    public static boolean currStateBlockGrabber=false, prevStateBlockGrabber =false, taskStateBlockGrabber =false;
-    public static boolean currStateBlockRotator=false, prevStateBlockRotator =false, taskStateBlockRotator =false;
-    public static boolean currStateCapper=false, prevStateCapper =false, taskStateCapper =false;
+    private static boolean prevStateBlockGrabber =false;
+    private static boolean taskStateBlockGrabber =false;
+    private static boolean prevStateBlockRotator =false;
+    private static boolean taskStateBlockRotator =false;
+    private static boolean prevStateCapper =false;
+    private static boolean taskStateCapper =false;
 
     @Override
     public void mapHardware(HardwareMap hardwareMap) {
@@ -108,10 +111,10 @@ public class MarkOne extends MasqRobot {
     }
     public void toggleBlockGrabber(MasqController controller) {
 
+        boolean currStateBlockGrabber = false;
         if (controller.x()) {
             currStateBlockGrabber = true;
         } else {
-            currStateBlockGrabber = false;
             if (prevStateBlockGrabber) {
                 taskStateBlockGrabber = !taskStateBlockGrabber;
             }
@@ -129,10 +132,10 @@ public class MarkOne extends MasqRobot {
 
     public void toggleBlockRotator(MasqController controller) {
 
+        boolean currStateBlockRotator = false;
         if (controller.y()) {
             currStateBlockRotator = true;
         } else {
-            currStateBlockRotator = false;
             if (prevStateBlockRotator) {
                 taskStateBlockRotator = !taskStateBlockRotator;
             }
@@ -149,10 +152,10 @@ public class MarkOne extends MasqRobot {
 
     public void toggleCapper(MasqController controller) {
 
+        boolean currStateCapper = false;
         if (controller.dPadUp()) {
             currStateCapper = true;
         } else {
-            currStateCapper = false;
             if (prevStateCapper) {
                 taskStateCapper = !taskStateCapper;
             }
