@@ -41,7 +41,8 @@ public class RobotTeleOp extends MasqLinearOpMode {
 
             robot.tapeMeasure.setPower(controller2.rightStickY());
 
-            robot.toggleBlockGrabber(controller2);
+            if (controller2.a()) robot.blockGrabber.setPosition(0);
+            else if (controller2.x()) robot.blockGrabber.setPosition(1);
             robot.toggleBlockRotator(controller2);
             robot.toggleCapper(controller2);
 

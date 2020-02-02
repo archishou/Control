@@ -30,19 +30,16 @@ import static Library4997.MasqCV.MasqCV.Cam.WEBCAM;
  */
 public class MarkOne extends MasqRobot {
 
-    private MasqServo blockGrabber, blockRotater, capper;
+    public MasqServo blockGrabber, blockRotater, capper;
     public MarkOneFoundationHook foundationHook;
     public MarkOneSideGrabber sideGrabber;
     public MasqMotor lift, tapeMeasure;
     public MasqMotorSystem intake;
     public MasqCV cv;
     public MasqPositionTrackerV2 trackerV2;
-    private static boolean prevStateBlockGrabber =false;
-    private static boolean taskStateBlockGrabber = true;
-    private static boolean prevStateBlockRotator =false;
-    private static boolean taskStateBlockRotator =false;
-    private static boolean prevStateCapper =false;
-    private static boolean taskStateCapper =false;
+    private static boolean prevStateBlockGrabber =false, taskStateBlockGrabber = true,
+            prevStateBlockRotator =false, taskStateBlockRotator =false, prevStateCapper =false,
+            taskStateCapper =false;
 
     @Override
     public void mapHardware(HardwareMap hardwareMap) {
