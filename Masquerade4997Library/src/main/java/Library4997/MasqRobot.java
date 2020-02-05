@@ -22,6 +22,7 @@ import Library4997.MasqWrappers.MasqPredicate;
 
 import static Library4997.MasqControlSystems.MasqPurePursuit.MasqWayPoint.PointMode.MECH;
 import static Library4997.MasqControlSystems.MasqPurePursuit.MasqWayPoint.PointMode.SWITCH;
+import static Library4997.MasqResources.MasqUtils.DEFAULT_SLEEP_TIME;
 import static Library4997.MasqResources.MasqUtils.DEFAULT_TIMEOUT;
 import static Library4997.MasqResources.MasqUtils.angleController;
 import static Library4997.MasqResources.MasqUtils.driveController;
@@ -117,13 +118,13 @@ public abstract class MasqRobot {
     public static boolean opModeIsActive() {return MasqUtils.opModeIsActive();}
 
     public void strafe(double distance, double angle, double timeout, double speed) {
-        MasqClock timeoutTimer = new MasqClock();
         driveTrain.resetEncoders();
-        double targetClicks = (int)(distance * driveTrain.getEncoder().getClicksPerInch());
+        double targetClicks = distance * driveTrain.getEncoder().getClicksPerInch();
         double clicksRemaining;
         double power, angularError, targetAngle = tracker.getHeading(), powerAdjustment;
+        timeoutClock.reset();
         do {
-            clicksRemaining = (int) (targetClicks - Math.abs(driveTrain.getCurrentPositionPositive()));
+            clicksRemaining = targetClicks - Math.abs(driveTrain.getCurrentPositionPositive());
             power = driveController.getOutput(clicksRemaining) * speed;
             power = Range.clip(power, -1.0, +1.0);
             angularError = MasqUtils.adjustAngle(targetAngle - tracker.getHeading());
@@ -133,31 +134,28 @@ public abstract class MasqRobot {
             dash.create("ERROR: ", clicksRemaining);
             dash.create("HEADING: ", tracker.getHeading());
             dash.update();
-        } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.01));
-        driveTrain.stopDriving();
+        } while (opModeIsActive() && !timeoutClock.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.01));
+        driveTrain.setVelocity(0);
         MasqUtils.sleep(MasqUtils.DEFAULT_SLEEP_TIME);
     }
     public void strafe(double distance, double angle, double timeout) {
         strafe(distance, angle, timeout, 0.7);
     }
     public void strafe (double distance, double angle) {
-        strafe(distance, angle, 1);
+        strafe(distance, angle, DEFAULT_TIMEOUT);
     }
 
     public void drive(double distance, double speed, Direction direction, double timeout, double sleepTime) {
-        MasqClock timeoutTimer = new MasqClock();
         driveTrain.resetEncoders();
         double targetAngle = tracker.getHeading();
-        double targetClicks = (int)(distance * driveTrain.getEncoder().getClicksPerInch());
+        double targetClicks = distance * driveTrain.getEncoder().getClicksPerInch();
         double clicksRemaining;
         double angularError, powerAdjustment, power, leftPower, rightPower, maxPower;
         do {
-            clicksRemaining = (int) (targetClicks - Math.abs(driveTrain.getCurrentPosition()));
+            clicksRemaining = targetClicks - Math.abs(driveTrain.getCurrentPosition());
             power = driveController.getOutput(clicksRemaining) * speed;
-            power = Range.clip(power, -1.0, +1.0);
             angularError = MasqUtils.adjustAngle(targetAngle - tracker.getHeading());
             powerAdjustment = angleController.getOutput(MasqUtils.adjustAngle(angularError));
-            powerAdjustment = Range.clip(powerAdjustment, -1.0, +1.0);
             leftPower = (direction.value * power) - powerAdjustment;
             rightPower = (direction.value * power) + powerAdjustment;
             maxPower = MasqUtils.max(Math.abs(leftPower), Math.abs(rightPower));
@@ -171,8 +169,8 @@ public abstract class MasqRobot {
             dash.create("ERROR: ", clicksRemaining);
             dash.create("HEADING: ", tracker.getHeading());
             dash.update();
-        } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.01));
-        driveTrain.stopDriving();
+        } while (opModeIsActive() && !timeoutClock.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.01));
+        driveTrain.setVelocity(0);
         MasqUtils.sleep(sleepTime);
     }
     public void drive(double distance, double speed, Direction strafe, double timeout) {
@@ -188,66 +186,55 @@ public abstract class MasqRobot {
     public void drive(double distance, Direction direction) {drive(distance, 0.5, direction);}
     public void drive(double distance) {drive(distance, 0.5);}
 
-    public void driveAbsoluteAngle(double distance, int angle, double speed, Direction direction, double timeout, double sleepTime) {
-        MasqClock timeoutTimer = new MasqClock();
+    public void driveAbsoluteAngle(double distance, double angle, double speed, double timeout, double sleepTime) {
         driveTrain.resetEncoders();
-        double targetClicks = (int)(distance * driveTrain.getEncoder().getClicksPerInch());
+        double targetClicks = distance * driveTrain.getEncoder().getClicksPerInch();
         double clicksRemaining;
         double angularError, powerAdjustment, power, leftPower, rightPower, maxPower;
+        timeoutClock.reset();
         do {
             clicksRemaining = (int) (targetClicks - Math.abs(driveTrain.getCurrentPosition()));
             power = driveController.getOutput(clicksRemaining) * speed;
-            angularError = MasqUtils.adjustAngle((double)angle - tracker.getHeading());
+            angularError = MasqUtils.adjustAngle(angle - tracker.getHeading());
             powerAdjustment = angleController.getOutput(angularError);
             leftPower = power - powerAdjustment;
             rightPower = power + powerAdjustment;
-            leftPower*=direction.value;
-            rightPower*=direction.value;
             maxPower = MasqUtils.max(Math.abs(leftPower), Math.abs(rightPower));
             if (maxPower > 1.0) {
                 leftPower /= maxPower;
                 rightPower /= maxPower;
             }
             driveTrain.setVelocity(leftPower, rightPower);
-            //serializer.writeData(new Object[]{clicksRemaining, power, angularError, angularIntegral, angularDerivative, leftPower, rightPower, powerAdjustment});
             dash.create("LEFT POWER: ", leftPower);
             dash.create("RIGHT POWER: ", rightPower);
             dash.create("ERROR: ", clicksRemaining);
             dash.update();
-        } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && ((clicksRemaining / targetClicks) > 0.01));
-        //serializer.close();
-        driveTrain.stopDriving();
+        } while (opModeIsActive() && !timeoutClock.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && ((clicksRemaining / targetClicks) > 0.01));
+        driveTrain.setVelocity(0);
         MasqUtils.sleep(sleepTime);
     }
-    public void driveAbsoluteAngle(double distance, int angle, double speed, Direction strafe, double timeout) {
-        driveAbsoluteAngle(distance, angle, speed, strafe, timeout, MasqUtils.DEFAULT_SLEEP_TIME);
+    public void driveAbsoluteAngle(double distance, double angle, double speed, double timeout) {
+        driveAbsoluteAngle(distance, angle, speed, timeout, MasqUtils.DEFAULT_SLEEP_TIME);
     }
-    public void driveAbsoluteAngle(double distance, int angle, double speed, Direction strafe) {
-        driveAbsoluteAngle(distance, angle, speed, strafe, MasqUtils.DEFAULT_TIMEOUT);
+    public void driveAbsoluteAngle(double distance, double angle, double speed) {
+        driveAbsoluteAngle(distance, angle, speed, MasqUtils.DEFAULT_TIMEOUT);
     }
-    public void driveAbsoluteAngle(double distance, int angle, double speed){
-        driveAbsoluteAngle(distance, angle, speed, Direction.FORWARD);
-    }
-    public void driveAbsoluteAngle(double distance, int angle) {
+    public void driveAbsoluteAngle(double distance, double angle){
         driveAbsoluteAngle(distance, angle, 0.5);
     }
 
-    public void turnRelative(double angle, Direction direction, double timeout, double sleepTime, double kp, double ki, double kd, boolean left, boolean right) {
-        double targetAngle = MasqUtils.adjustAngle(tracker.getHeading()) + (direction.value * angle);
+    public void turnRelative(double angle, double timeout, double sleepTime) {
+        double targetAngle = MasqUtils.adjustAngle(angle + tracker.getHeading());
         double acceptableError = .5;
         double error = MasqUtils.adjustAngle(targetAngle - tracker.getHeading());
         double power;
-        double leftPower = 0, rightPower = 0;
-        turnController.setConstants(kp, ki, kd);
         timeoutClock.reset();
         while (opModeIsActive() && (MasqUtils.adjustAngle(Math.abs(error)) > acceptableError)
                 && !timeoutClock.elapsedTime(timeout, MasqClock.Resolution.SECONDS)) {
             error = MasqUtils.adjustAngle(targetAngle - tracker.getHeading());
             power = turnController.getOutput(error);
             if (Math.abs(power) >= 1) power /= Math.abs(power);
-            if (left) leftPower = power;
-            if (right) rightPower = -power;
-            driveTrain.setVelocity(leftPower, rightPower);
+            driveTrain.setVelocity(power, -power);
             dash.create("TargetAngle", targetAngle);
             dash.create("Heading", tracker.getHeading());
             dash.create("AngleLeftToCover", error);
@@ -255,35 +242,20 @@ public abstract class MasqRobot {
             dash.create("Raw Power: ", driveTrain.getPower());
             dash.update();
         }
-        driveTrain.setVelocity(0,0);
+        driveTrain.setVelocity(0);
         MasqUtils.sleep(sleepTime);
     }
-    public void turnRelative(double angle, Direction direction, double timeout, double sleepTime, double kp, double ki) {
-        turnRelative(angle, direction, timeout, sleepTime, kp, ki, turnController.getConstants()[2], true, true);
+    public void turnRelative(double angle, double timeout) {
+        turnRelative(angle, timeout, DEFAULT_SLEEP_TIME);
     }
-    public void turnRelative(double angle, Direction direction, double timeout, double sleepTime, double kp) {
-        turnRelative(angle, direction, timeout, sleepTime, kp, turnController.getConstants()[1]);
-    }
-    public void turnRelative(double angle, Direction direction, double timeout, double sleepTime) {
-        turnRelative(angle, direction, timeout, sleepTime, turnController.getConstants()[0]);
-    }
-    public void turnRelative(double angle, Direction direction, double timeout) {
-        turnRelative(angle, direction, timeout, MasqUtils.DEFAULT_SLEEP_TIME);
-    }
-    public void turnRelative(double angle, Direction direction)  {
-        turnRelative(angle, direction, MasqUtils.DEFAULT_TIMEOUT);
-    }
-    public void turnRelative(double angle, Direction direction, boolean left, boolean right)  {
-        turnRelative(angle, direction, MasqUtils.DEFAULT_TIMEOUT, MasqUtils.DEFAULT_SLEEP_TIME,
-                turnController.getConstants()[0], turnController.getConstants()[1], turnController.getConstants()[2], left, right);
+    public void turnRelative(double angle) {
+        turnRelative(angle, DEFAULT_TIMEOUT);
     }
 
-    public void turnAbsolute(double angle,  double timeout, double sleepTime, double kp, double ki, double kd) {
-        //double targetAngle = MasqUtils.adjustAngle(angle);
+    public void turnAbsolute(double angle,  double timeout, double sleepTime) {
         double acceptableError = 2;
         double error = MasqUtils.adjustAngle(angle - tracker.getHeading());
         double power;
-        turnController.setConstants(kp, ki, kd);
         timeoutClock.reset();
         while (opModeIsActive() && (MasqUtils.adjustAngle(Math.abs(error)) > acceptableError)
                 && !timeoutClock.elapsedTime(timeout, MasqClock.Resolution.SECONDS)) {
@@ -291,42 +263,30 @@ public abstract class MasqRobot {
             power = turnController.getOutput(error);
             if (Math.abs(power) >= 1) power /= Math.abs(power);
             driveTrain.setVelocity(-power, power);
-            dash.create("KP: ", kp);
             dash.create("RIGHT POWER: " ,power);
             dash.create("TargetAngle", angle);
             dash.create("Heading", tracker.getHeading());
             dash.create("AngleLeftToCover", error);
             dash.update();
         }
-        driveTrain.setVelocity(0,0);
+        driveTrain.setVelocity(0);
         MasqUtils.sleep(sleepTime);
     }
-    public void turnAbsolute(double angle, double timeout, double sleepTime, double kp, double ki) {
-        turnAbsolute(angle, timeout, sleepTime, kp, ki, turnController.getKd());
+    public void turnAbsolute(double angle, double timeout) {
+        turnAbsolute(angle, timeout,DEFAULT_SLEEP_TIME);
     }
-    public void turnAbsolute(double angle, double timeout, double sleepTime, double kp) {
-        turnAbsolute(angle, timeout, sleepTime, kp, turnController.getKi());
-    }
-    public void turnAbsolute(double angle,  double timeout, double sleepTime) {
-        turnAbsolute(angle, timeout, sleepTime, turnController.getKp());
-    }
-    public void turnAbsolute(double angle, double timeout)  {
-        turnAbsolute(angle, timeout, MasqUtils.DEFAULT_SLEEP_TIME);
-    }
-    public void turnAbsolute(double angle)  {
+    public void turnAbsolute(double angle) {
         turnAbsolute(angle, DEFAULT_TIMEOUT);
     }
 
     public void stop(MasqPredicate stopCondition, double angle, double speed, Direction direction, double timeout) {
-        MasqClock timeoutTimer = new MasqClock();
         driveTrain.resetEncoders();
         double angularError, powerAdjustment, power, leftPower, rightPower, maxPower;
+        timeoutClock.reset();
         do {
             power = direction.value * speed;
-            power = Range.clip(power, -1.0, +1.0);
             angularError = MasqUtils.adjustAngle(angle - tracker.getHeading());
             powerAdjustment = angleController.getOutput(angularError);
-            powerAdjustment = Range.clip(powerAdjustment, -1.0, +1.0);
             powerAdjustment *= direction.value;
             leftPower = power - powerAdjustment;
             rightPower = power + powerAdjustment;
@@ -340,8 +300,9 @@ public abstract class MasqRobot {
             dash.create("RIGHT POWER: ",rightPower);
             dash.create("Angle Error", angularError);
             dash.update();
-        } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && stopCondition.run());
-        driveTrain.stopDriving();
+        } while (opModeIsActive() && !timeoutClock.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && stopCondition.run());
+
+        driveTrain.setVelocity(0);
     }
     public void stop(MasqPredicate stopCondition, double angle, double speed, Direction direction) {
         stop(stopCondition, angle, speed, direction, MasqUtils.DEFAULT_TIMEOUT);
@@ -365,8 +326,11 @@ public abstract class MasqRobot {
         MasqMechanumDriveTrain.angleCorrectionController.setKd(xyAngleController.getKd());
         List<MasqWayPoint> pointsWithRobot = new ArrayList<>(Arrays.asList(points));
         pointsWithRobot.add(0, getCurrentWayPoint());
+
         MasqPIDController travelAngleController = new MasqPIDController(0.01, 0, 0);
+
         int index = 1;
+
         MasqClock pointTimeout = new MasqClock();
         timeoutClock.reset();
         while (!timeoutClock.elapsedTime(timeout, MasqClock.Resolution.SECONDS) &&
@@ -382,7 +346,7 @@ public abstract class MasqRobot {
             pointTimeout.reset();
             while (!pointTimeout.elapsedTime(pointsWithRobot.get(index).getTimeout(), MasqClock.Resolution.SECONDS) &&
                     !current.equal(pointsWithRobot.get(index).getTargetRadius(), target) && opModeIsActive() && speed > 0.1) {
-                double heading = Math.toRadians(-tracker.getHeading());
+                double heading = Math.toRadians(tracker.getHeading());
                 MasqVector headingUnitVector = new MasqVector(Math.sin(heading), Math.cos(heading));
                 MasqVector lookahead = MasqUtils.getLookAhead(initial, current, target, lookAheadDistance);
                 MasqVector pathDisplacement = initial.displacement(target);
@@ -410,7 +374,7 @@ public abstract class MasqRobot {
                     pathAngle = 90 - Math.toDegrees(Math.atan2(lookaheadDisplacement.getY(), lookaheadDisplacement.getX()));
                     driveTrain.setVelocityMECH(
                             pathAngle + tracker.getHeading(), speed,
-                            -pointsWithRobot.get(index).getH()
+                            pointsWithRobot.get(index).getH()
                     );
                 }
                 else driveTrain.setVelocity(leftPower, rightPower);
@@ -425,7 +389,7 @@ public abstract class MasqRobot {
             }
             index++;
         }
-        driveTrain.stopDriving();
+        driveTrain.setVelocity(0);
     }
     public void xyPathV2(double timeout, MasqWayPoint... points) {
         MasqMechanumDriveTrain.angleCorrectionController.setKp(xyAngleController.getKp());
@@ -449,7 +413,7 @@ public abstract class MasqRobot {
             pointTimeout.reset();
             while (!pointTimeout.elapsedTime(pointsWithRobot.get(index).getTimeout(), MasqClock.Resolution.SECONDS) &&
                     !current.equal(pointsWithRobot.get(index).getTargetRadius(), target) && opModeIsActive() && speed > 0.1) {
-                double heading = Math.toRadians(-tracker.getHeading());
+                double heading = Math.toRadians(tracker.getHeading());
                 // Y and X components are reversed because the axis are switched for the robot and a cartesian coordinate plane, where 0 degrees is east.
                 // This robot should have 0 degrees at north.
                 MasqVector headingUnitVector = new MasqVector(Math.sin(heading), Math.cos(heading));
@@ -504,7 +468,7 @@ public abstract class MasqRobot {
                 pointsWithRobot.get(index).getOnComplete().run();
             index++;
         }
-        driveTrain.stopDriving();
+        driveTrain.setVelocity(0);
     }
 
     public void NFS(MasqController c) {
@@ -542,17 +506,17 @@ public abstract class MasqRobot {
 
         double x = -c.leftStickY();
         double y = c.leftStickX();
-        double xR = -c.rightStickX();
+        double xR = c.rightStickX();
 
         angle = Math.atan2(y, x) + (Math.toRadians(tracker.getHeading()) * disable);
         double adjustedAngle = angle + Math.PI/4;
 
         double speedMagnitude = Math.hypot(x, y);
 
-        double leftFront = (Math.sin(adjustedAngle) * speedMagnitude * speedMultiplier) - xR * turnMultiplier * direction.value;
-        double leftBack = (Math.cos(adjustedAngle) * speedMagnitude * speedMultiplier) - xR  * turnMultiplier * direction.value;
-        double rightFront = (Math.cos(adjustedAngle) * speedMagnitude * speedMultiplier) + xR * turnMultiplier * direction.value;
-        double rightBack = (Math.sin(adjustedAngle) * speedMagnitude * speedMultiplier) + xR * turnMultiplier * direction.value;
+        double leftFront = (Math.sin(adjustedAngle) * speedMagnitude * speedMultiplier) + xR * turnMultiplier * direction.value;
+        double leftBack = (Math.cos(adjustedAngle) * speedMagnitude * speedMultiplier) + xR  * turnMultiplier * direction.value;
+        double rightFront = (Math.cos(adjustedAngle) * speedMagnitude * speedMultiplier) - xR * turnMultiplier * direction.value;
+        double rightBack = (Math.sin(adjustedAngle) * speedMagnitude * speedMultiplier) - xR * turnMultiplier * direction.value;
 
         double max = MasqUtils.max(Math.abs(leftFront), Math.abs(leftBack), Math.abs(rightFront), Math.abs(rightBack));
         if (max > 1) {
@@ -570,8 +534,8 @@ public abstract class MasqRobot {
     public void MECH(MasqController c, Direction direction) {
         MECH(c, direction, false, MasqUtils.DEFAULT_SPEED_MULTIPLIER, MasqUtils.DEFAULT_TURN_MULTIPLIER);
     }
-    public void MECH(MasqController c, boolean disabled) {
-        MECH(c, Direction.FORWARD, disabled, MasqUtils.DEFAULT_SPEED_MULTIPLIER, MasqUtils.DEFAULT_TURN_MULTIPLIER);
+    public void MECH(MasqController c, boolean fieldCentric) {
+        MECH(c, Direction.FORWARD, fieldCentric, MasqUtils.DEFAULT_SPEED_MULTIPLIER, MasqUtils.DEFAULT_TURN_MULTIPLIER);
     }
     public void MECH(MasqController c) {
         MECH(c, Direction.FORWARD, false, MasqUtils.DEFAULT_SPEED_MULTIPLIER, MasqUtils.DEFAULT_TURN_MULTIPLIER);
@@ -590,10 +554,7 @@ public abstract class MasqRobot {
         driveTrain.setKi(velocityAutoController.getKi());
         driveTrain.setKd(velocityAutoController.getKd());
     }
-    public MasqWayPoint getCurrentWayPoint() {
+    private MasqWayPoint getCurrentWayPoint() {
         return new MasqWayPoint().setPoint(new MasqPoint(tracker.getGlobalX(), tracker.getGlobalY(), tracker.getHeading())).setName("Inital WayPoint");
-    }
-    public MasqWayPointLegacy getCurrentWayPointLegacy() {
-        return new MasqWayPointLegacy(new MasqPoint(tracker.getGlobalX(), tracker.getGlobalY(), tracker.getHeading()));
     }
 }
