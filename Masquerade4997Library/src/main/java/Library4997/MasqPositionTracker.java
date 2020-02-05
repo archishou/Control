@@ -60,7 +60,7 @@ public class MasqPositionTracker implements MasqHardware {
     }
 
     public double getHeading () {
-        return -imu.getRelativeYaw();
+        return imu.getRelativeYaw();
     }
     public void updateSystem () {
         switch (position) {
