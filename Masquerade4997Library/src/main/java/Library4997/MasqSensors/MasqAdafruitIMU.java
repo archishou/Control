@@ -69,9 +69,9 @@ public class MasqAdafruitIMU implements MasqHardware {
     }
     public String[] getDash() {
         return new String[]{
-                "Heading:" + Double.toString(getAbsoluteHeading()),
-                "Roll" + Double.toString(getRoll()),
-                "Pitch" + Double.toString(getPitch())
+                "Heading:" + getAbsoluteHeading(),
+                "Roll" + getRoll(),
+                "Pitch" + getPitch()
         };
     }
 }

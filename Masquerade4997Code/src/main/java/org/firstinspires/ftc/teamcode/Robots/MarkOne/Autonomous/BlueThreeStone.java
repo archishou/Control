@@ -41,13 +41,13 @@ public class BlueThreeStone extends MasqLinearOpMode {
 
         stones.add(null);
 
-        stones.add(new MasqWayPoint().setPoint(-17, 30.5, -90).setMinVelocity(0).setTargetRadius(0.5));
-        stones.add(new MasqWayPoint().setPoint(-11, 29.5, -90).setMinVelocity(0).setTargetRadius(0.5));
-        stones.add(new MasqWayPoint().setPoint(-3, 29.5, -90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(-10, 25, -90).setMinVelocity(0).setTargetRadius(0.5).setTimeout(30));
+        stones.add(new MasqWayPoint().setPoint(-3, 25, -90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(-3, 25, -90).setMinVelocity(0).setTargetRadius(0.5));
 
-        stones.add(new MasqWayPoint().setPoint(7, 29.5,-90).setMinVelocity(0).setTargetRadius(0.5));
-        stones.add(new MasqWayPoint().setPoint(15, 29.5, -90).setMinVelocity(0).setTargetRadius(0.5));
-        stones.add(new MasqWayPoint().setPoint(22, 29.5, -90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(7, 25,-90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(15, 25, -90).setMinVelocity(0).setTargetRadius(0.5));
+        stones.add(new MasqWayPoint().setPoint(22, 25, -90).setMinVelocity(0).setTargetRadius(0.5));
 
         while (!opModeIsActive()) {
             position = CVInterpreter.getBlue(robot.cv.detector);
@@ -63,9 +63,9 @@ public class BlueThreeStone extends MasqLinearOpMode {
         robot.sideGrabber.leftClose(0);
         robot.foundationHook.mid();
 
-        //mainAuto(stones.get(1), stones.get(4),stones.get(2));
+        mainAuto(stones.get(1), stones.get(4),stones.get(2));
 
-        if (position == LEFT) runSimultaneously(
+        /*if (position == LEFT) runSimultaneously(
                 () -> mainAuto(stones.get(1), stones.get(4),stones.get(2)),
                 () -> robot.cv.stop()
         );
@@ -76,30 +76,30 @@ public class BlueThreeStone extends MasqLinearOpMode {
         else runSimultaneously(
                 () -> mainAuto(stones.get(3), stones.get(6),stones.get(1)),
                 () -> robot.cv.stop()
-        );
+        );*/
 
     }
 
     private void mainAuto(MasqWayPoint stone1, MasqWayPoint stone2, MasqWayPoint stone3) {
         grabStone(stone1, foundationOne,true);
-        grabStone(stone2, foundationTwo,false);
+        /*grabStone(stone2, foundationTwo,false);
         grabStone(stone3, foundationThree,false);
-        foundationPark();
+        foundationPark();*/
     }
 
     private void grabStone(MasqWayPoint stone, MasqWayPoint foundation, boolean firstStone) {
-        if (firstStone) robot.xyPath(4, stone);
+        if (firstStone) robot.xyPath(40, stone);
         else robot.xyPath(9, bridge2.setSwitchMode(MECH), bridge1, stone);
         robot.driveTrain.setVelocity(0);
         if (firstStone) robot.sideGrabber.rightDown(0.35);
         else robot.sideGrabber.rightDown(1);
         robot.sideGrabber.rightClose(1);
         robot.sideGrabber.rightMid(1);
-        if (firstStone) robot.xyPath(5, bridge1, bridge2.setSwitchMode(MECH), foundation);
+        /*if (firstStone) robot.xyPath(5, bridge1, bridge2.setSwitchMode(MECH), foundation);
         else robot.xyPath(5, bridge1, bridge2, foundation);
         robot.driveTrain.setVelocity(0);
         robot.sideGrabber.rightSlightClose(0);
-        robot.sideGrabber.rightLowMid(0);
+        robot.sideGrabber.rightLowMid(0);*/
     }
 
     private void foundationPark() {

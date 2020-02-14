@@ -50,7 +50,7 @@ public class MarkOne extends MasqRobot {
         intake = new MasqMotorSystem("intakeRight", DcMotorSimple.Direction.FORWARD, "intakeLeft", DcMotorSimple.Direction.REVERSE, MasqMotorModel.REVTHROUGHBORE, hardwareMap);
         capper = new MasqServo("capper", hardwareMap);
         sideGrabber = new MarkOneSideGrabber(hardwareMap);
-        tapeMeasure = new MasqMotor("X", MasqMotorModel.USDIGITAL_E4T, DcMotorSimple.Direction.REVERSE,hardwareMap);
+        tapeMeasure = new MasqMotor("tape", MasqMotorModel.REVTHROUGHBORE, DcMotorSimple.Direction.REVERSE,hardwareMap);
         tracker = new MasqPositionTracker(tapeMeasure,intake.motor1, intake.motor2, hardwareMap);
         trackerV2 = new MasqPositionTrackerV2(tapeMeasure,intake.motor1, intake.motor2, hardwareMap);
         foundationHook = new MarkOneFoundationHook(hardwareMap);
@@ -71,9 +71,9 @@ public class MarkOne extends MasqRobot {
         MasqUtils.angleController = new MasqPIDController(0.003);
         MasqUtils.turnController = new MasqPIDController(0.01);
         MasqUtils.velocityTeleController = new MasqPIDController(0.001);
-        MasqUtils.velocityAutoController = new MasqPIDController(0.0045);
-        MasqUtils.xySpeedController = new MasqPIDController(0.045, 0, 0);
-        MasqUtils.xyAngleController = new MasqPIDController(0.04, 0, 0);
+        MasqUtils.velocityAutoController = new MasqPIDController(0.005);
+        MasqUtils.xySpeedController = new MasqPIDController(0.001, 0, 0);
+        MasqUtils.xyAngleController = new MasqPIDController(0.02, 0, 0);
         lift.encoder.setWheelDiameter(1);
         tapeMeasure.setWheelDiameter(2);
         intake.setWheelDiameter(2);
@@ -95,7 +95,7 @@ public class MarkOne extends MasqRobot {
     private void scaleServos() {
         blockGrabber.scaleRange(0, 0.5);
         blockRotater.scaleRange(0.02, 0.7);
-        capper.scaleRange(0.5,1);
+        capper.scaleRange(0.65,1);
         sideGrabber.scaleServos();
     }
 

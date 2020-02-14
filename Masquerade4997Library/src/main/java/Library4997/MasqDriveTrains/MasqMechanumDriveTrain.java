@@ -15,7 +15,7 @@ import static Library4997.MasqResources.MasqUtils.adjustAngle;
 
 public class MasqMechanumDriveTrain extends MasqDriveTrain implements MasqHardware {
     public static MasqPIDController angleCorrectionController = new MasqPIDController(0.05);
-    MasqPositionTracker tracker;
+    private MasqPositionTracker tracker;
     public MasqMechanumDriveTrain(HardwareMap hardwareMap){
         super(hardwareMap);
     }
