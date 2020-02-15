@@ -11,7 +11,6 @@ import Library4997.MasqWrappers.MasqLinearOpMode;
 @TeleOp(name = "RobotTeleOp", group = "MarkOne")
 public class RobotTeleOp extends MasqLinearOpMode {
     private MarkOne robot = new MarkOne();
-    double liftSpeed;
 
     @Override
     public void runLinearOpMode() throws InterruptedException {
@@ -34,9 +33,7 @@ public class RobotTeleOp extends MasqLinearOpMode {
             else if (controller1.rightTriggerPressed()) robot.intake.setVelocity(1);
             else robot.intake.setVelocity(0);
 
-            liftSpeed = controller2.leftStickY();
-            if(liftSpeed < 0) liftSpeed *= 0.75;
-            robot.lift.setVelocity(liftSpeed);
+            robot.lift.setVelocity(controller2.leftStickY());
 
             robot.tapeMeasure.setPower(controller2.rightStickY());
 
