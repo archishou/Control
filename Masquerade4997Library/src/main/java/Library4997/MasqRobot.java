@@ -26,6 +26,7 @@ import static Library4997.MasqResources.MasqUtils.DEFAULT_TIMEOUT;
 import static Library4997.MasqResources.MasqUtils.angleController;
 import static Library4997.MasqResources.MasqUtils.driveController;
 import static Library4997.MasqResources.MasqUtils.scaleNumber;
+import static Library4997.MasqResources.MasqUtils.sleep;
 import static Library4997.MasqResources.MasqUtils.turnController;
 import static Library4997.MasqResources.MasqUtils.velocityAutoController;
 import static Library4997.MasqResources.MasqUtils.velocityTeleController;
@@ -105,7 +106,8 @@ TODO:
     Unit Tests for all major functions
     State Machine support
  */
-public abstract class MasqRobot {
+public abstract class
+MasqRobot {
     public abstract void mapHardware(HardwareMap hardwareMap);
     public abstract void init(HardwareMap hardwareMap) throws InterruptedException;
 
@@ -378,10 +380,10 @@ public abstract class MasqRobot {
             MasqVector target = new MasqVector(pointsWithRobot.get(index).getX(), pointsWithRobot.get(index).getY());
             MasqVector current = new MasqVector(tracker.getGlobalX(), tracker.getGlobalY());
             MasqVector initial = new MasqVector(pointsWithRobot.get(index - 1).getX(), pointsWithRobot.get(index - 1).getY());
-            double speed = 1;
+            double speed;
             pointTimeout.reset();
             while (!pointTimeout.elapsedTime(pointsWithRobot.get(index).getTimeout(), MasqClock.Resolution.SECONDS) &&
-                    !current.equal(pointsWithRobot.get(index).getTargetRadius(), target) && opModeIsActive() && speed > 0.1) {
+                    !current.equal(pointsWithRobot.get(index).getTargetRadius(), target) && opModeIsActive()) {
                 double heading = Math.toRadians(-tracker.getHeading());
                 MasqVector headingUnitVector = new MasqVector(Math.sin(heading), Math.cos(heading));
                 MasqVector lookahead = MasqUtils.getLookAhead(initial, current, target, lookAheadDistance);
