@@ -27,7 +27,7 @@ public class BlueThreeStone extends MasqLinearOpMode {
     private SkystonePosition position;
     private List<MasqWayPoint> stones = new ArrayList<>();
     private MasqWayPoint
-            bridge1 = new MasqWayPoint().setPoint(-24, 24, -90).setSwitchMode(MECH),
+            bridge1 = new MasqWayPoint().setPoint(-24, 20, -90).setSwitchMode(MECH),
             bridge2 = new MasqWayPoint().setPoint(-59, 24, -90),
             foundationOne = new MasqWayPoint().setPoint(-82, 30, -90).setTargetRadius(3).setMinVelocity(0).setOnComplete(() -> {
                 robot.sideGrabber.rightSlightClose(0);
@@ -97,7 +97,7 @@ public class BlueThreeStone extends MasqLinearOpMode {
         grabStone(stone2, foundationTwo,false);
         grabStone(stone3.setDriveCorrectionSpeed(0.16), foundationThree,false);
         foundationPark();
-    }/
+    }
 
     private void grabStone(MasqWayPoint stone, MasqWayPoint foundation, boolean firstStone) {
         if (firstStone) robot.xyPath(4, stone);
@@ -121,7 +121,7 @@ public class BlueThreeStone extends MasqLinearOpMode {
     }
 
     private void foundationPark() {
-        robot.turnAbsolute(175,1.5);
+        robot.turnAbsolute(170,1.5);
         robot.drive(7, Direction.BACKWARD);
         robot.foundationHook.lower();
         sleep();
