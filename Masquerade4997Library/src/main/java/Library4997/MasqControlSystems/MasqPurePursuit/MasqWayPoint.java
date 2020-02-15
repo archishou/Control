@@ -2,7 +2,7 @@ package Library4997.MasqControlSystems.MasqPurePursuit;
 
 import Library4997.MasqResources.MasqHelpers.MasqHardware;
 import Library4997.MasqResources.MasqMath.MasqPoint;
-import Library4997.MasqResources.MasqUtils;
+import Library4997.MasqResources.MasqMath.MasqVector;
 
 /**
  * Created by Archishmaan Peyyety on 2020-01-23.
@@ -201,6 +201,10 @@ public class MasqWayPoint implements MasqHardware {
 
     public Runnable getOnComplete() {
         return onComplete;
+    }
+
+    public MasqVector getPoint() {
+        return new MasqVector(x,y);
     }
 
     public MasqWayPoint setName(String name) {

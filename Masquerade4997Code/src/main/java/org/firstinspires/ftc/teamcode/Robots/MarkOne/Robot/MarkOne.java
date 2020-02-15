@@ -17,11 +17,13 @@ import Library4997.MasqPositionTracker;
 import Library4997.MasqPositionTrackerV2;
 import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqRobot;
+import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqServos.MasqServo;
 import Library4997.MasqWrappers.DashBoard;
 import Library4997.MasqWrappers.MasqController;
 
 import static Library4997.MasqCV.MasqCV.Cam.WEBCAM;
+import static Library4997.MasqSensors.MasqClock.Resolution.SECONDS;
 
 
 /**
@@ -144,6 +146,12 @@ public class MarkOne extends MasqRobot {
             capper.setPosition(1);
         } else {
             capper.setPosition(0);
+        }
+    }
+    public void stop(double time) {
+        MasqClock clock = new MasqClock();
+        while(!clock.elapsedTime(time, SECONDS)) {
+            driveTrain.setVelocity(0);
         }
     }
 }
