@@ -11,7 +11,7 @@ import Library4997.MasqResources.MasqMath.MasqVector;
 public class MasqWayPoint implements MasqHardware {
     private double x, y, h, targetRadius = 1, modeSwitchRadius = 10, pointSwitchRadius = 10,
             minVelocity = 0.5, maxVelocity = 1, timeout = 2, lookAhead = 10,
-            angularCorrectionSpeed = 0.04, speedBias = 0.5, driveCorrectionSpeed = 0.06;
+            angularCorrectionSpeed = 0.02, speedBias = 0.5, driveCorrectionSpeed = 0.06;
 
     private String name;
     private PointMode switchMode = PointMode.SWITCH;
