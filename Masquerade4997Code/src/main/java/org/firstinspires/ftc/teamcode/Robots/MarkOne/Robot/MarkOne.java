@@ -153,5 +153,6 @@ public class MarkOne extends MasqRobot {
         while(!clock.elapsedTime(time, SECONDS)) {
             driveTrain.setVelocity(0);
         }
+        driveTrain.setPower(0);
     }
 }
