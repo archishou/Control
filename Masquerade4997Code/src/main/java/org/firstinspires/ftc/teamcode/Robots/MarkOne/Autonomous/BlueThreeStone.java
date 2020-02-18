@@ -116,7 +116,7 @@ public class BlueThreeStone extends MasqLinearOpMode {
 
     private void foundationPark() {
         robot.turnAbsolute(180,1.5);
-        robot.drive(7, 1.25,BACKWARD,1);
+        robot.drive(7, 1.75,BACKWARD,1);
         robot.foundationHook.lower();
         sleep();
         robot.driveTrain.setVelocity(0.2,1);
@@ -125,7 +125,9 @@ public class BlueThreeStone extends MasqLinearOpMode {
         robot.turnAbsolute(-90,1);
         robot.driveTrain.setVelocity(0);
         robot.foundationHook.raise();
-        sleep();
+        robot.driveTrain.setVelocity(-1,-0.3);
+        robot.tracker.updateOverTime(1);
+        robot.driveTrain.setVelocity(0);
         MasqWayPoint park = new MasqWayPoint().setPoint(-40,28,90).setDriveCorrectionSpeed(0.2).setLookAhead(5);
         robot.xyPath(1,park);
         robot.stop(0.5);
