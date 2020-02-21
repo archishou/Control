@@ -22,8 +22,8 @@ import static org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.CVI
 /**
  * Created by Keval Kataria on 1/4/2020
  */
-@Autonomous(name = "Blue Hadron", group = "MarkOne")
-public class BlueCollaborativeHadron extends MasqLinearOpMode {
+@Autonomous(name = "Blue Collab", group = "MarkOne")
+public class BlueCollabAuto extends MasqLinearOpMode {
     private MarkOne robot = new MarkOne();
     private SkystonePosition position;
     private List<MasqWayPoint> stones = new ArrayList<>();
@@ -76,32 +76,36 @@ public class BlueCollaborativeHadron extends MasqLinearOpMode {
         robot.foundationHook.raise();
 
         if (position == LEFT) runSimultaneously(
-                () -> mainAuto(stones.get(4), stones.get(3),stones.get(5)),
+                () -> mainAuto(stones.get(1), stones.get(4),stones.get(2), stones.get(3)),
                 () -> robot.cv.stop()
         );
         else if (position == MIDDLE) runSimultaneously(
-                () -> mainAuto(stones.get(5), stones.get(3),stones.get(4)),
+                () -> mainAuto(stones.get(2), stones.get(5),stones.get(1), stones.get(3)),
                 () -> robot.cv.stop()
         );
         else runSimultaneously(
-                () -> mainAuto(stones.get(6), stones.get(2),stones.get(4)),
+                () -> mainAuto(stones.get(3), stones.get(6),stones.get(1), stones.get(2)),
                 () -> robot.cv.stop()
         );
     }
 
-    private void mainAuto(MasqWayPoint stone1, MasqWayPoint stone2, MasqWayPoint stone3) {
+    private void mainAuto(MasqWayPoint stone1, MasqWayPoint stone2, MasqWayPoint stone3, MasqWayPoint stone4) {
         grabStone(stone1.setSwitchMode(MECH).setOnComplete(() -> {
             robot.sideGrabber.rightClose(1);
             robot.sideGrabber.rightMid(0.5);
         }), foundationOne,true);
-        grabStone (
-                stone2.setPoint(stone2.getX(), stone2.getY() + 3, stone2.getH()),
-                foundationThree,false
+        grabStone(stone2.setPoint(stone2.getX(), stone2.getY() + 3, stone2.getH()), foundationTwo,
+                false
         );
-        grabStone (
-                stone3.setPoint(stone3.getX(), stone3.getY() + 6, stone3.getH()),
-                foundationTwo,false
+        grabStone(stone3.setPoint(stone3.getX(), stone3.getY() + 6, stone3.getH()), foundationThree,
+                false
         );
+        grabStone(stone4.setPoint(stone3.getX(),stone4.getY() + 9, stone4.getH()), foundationOne,
+                false
+        );
+        /*grabStone(stone5.setPoint(stone3.getX(),stone4.getY() + 9, stone5.getH()), foundationOne,
+                false
+        );*/
         robot.xyPath(1, new MasqWayPoint().setPoint(-40,28, robot.tracker.getHeading())
             .setDriveCorrectionSpeed(0.2).setLookAhead(5));
         robot.stop(0.5);
@@ -149,21 +153,5 @@ public class BlueCollaborativeHadron extends MasqLinearOpMode {
         robot.driveTrain.setVelocity(0);
         robot.foundationHook.raise();
         robot.stop(1);
-    }
-
-    private void legacy() {
-        robot.turnAbsolute(175,1.5);
-        robot.drive(7, 1.75, BACKWARD,1);
-        robot.foundationHook.lower();
-        robot.stop(1);
-        MasqWayPoint p1 = new MasqWayPoint()
-                .setPoint(new MasqPoint(-80, 0, 80))
-                .setMinVelocity(0.5)
-                .setModeSwitchRadius(5);
-        robot.xyPath(3, p1);
-        robot.foundationHook.raise();
-        robot.stop(1);
-        MasqWayPoint park = new MasqWayPoint().setPoint(-45,22,90);
-        robot.xyPath(2, park);
     }
 }

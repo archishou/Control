@@ -146,20 +146,4 @@ public class BlueThreeStone extends MasqLinearOpMode {
         robot.foundationHook.raise();
         robot.stop(1);
     }
-
-    private void legacy() {
-        robot.turnAbsolute(175,1.5);
-        robot.drive(7, 1.75, BACKWARD,1);
-        robot.foundationHook.lower();
-        robot.stop(1);
-        MasqWayPoint p1 = new MasqWayPoint()
-                .setPoint(new MasqPoint(-80, 0, 80))
-                .setMinVelocity(0.5)
-                .setModeSwitchRadius(5);
-        robot.xyPath(3, p1);
-        robot.foundationHook.raise();
-        robot.stop(1);
-        MasqWayPoint park = new MasqWayPoint().setPoint(-45,22,90);
-        robot.xyPath(2, park);
-    }
 }
