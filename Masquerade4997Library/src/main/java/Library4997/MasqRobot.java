@@ -361,11 +361,10 @@ MasqRobot {
                 dash.update();
                 current = new MasqVector(tracker.getGlobalX(), tracker.getGlobalY());
             }
-            if (pointsWithRobot.get(index).getOnComplete() != null) pointsWithRobot.get(index).getOnComplete().run();
-            if (pointsWithRobot.get(index).getOnSimul() != null) {
-                Thread thread = new Thread(pointsWithRobot.get(index).getOnSimul());
-                thread.start();
-            }
+            if (pointsWithRobot.get(index).getOnComplete() != null)
+                pointsWithRobot.get(index).getOnComplete().run();
+            if (pointsWithRobot.get(index).getOnSimul() != null)
+                new Thread(pointsWithRobot.get(index).getOnSimul()).start();
             index++;
         }
         driveTrain.setVelocity(0);
