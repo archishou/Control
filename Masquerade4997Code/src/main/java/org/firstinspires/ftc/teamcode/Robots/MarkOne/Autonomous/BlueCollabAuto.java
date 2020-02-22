@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Library4997.MasqControlSystems.MasqPurePursuit.MasqWayPoint;
+import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqWrappers.MasqLinearOpMode;
 
@@ -133,7 +134,7 @@ public class BlueCollabAuto extends MasqLinearOpMode {
         robot.turnAbsolute(178,1);
         robot.drive(5,1,BACKWARD,1);
         robot.foundationHook.lower();
-        sleep();
+        MasqUtils.sleep(1, MasqClock.Resolution.SECONDS);
         MasqWayPoint p1 = new MasqWayPoint().setPoint(-60,0, 90)
                 .setDriveCorrectionSpeed(0.2).setMinVelocity(0);
         MasqWayPoint p2 = new MasqWayPoint().setPoint(-90,20, 60)

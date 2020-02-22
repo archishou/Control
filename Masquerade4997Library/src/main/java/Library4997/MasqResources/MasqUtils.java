@@ -12,6 +12,7 @@ import java.util.Locale;
 
 import Library4997.MasqControlSystems.MasqPID.MasqPIDController;
 import Library4997.MasqResources.MasqMath.MasqVector;
+import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqWrappers.MasqLinearOpMode;
 
 
@@ -41,14 +42,16 @@ public class MasqUtils {
     public static MasqPIDController velocityAutoController;
     public static MasqPIDController angleController;
 
-    public static void sleep(double timeSeconds) {
+    public static void sleep(double time, MasqClock.Resolution resolution) {
         try {
-            Thread.sleep((long) timeSeconds * 1000);
+            Thread.sleep((long) ((time * resolution.multiplier) / MasqClock.Resolution.MILLISECONDS.multiplier));
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
     }
-    public static void sleep() {sleep(MasqUtils.DEFAULT_SLEEP_TIME);}
+    public static void sleep() {
+        sleep(MasqUtils.DEFAULT_SLEEP_TIME, MasqClock.Resolution.SECONDS);
+    }
     public static void setLinearOpMode(MasqLinearOpMode pLinearOpMode) {
         linearOpMode = pLinearOpMode;
     }
