@@ -31,16 +31,16 @@ public class BlueThreeStone extends MasqLinearOpMode {
             bridge1 = new MasqWayPoint().setPoint(-24, 20, -90).setSwitchMode(MECH),
             bridge2 = new MasqWayPoint().setPoint(-59, 24, -90).setSwitchMode(MECH),
             foundationOne = new MasqWayPoint().setPoint(-86, 32, -90).setTargetRadius(3).setMinVelocity(0).setOnComplete(() -> {
-                robot.sideGrabber.rightSlightClose(0);
-                robot.sideGrabber.rightLowMid(0);
+                robot.sideGrabber.rightOpen(0);
+                robot.sideGrabber.rightDown(0);
             }),
             foundationTwo = new MasqWayPoint().setPoint(-88, 38, -90).setTargetRadius(3).setMinVelocity(0).setOnComplete(() -> {
-                robot.sideGrabber.rightSlightClose(0);
-                robot.sideGrabber.rightLowMid(0);
+                robot.sideGrabber.rightOpen(0);
+                robot.sideGrabber.rightDown(0);
             }),
             foundationThree = new MasqWayPoint().setPoint(-92, 35, -90).setTargetRadius(3).setMinVelocity(0).setOnComplete(() -> {
-                robot.sideGrabber.rightSlightClose(0);
-                robot.sideGrabber.rightLowMid(0);
+                robot.sideGrabber.rightOpen(0);
+                robot.sideGrabber.rightDown(0);
             });
 
     @Override
@@ -105,7 +105,7 @@ public class BlueThreeStone extends MasqLinearOpMode {
 
     private void grabStone(MasqWayPoint stone, MasqWayPoint foundation, boolean firstStone) {
         if (firstStone) robot.xyPath(4, stone);
-        else robot.xyPath(9, bridge2, bridge1.setOnComplete(() -> {
+        else robot.xyPath(9, bridge2.setOnComplete(() -> robot.sideGrabber.rightClose(0)), bridge1.setOnComplete(() -> {
             robot.sideGrabber.rightOpen(0);
             robot.sideGrabber.rightDown(0);
         }), stone.setOnComplete(() -> {
@@ -115,7 +115,7 @@ public class BlueThreeStone extends MasqLinearOpMode {
             robot.sideGrabber.rightMid(rotateSleep);
         }));
         robot.driveTrain.setVelocity(0);
-        robot.xyPath(5, bridge1.setOnComplete(null), bridge2, foundation);
+        robot.xyPath(5, bridge1.setOnComplete(null), bridge2.setOnComplete(null), foundation);
         robot.driveTrain.setVelocity(0);
     }
 
@@ -132,21 +132,5 @@ public class BlueThreeStone extends MasqLinearOpMode {
                 .setDriveCorrectionSpeed(0.2).setLookAhead(5);
         robot.xyPath(5, p1, p2, p3);
         robot.stop(0.5);
-    }
-
-    private void foundationRotation(double inches, double heading) {
-        double curr = Math.abs(robot.driveTrain.leftDrive.getInches());
-        double tar = curr + inches;
-        MasqClock timeout = new MasqClock();
-        while (curr < tar && opModeIsActive() &&
-                !timeout.elapsedTime(2, MasqClock.Resolution.SECONDS)) {
-            robot.driveTrain.setVelocity(0.5, 1);
-            robot.tracker.updateSystem();
-            curr = Math.abs(robot.driveTrain.leftDrive.getInches());
-        }
-        robot.turnAbsolute(-90, 1);
-        robot.driveTrain.setVelocity(0);
-        robot.foundationHook.raise();
-        robot.stop(1);
     }
 }
