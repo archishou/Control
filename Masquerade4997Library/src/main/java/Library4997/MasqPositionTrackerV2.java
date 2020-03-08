@@ -60,8 +60,38 @@ public class MasqPositionTrackerV2 implements MasqHardware, Runnable {
         double dTranslationalY = (dYR + dYL) / 2;
         double angularComponentX = xRadius * dH;
         double dTranslationalX = dX - angularComponentX;
-        double dGlobalX = dTranslationalX * Math.cos(heading) - dTranslationalY * Math.sin(heading);
-        double dGlobalY = dTranslationalX * Math.sin(heading) + dTranslationalY * Math.cos(heading);
+        double dGlobalX = dTranslationalX * Math.cos(heading) + dTranslationalY * Math.sin(heading);
+        double dGlobalY = -dTranslationalX * Math.sin(heading) + dTranslationalY * Math.cos(heading);
+        globalX += dGlobalX;
+        globalY += dGlobalY;
+    }
+
+    private void threev2() {
+        double xPosition = xSystem.getInches();
+        double yLPosition = yLSystem.getInches();
+        double yRPosition = yRSystem.getInches();
+        heading = Math.toRadians(MasqUtils.adjustAngle(Math.toDegrees(
+                (yLPosition - yRPosition) / trackWidth
+        )));
+        double dX = xPosition - prevX;
+        prevX = xPosition;
+        double dYR = yRPosition - prevYR;
+        prevYR = yRPosition;
+        double dYL = yLPosition - prevYL;
+        prevYL = yLPosition;
+        double dH = (dYL - dYR) / trackWidth;
+
+        double dTranslationalY = (dYR + dYL) / 2;
+        double angularComponentX = xRadius * dH;
+        double dTranslationalX = dX - angularComponentX;
+        if (dH > 0) {
+            double radiusMov = (dYR+dYL) / (2 * dH);
+            double radiusStrafe = dTranslationalX/dH;
+            dTranslationalY = (radiusMov * Math.sin(dH)) - (radiusStrafe * (1 - Math.cos(dH)));
+            dTranslationalX = radiusMov * (1 - Math.cos(dH)) + (radiusStrafe * Math.sin(dH));
+        }
+        double dGlobalX = dTranslationalX * Math.cos(heading) + dTranslationalY * Math.sin(heading);
+        double dGlobalY = -dTranslationalX * Math.sin(heading) + dTranslationalY * Math.cos(heading);
         globalX += dGlobalX;
         globalY += dGlobalY;
     }
