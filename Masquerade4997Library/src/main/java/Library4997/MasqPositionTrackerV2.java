@@ -15,10 +15,10 @@ import Library4997.MasqSensors.MasqAdafruitIMU;
 public class MasqPositionTrackerV2 implements MasqHardware, Runnable {
     private MasqMotor xSystem, yLSystem, yRSystem;
     public MasqAdafruitIMU imu;
-    private double heading, globalX, globalY;
-    private boolean running;
+    private double heading, globalX, globalY, dH;
+    private boolean running = true;
 
-    private double prevX, prevYR, prevYL, xRadius, trackWidth, threadSleep = 1;
+    private double prevX, prevYR, prevYL, xRadius, trackWidth, threadSleep = 0;
 
     public MasqPositionTrackerV2(MasqMotor xSystem, MasqMotor yLSystem, MasqMotor yRSystem, HardwareMap hardwareMap) {
         this.xSystem = xSystem;
@@ -40,14 +40,14 @@ public class MasqPositionTrackerV2 implements MasqHardware, Runnable {
     }
 
     public void updateSystem() {
-        three();
+        threev2();
     }
 
     private void three() {
         double xPosition = xSystem.getInches();
         double yLPosition = yLSystem.getInches();
         double yRPosition = yRSystem.getInches();
-        heading = Math.toRadians(MasqUtils.adjustAngle(Math.toDegrees(
+        heading = -Math.toRadians(MasqUtils.adjustAngle(Math.toDegrees(
                 (yLPosition - yRPosition) / trackWidth
         )));
         double dX = xPosition - prevX;
@@ -70,21 +70,21 @@ public class MasqPositionTrackerV2 implements MasqHardware, Runnable {
         double xPosition = xSystem.getInches();
         double yLPosition = yLSystem.getInches();
         double yRPosition = yRSystem.getInches();
-        heading = Math.toRadians(MasqUtils.adjustAngle(Math.toDegrees(
+        heading = /*-Math.toRadians(MasqUtils.adjustAngle(Math.toDegrees(
                 (yLPosition - yRPosition) / trackWidth
-        )));
+        )));*/ -Math.toRadians(getYaw());
         double dX = xPosition - prevX;
         prevX = xPosition;
         double dYR = yRPosition - prevYR;
         prevYR = yRPosition;
         double dYL = yLPosition - prevYL;
         prevYL = yLPosition;
-        double dH = (dYL - dYR) / trackWidth;
+        dH = (dYL - dYR) / trackWidth;
 
         double dTranslationalY = (dYR + dYL) / 2;
         double angularComponentX = xRadius * dH;
         double dTranslationalX = dX - angularComponentX;
-        if (dH > 0) {
+        if (Math.abs(dH) > 0) {
             double radiusMov = (dYR+dYL) / (2 * dH);
             double radiusStrafe = dTranslationalX/dH;
             dTranslationalY = (radiusMov * Math.sin(dH)) - (radiusStrafe * (1 - Math.cos(dH)));
@@ -94,6 +94,10 @@ public class MasqPositionTrackerV2 implements MasqHardware, Runnable {
         double dGlobalY = -dTranslationalX * Math.sin(heading) + dTranslationalY * Math.cos(heading);
         globalX += dGlobalX;
         globalY += dGlobalY;
+    }
+
+    public double getYaw () {
+        return imu.getRelativeYaw();
     }
 
     public double getThreadSleep() {
@@ -123,6 +127,10 @@ public class MasqPositionTrackerV2 implements MasqHardware, Runnable {
         this.running = running;
     }
 
+    public double getdH() {
+        return dH;
+    }
+
     @Override
     public String getName() {
         return "Tracker";
@@ -140,13 +148,8 @@ public class MasqPositionTrackerV2 implements MasqHardware, Runnable {
 
     @Override
     public void run() {
-        while (running) {
+        while (running && MasqUtils.opModeIsActive()) {
             updateSystem();
-            try {
-                Thread.sleep((long) threadSleep);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
     }
 }

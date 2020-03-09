@@ -26,7 +26,7 @@ public class PositionTeleOp extends MasqLinearOpMode {
 
         waitForStart();
 
-        //new Thread(robot.trackerV2).start();
+        new Thread(robot.trackerV2).start();
         while(opModeIsActive()) {
             robot.MECH(controller1, false, true);
             dash.create("X: ",robot.trackerV2.getGlobalX());
@@ -35,15 +35,17 @@ public class PositionTeleOp extends MasqLinearOpMode {
             dash.create("Raw X: ",robot.tapeMeasure.getCurrentPosition());
             dash.create("Raw YL: ",robot.intake.motor2.getCurrentPosition());
             dash.create("Raw YR: ", robot.intake.motor1.getCurrentPosition());
-            start = System.currentTimeMillis();
+            dash.create("dH: ", robot.trackerV2.getdH());
+            /*start = System.currentTimeMillis();
             robot.trackerV2.updateSystem();
             end = System.currentTimeMillis();
             long delta = end - start;
             dash.create("Current Loop Time: ", delta);
             sum += delta;
             num++;
-            dash.create("Average Loop Time: ", sum/num);
+            dash.create("Average Loop Time: ", sum/num);*/
             dash.update();
         }
+        robot.trackerV2.setRunning(false);
     }
 }
