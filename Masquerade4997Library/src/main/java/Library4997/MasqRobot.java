@@ -352,7 +352,6 @@ MasqRobot {
                 }
                 else driveTrain.setVelocity(leftPower, rightPower);
 
-                tracker.updateSystem();
                 dash.create(current.setName("Current Point"));
                 dash.create("Heading: ", Math.toDegrees(heading));
                 dash.create("Angular Correction Speed: ", MasqMechanumDriveTrain.angleCorrectionController.getKp());

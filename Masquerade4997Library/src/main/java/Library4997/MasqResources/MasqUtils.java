@@ -44,6 +44,8 @@ public class MasqUtils {
     public static MasqPIDController velocityAutoController;
     public static MasqPIDController angleController;
 
+    public enum  AngleUnits{DEGREE, RADIAN}
+
     public static void sleep(double timeSeconds) {
         try {
             Thread.sleep((long) timeSeconds * 1000);
@@ -59,6 +61,12 @@ public class MasqUtils {
     public static double adjustAngle(double angle) {
         while (angle > 180) angle -= 360;
         while (angle <= -180) angle += 360;
+        return angle;
+    }
+
+    public static double adjustAngleRad(double angle) {
+        while (angle > Math.PI) angle -= 2 * Math.PI;
+        while (angle <= -Math.PI) angle += 2 * Math.PI;
         return angle;
     }
 

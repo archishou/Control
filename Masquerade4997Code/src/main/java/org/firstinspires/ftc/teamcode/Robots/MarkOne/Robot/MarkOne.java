@@ -14,7 +14,6 @@ import Library4997.MasqMotors.MasqMotor;
 import Library4997.MasqMotors.MasqMotorModel;
 import Library4997.MasqMotors.MasqMotorSystem;
 import Library4997.MasqPositionTracker;
-import Library4997.MasqPositionTrackerV2;
 import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqRobot;
 import Library4997.MasqSensors.MasqClock;
@@ -40,7 +39,7 @@ public class MarkOne extends MasqRobot {
     public MasqMotor lift, tapeMeasure;
     public MasqMotorSystem intake;
     public MasqCV cv;
-    public MasqPositionTrackerV2 trackerV2;
+    public MasqPositionTracker tracker;
     private boolean prevStateBlockRotator =false, taskStateBlockRotator =false,
             prevStateCapper =false, taskStateCapper =false;
 
@@ -55,19 +54,14 @@ public class MarkOne extends MasqRobot {
         sideGrabber = new MarkOneSideGrabber(hardwareMap);
         tapeMeasure = new MasqMotor("tape", MasqMotorModel.REVTHROUGHBORE, DcMotorSimple.Direction.REVERSE,hardwareMap);
         tracker = new MasqPositionTracker(tapeMeasure,intake.motor1, intake.motor2, hardwareMap);
-        trackerV2 = new MasqPositionTrackerV2(tapeMeasure,intake.motor1, intake.motor2, hardwareMap);
         foundationHook = new MarkOneFoundationHook(hardwareMap);
         dash = DashBoard.getDash();
     }
 
     public void init(HardwareMap hardwareMap) {
         mapHardware(hardwareMap);
-        tracker.setPosition(MasqPositionTracker.DeadWheelPosition.THREE);
         tracker.setXRadius(5.68);
         tracker.setTrackWidth(14.625);
-
-        trackerV2.setXRadius(5.68);
-        trackerV2.setTrackWidth(14.625);
 
         driveTrain.setTracker(tracker);
         MasqUtils.driveController = new MasqPIDController(0.005);

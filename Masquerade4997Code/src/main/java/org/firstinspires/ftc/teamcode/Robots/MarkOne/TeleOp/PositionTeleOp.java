@@ -20,32 +20,24 @@ public class PositionTeleOp extends MasqLinearOpMode {
         robot.initializeTeleop();
 
         while(!opModeIsActive()) {
-            dash.create("Heading: ", robot.trackerV2.getHeading());
+            dash.create("Heading: ", robot.tracker.getHeading());
             dash.update();
         }
 
         waitForStart();
 
-        new Thread(robot.trackerV2).start();
+        new Thread(robot.tracker).start();
         while(opModeIsActive()) {
             robot.MECH(controller1, false, true);
-            dash.create("X: ",robot.trackerV2.getGlobalX());
-            dash.create("Heading: ", robot.trackerV2.getHeading());
-            dash.create("Y: ",robot.trackerV2.getGlobalY());
+            dash.create("X: ",robot.tracker.getGlobalX());
+            dash.create("Heading: ", robot.tracker.getHeading());
+            dash.create("Y: ",robot.tracker.getGlobalY());
             dash.create("Raw X: ",robot.tapeMeasure.getCurrentPosition());
             dash.create("Raw YL: ",robot.intake.motor2.getCurrentPosition());
             dash.create("Raw YR: ", robot.intake.motor1.getCurrentPosition());
-            dash.create("dH: ", robot.trackerV2.getdH());
-            /*start = System.currentTimeMillis();
-            robot.trackerV2.updateSystem();
-            end = System.currentTimeMillis();
-            long delta = end - start;
-            dash.create("Current Loop Time: ", delta);
-            sum += delta;
-            num++;
-            dash.create("Average Loop Time: ", sum/num);*/
+            dash.create("dH: ", robot.tracker.getdH());
             dash.update();
         }
-        robot.trackerV2.setRunning(false);
+        robot.tracker.setRunning(false);
     }
 }
