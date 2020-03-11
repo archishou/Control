@@ -32,6 +32,10 @@ public class MasqPositionTracker implements MasqHardware, Runnable {
         return Math.toDegrees(heading);
     }
 
+    public double getCalculated () {
+        return Math.toDegrees(heading);
+    }
+
     public void reset() {
         xSystem.resetEncoder();
         yLSystem.resetEncoder();

@@ -7,11 +7,7 @@ import Library4997.MasqMotors.MasqMotorModel;
 import Library4997.MasqMotors.MasqMotorSystem;
 import Library4997.MasqPositionTracker;
 import Library4997.MasqResources.MasqHelpers.MasqHardware;
-import Library4997.MasqResources.MasqMath.MasqVector;
 import Library4997.MasqResources.MasqUtils;
-
-import static Library4997.MasqResources.MasqUtils.xSpeedController;
-import static Library4997.MasqResources.MasqUtils.ySpeedController;
 
 
 public class MasqMechanumDriveTrain extends MasqDriveTrain implements MasqHardware {
@@ -49,18 +45,16 @@ public class MasqMechanumDriveTrain extends MasqDriveTrain implements MasqHardwa
         rightDrive.motor2.setVelocity(rightBack);
     }
 
-    public void setVelocityMECHXY(double angle, MasqVector current, MasqVector target, double targetHeading) {
+    public void setVelocityMECHXY(double angle, double speedx, double speedy, double targetHeading) {
         double turnPower = angleCorrectionController.getOutput(MasqUtils.adjustAngle(targetHeading - tracker.getHeading()));
         angle = Math.toRadians(angle);
         double adjustedAngle = angle + Math.PI/4;
 
-        double speedx = xSpeedController.getOutput(target.getX() - current.getX());
         double leftFrontX = (Math.sin(adjustedAngle) * speedx * MasqUtils.DEFAULT_SPEED_MULTIPLIER);
         double leftBackX = (Math.cos(adjustedAngle) * speedx * MasqUtils.DEFAULT_SPEED_MULTIPLIER);
         double rightFrontX = (Math.cos(adjustedAngle) * speedx * MasqUtils.DEFAULT_SPEED_MULTIPLIER);
         double rightBackX = (Math.sin(adjustedAngle) * speedx * MasqUtils.DEFAULT_SPEED_MULTIPLIER);
 
-        double speedy = ySpeedController.getOutput(target.getY() - current.getY());
         double leftFrontY = (Math.sin(adjustedAngle) * speedy * MasqUtils.DEFAULT_SPEED_MULTIPLIER);
         double leftBackY = (Math.cos(adjustedAngle) * speedy * MasqUtils.DEFAULT_SPEED_MULTIPLIER);
         double rightFrontY = (Math.cos(adjustedAngle) * speedy * MasqUtils.DEFAULT_SPEED_MULTIPLIER);

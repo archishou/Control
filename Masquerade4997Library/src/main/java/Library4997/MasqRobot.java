@@ -444,52 +444,6 @@ MasqRobot {
         driveTrain.setVelocity(0);
     }
 
-    public void xyPathMECH(double timeout, MasqWayPoint... points) {
-        MasqMechanumDriveTrain.angleCorrectionController.setKp(xyAngleController.getKp());
-        MasqMechanumDriveTrain.angleCorrectionController.setKi(xyAngleController.getKi());
-        MasqMechanumDriveTrain.angleCorrectionController.setKd(xyAngleController.getKd());
-        List<MasqWayPoint> pointsWithRobot = new ArrayList<>(Arrays.asList(points));
-        pointsWithRobot.add(0, getCurrentWayPoint());
-        MasqPIDController travelAngleController = new MasqPIDController(0.01, 0, 0);
-        int index = 1;
-        MasqClock pointTimeout = new MasqClock();
-        timeoutClock.reset();
-        while (!timeoutClock.elapsedTime(timeout, MasqClock.Resolution.SECONDS) &&
-                index < pointsWithRobot.size()) {
-            double lookAheadDistance = pointsWithRobot.get(index).getLookAhead();
-            travelAngleController.setKp(pointsWithRobot.get(index).getAngularCorrectionSpeed());
-            MasqMechanumDriveTrain.angleCorrectionController.setKp(pointsWithRobot.get(index).getAngularCorrectionSpeed());
-            MasqVector target = new MasqVector(pointsWithRobot.get(index).getX(), pointsWithRobot.get(index).getY());
-            MasqVector current = new MasqVector(tracker.getGlobalX(), tracker.getGlobalY());
-            MasqVector initial = new MasqVector(pointsWithRobot.get(index - 1).getX(), pointsWithRobot.get(index - 1).getY());
-            double speedx = 1, speedy = 1;
-            pointTimeout.reset();
-            while (!pointTimeout.elapsedTime(pointsWithRobot.get(index).getTimeout(), MasqClock.Resolution.SECONDS) &&
-                    !current.equal(pointsWithRobot.get(index).getTargetRadius(), target) && opModeIsActive() && Math.abs(speedx) > 0.1 && Math.abs(speedy) > 0.1) {
-                MasqVector lookahead = MasqUtils.getLookAhead(initial, current, target, lookAheadDistance);
-                MasqVector pathDisplacement = initial.displacement(target);
-                boolean closerThanLookAhead = initial.displacement(lookahead).getMagnitude() > pathDisplacement.getMagnitude();
-                boolean approachingFinalPos = index == pointsWithRobot.size() - 1;
-                if (closerThanLookAhead) {
-                    if (approachingFinalPos) lookahead = new MasqVector(target.getX(), target.getY());
-                    else break;
-                }
-                MasqVector lookaheadDisplacement = current.displacement(lookahead);
-                double pathAngle = 90 - Math.toDegrees(Math.atan2(lookaheadDisplacement.getY(), lookaheadDisplacement.getX()));
-
-                driveTrain.setVelocityMECHXY(pathAngle + tracker.getHeading(), current, target, -pointsWithRobot.get(index).getH());
-
-                tracker.updateSystem();
-                dash.create("x Speed: ", speedx);
-                dash.create("y Speed: ", speedx);
-                dash.update();
-                current = new MasqVector(tracker.getGlobalX(), tracker.getGlobalY());
-            }
-            if (pointsWithRobot.get(index).getOnComplete() != null) pointsWithRobot.get(index).getOnComplete().run();
-            index++;
-        }
-        driveTrain.setVelocity(0);
-    }
 
     public void NFS(MasqController c) {
         float move = -c.leftStickY();
