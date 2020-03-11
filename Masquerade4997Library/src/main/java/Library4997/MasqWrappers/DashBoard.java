@@ -5,7 +5,6 @@ import com.qualcomm.robotcore.util.RobotLog;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 import Library4997.MasqResources.MasqHelpers.MasqHardware;
-import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqSubSystem;
 
 /**
@@ -108,23 +107,5 @@ public class DashBoard {
     public void clear(){
         telemetry.clearAll();
     }
-    public void close () {
-        open = false;
-    }
-    public void open () {
-        open = true;
-    }
-    public void startUpdate (){
-        Runnable main = new Runnable() {
-            @Override
-            public void run() {
-                while (MasqUtils.opModeIsActive() && open) {
-                    update();
-                    MasqUtils.sleep(100);
-                }
-            }
-        };
-        Thread t = new Thread(main);
-        t.start();
-    }
+
 }

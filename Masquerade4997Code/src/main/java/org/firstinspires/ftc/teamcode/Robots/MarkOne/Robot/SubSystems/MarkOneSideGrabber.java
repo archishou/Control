@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.Constants;
 
 import Library4997.MasqResources.MasqHelpers.MasqHardware;
+import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqServos.MasqServo;
 import Library4997.MasqServos.MasqServoSystem;
 import Library4997.MasqSubSystem;
@@ -43,59 +44,59 @@ public class MarkOneSideGrabber implements MasqSubSystem, Constants {
 
     public void leftUp(double sleepTime) {
         leftRotater.setPosition(1);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void leftDown(double sleepTime) {
         leftRotater.setPosition(0);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void leftLowMid(double sleepTime) {
         leftRotater.setPosition(0.45);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void leftClose(double sleepTime) {
         leftGrabber.setPosition(1);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void leftSlightClose(double sleepTime) {
         leftGrabber.setPosition(0.5);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void leftOpen(double sleepTime) {
         leftGrabber.setPosition(0);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void leftMid(double sleepTime) {
         leftRotater.setPosition(0.15);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void rightUp(double sleepTime) {
         rightRotater.setPosition(0.1);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void rightMid(double sleepTime) {
         rightRotater.setPosition(0.2);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void rightDown(double sleepTime) {
         rightRotater.setPosition(1);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void rightLowMid(double sleepTime) {
         rightRotater.setPosition(0.45);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void rightClose(double sleepTime) {
         rightGrabber.setPosition(1);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void rightSlightClose(double sleepTime) {
         rightGrabber.setPosition(0.5);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void rightOpen(double sleepTime) {
         rightGrabber.setPosition(0);
-        sleep(sleepTime);
+        sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void reset() {
         leftUp(0);

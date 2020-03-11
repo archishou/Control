@@ -71,7 +71,7 @@ MasqRobot {
             dash.update();
         } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.01));
         driveTrain.setVelocity(0);
-        MasqUtils.sleep(MasqUtils.DEFAULT_SLEEP_TIME);
+        MasqUtils.sleep();
     }
     public void strafe(double distance, double angle, double timeout) {
         strafe(distance, angle, timeout, 0.7);
@@ -109,7 +109,7 @@ MasqRobot {
             dash.update();
         } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && (Math.abs(angularError) > 5 || clicksRemaining/targetClicks > 0.01));
         driveTrain.setVelocity(0);
-        MasqUtils.sleep(sleepTime);
+        MasqUtils.sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void drive(double distance, double speed, Direction strafe, double timeout) {
         drive(distance, speed, strafe, timeout, MasqUtils.DEFAULT_SLEEP_TIME);
@@ -154,7 +154,7 @@ MasqRobot {
         } while (opModeIsActive() && !timeoutTimer.elapsedTime(timeout, MasqClock.Resolution.SECONDS) && ((clicksRemaining / targetClicks) > 0.01));
         //serializer.close();
         driveTrain.setVelocity(0);
-        MasqUtils.sleep(sleepTime);
+        MasqUtils.sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void driveAbsoluteAngle(double distance, int angle, double speed, Direction strafe, double timeout) {
         driveAbsoluteAngle(distance, angle, speed, strafe, timeout, MasqUtils.DEFAULT_SLEEP_TIME);
@@ -193,7 +193,7 @@ MasqRobot {
             dash.update();
         }
         driveTrain.setVelocity(0,0);
-        MasqUtils.sleep(sleepTime);
+        MasqUtils.sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void turnRelative(double angle, Direction direction, double timeout, double sleepTime, double kp, double ki) {
         turnRelative(angle, direction, timeout, sleepTime, kp, ki, turnController.getConstants()[2], true, true);
@@ -236,7 +236,7 @@ MasqRobot {
             dash.update();
         }
         driveTrain.setVelocity(0,0);
-        MasqUtils.sleep(sleepTime);
+        MasqUtils.sleep(sleepTime, MasqClock.Resolution.SECONDS);
     }
     public void turnAbsolute(double angle, double timeout, double sleepTime,  double kp, double ki) {
         turnAbsolute(angle, timeout, sleepTime,  kp, ki, turnController.getKd());

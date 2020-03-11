@@ -12,6 +12,7 @@ import java.util.Locale;
 
 import Library4997.MasqControlSystems.MasqPID.MasqPIDController;
 import Library4997.MasqResources.MasqMath.MasqVector;
+import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqWrappers.MasqLinearOpMode;
 
 
@@ -46,14 +47,9 @@ public class MasqUtils {
 
     public enum  AngleUnits{DEGREE, RADIAN}
 
-    public static void sleep(double timeSeconds) {
-        try {
-            Thread.sleep((long) timeSeconds * 1000);
-        } catch (InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
+    public static void sleep() {
+        sleep(MasqUtils.DEFAULT_SLEEP_TIME, MasqClock.Resolution.SECONDS);
     }
-    public static void sleep() {sleep(MasqUtils.DEFAULT_SLEEP_TIME);}
     public static void setLinearOpMode(MasqLinearOpMode pLinearOpMode) {
         linearOpMode = pLinearOpMode;
     }
@@ -110,6 +106,13 @@ public class MasqUtils {
     }
     public static Point getCenterPoint(Rect rect) {
         return new Point(rect.x + rect.width/2, rect.y + rect.height/2);
+    }
+    public static void sleep(double time, MasqClock.Resolution resolution) {
+        try {
+            Thread.sleep((long) ((time * resolution.multiplier) / MasqClock.Resolution.MILLISECONDS.multiplier));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
     public static MasqVector getLookAhead(MasqVector initial, MasqVector current, MasqVector finalPos, double lookAhead) {
         MasqVector pathDisplacement = initial.displacement(finalPos);

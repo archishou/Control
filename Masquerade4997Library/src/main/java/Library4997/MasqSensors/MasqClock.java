@@ -33,7 +33,7 @@ public class MasqClock implements MasqHardware {
         NANOSECONDS (1),
         MILLISECONDS (1E6),
         SECONDS (1E9);
-        private final double multiplier;
+        public final double multiplier;
         Resolution (double multiplier) {this.multiplier = multiplier;}
     }
 

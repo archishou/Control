@@ -268,7 +268,7 @@ public class MasqMotor implements MasqHardware {
                     if (stalled) stallAction.run();
                     else unStalledAction.run();
                 }
-                MasqUtils.sleep(100);
+                MasqUtils.sleep(100, MasqClock.Resolution.MILLISECONDS);
             }
         };
         Thread thread = new Thread(mainRunnable);
@@ -283,7 +283,7 @@ public class MasqMotor implements MasqHardware {
                 if (stalled) stallAction.run();
                 else unStalledAction.run();
             }
-            MasqUtils.sleep(100);
+            MasqUtils.sleep(100, MasqClock.Resolution.MILLISECONDS);
         }};
         Thread thread = new Thread(mainRunnable);
         thread.start();

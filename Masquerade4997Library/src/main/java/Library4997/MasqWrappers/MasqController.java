@@ -3,6 +3,7 @@ package Library4997.MasqWrappers;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
 import Library4997.MasqResources.MasqUtils;
+import Library4997.MasqSensors.MasqClock;
 
 /**
  * Created by Archish on 10/12/17.
@@ -192,7 +193,7 @@ public class MasqController implements Runnable{
             System.out.println(a());
             update();
             close = this.close;
-            MasqUtils.sleep(100);
+            MasqUtils.sleep(100, MasqClock.Resolution.MILLISECONDS);
         }
     }
     public void close() {close = true;}
