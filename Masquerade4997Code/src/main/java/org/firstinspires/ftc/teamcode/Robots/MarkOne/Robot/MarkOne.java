@@ -6,7 +6,6 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.MarkOneFoundationHook;
 import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.MarkOneSideGrabber;
 
-import Library4997.MasqCV.MasqCV;
 import Library4997.MasqControlSystems.MasqPID.MasqPIDController;
 import Library4997.MasqDriveTrains.MasqMechanumDriveTrain;
 import Library4997.MasqMotors.MasqMotor;
@@ -32,10 +31,7 @@ public class MarkOne extends MasqRobot {
     public MarkOneSideGrabber sideGrabber;
     public MasqMotor lift, tapeMeasure;
     public MasqMotorSystem intake;
-    public MasqCV cv;
     public MasqPositionTracker tracker;
-    private boolean prevStateBlockRotator =false, taskStateBlockRotator =false,
-            prevStateCapper =false, taskStateCapper =false;
 
     @Override
     public void mapHardware(HardwareMap hardwareMap) {
