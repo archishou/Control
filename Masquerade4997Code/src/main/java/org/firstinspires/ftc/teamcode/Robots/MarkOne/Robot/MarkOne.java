@@ -7,7 +7,6 @@ import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.MarkOneFou
 import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.SubSystems.MarkOneSideGrabber;
 
 import Library4997.MasqCV.MasqCV;
-import Library4997.MasqCV.detectors.skystone.SkystoneDetector;
 import Library4997.MasqControlSystems.MasqPID.MasqPIDController;
 import Library4997.MasqDriveTrains.MasqMechanumDriveTrain;
 import Library4997.MasqMotors.MasqMotor;
@@ -16,13 +15,8 @@ import Library4997.MasqMotors.MasqMotorSystem;
 import Library4997.MasqPositionTracker;
 import Library4997.MasqResources.MasqUtils;
 import Library4997.MasqRobot;
-import Library4997.MasqSensors.MasqClock;
 import Library4997.MasqServos.MasqServo;
 import Library4997.MasqWrappers.DashBoard;
-import Library4997.MasqWrappers.MasqController;
-
-import static Library4997.MasqCV.MasqCV.Cam.WEBCAM;
-import static Library4997.MasqSensors.MasqClock.Resolution.SECONDS;
 
 
 /**
@@ -78,76 +72,6 @@ public class MarkOne extends MasqRobot {
         driveTrain.resetEncoders();
         lift.setClosedLoop(true);
         lift.setKp(0.01);
-        scaleServos();
-        resetServos();
     }
 
-    public void initCamera(HardwareMap hardwareMap) {
-        SkystoneDetector detector = new SkystoneDetector();
-        detector.setClippingMargins(90,90,110,50);
-        cv = new MasqCV(detector, WEBCAM, hardwareMap);
-        cv.start();
-    }
-
-    private void scaleServos() {
-        blockGrabber.scaleRange(0, 0.5);
-        blockRotater.scaleRange(0.098, 0.78);
-        capper.scaleRange(0.4, 0.8);
-        sideGrabber.scaleServos();
-    }
-
-    private void resetServos() {
-        blockRotater.setPosition(0);
-        blockGrabber.setPosition(1);
-        foundationHook.raise();
-        sideGrabber.reset();
-        capper.setPosition(0);
-    }
-
-    public void toggleBlockRotator(MasqController controller) {
-
-        boolean currStateBlockRotator = false;
-        if (controller.y()) {
-            currStateBlockRotator = true;
-        } else {
-            if (prevStateBlockRotator) {
-                taskStateBlockRotator = !taskStateBlockRotator;
-            }
-        }
-
-        prevStateBlockRotator = currStateBlockRotator;
-
-        if (taskStateBlockRotator) {
-            blockRotater.setPosition(1);
-        } else {
-            blockRotater.setPosition(0);
-        }
-    }
-
-    public void toggleCapper(MasqController controller) {
-
-        boolean currStateCapper = false;
-        if (controller.dPadUp()) {
-            currStateCapper = true;
-        } else {
-            if (prevStateCapper) {
-                taskStateCapper = !taskStateCapper;
-            }
-        }
-
-        prevStateCapper = currStateCapper;
-
-        if (taskStateCapper) {
-            capper.setPosition(1);
-        } else {
-            capper.setPosition(0);
-        }
-    }
-    public void stop(double time) {
-        MasqClock clock = new MasqClock();
-        while(!clock.elapsedTime(time, SECONDS) && opModeIsActive()) {
-            driveTrain.setVelocity(0);
-        }
-        driveTrain.setPower(0);
-    }
 }
