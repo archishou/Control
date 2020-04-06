@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Robots.MarkOne.Robot.ExampleBot;
 
-import Library4997.MidnightWrappers.MidnightLinearOpMode;
+import Library17822.MidnightWrappers.MidnightLinearOpMode;
 
 /**
  * Created by Keval Kataria on 9/14/2019
