@@ -44,6 +44,9 @@ public class PurePursuitExample extends MidnightLinearOpMode {
 
         robot.xyPath(10, points);
 
+        // This may work to, not sure
+        robot.xyPath(10, (MidnightWayPoint[]) wayPoints.toArray());
+
         robot.tracker.setRunning(false);
     }
 }
