@@ -76,7 +76,7 @@ public class MidnightSplineGenerator {
     }
 
     private static List<MidnightCubicSegment> getSegments(List<Double> ns) {
-        List<MidnightCubicSegment> midnightCubicSegments = new ArrayList<>();
+        List<MidnightCubicSegment> segments = new ArrayList<>();
         Matrix constraints = generateConstraintMatrix(ns);
         Matrix solutions = generateSolutionsMatrix(ns);
         if (constraints == null) return null;
@@ -84,10 +84,10 @@ public class MidnightSplineGenerator {
         int n = coeffs.getArray().length;
         int index = 0;
         while (index < n) {
-            midnightCubicSegments.add(new MidnightCubicSegment(coeffs.get(index + 3, 0), coeffs.get(index + 2, 0), coeffs.get(index + 1, 0), coeffs.get(index, 0)));
+            segments.add(new MidnightCubicSegment(coeffs.get(index + 3, 0), coeffs.get(index + 2, 0), coeffs.get(index + 1, 0), coeffs.get(index, 0)));
             index += 4;
         }
-        return midnightCubicSegments;
+        return segments;
     }
 
     public static List<MidnightSplinePoint> generatePoints() {
@@ -100,10 +100,10 @@ public class MidnightSplineGenerator {
             hs.add(p.getH());
         }
 
-        List<MidnightCubicSegment> xMidnightCubicSegments = getSegments(xs);
-        List<MidnightCubicSegment> yMidnightCubicSegments = getSegments(ys);
-        List<MidnightCubicSegment> hMidnightCubicSegments = getSegments(hs);
-        if (xMidnightCubicSegments == null || yMidnightCubicSegments == null || hMidnightCubicSegments == null) return null;
+        List<MidnightCubicSegment> xSegments = getSegments(xs);
+        List<MidnightCubicSegment> ySegments = getSegments(ys);
+        List<MidnightCubicSegment> hSegments = getSegments(hs);
+        if (xSegments == null || ySegments == null || hSegments == null) return null;
         List<MidnightSplinePoint> midnightSplinePoints = new ArrayList<>();
 
         double t = 0;
@@ -112,7 +112,7 @@ public class MidnightSplineGenerator {
         int index = 0;
         while (index < n) {
             while (t < 1) {
-                midnightSplinePoints.add(new MidnightSplinePoint(xMidnightCubicSegments.get(index).compute(t), yMidnightCubicSegments.get(index).compute(t), hMidnightCubicSegments.get(index).compute(t)));
+                midnightSplinePoints.add(new MidnightSplinePoint(xSegments.get(index).compute(t), ySegments.get(index).compute(t), hSegments.get(index).compute(t)));
                 t += resolution;
             }
             t = 0;
