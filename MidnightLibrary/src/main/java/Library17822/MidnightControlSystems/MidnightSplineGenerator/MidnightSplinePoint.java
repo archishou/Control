@@ -1,9 +1,9 @@
 package Library17822.MidnightControlSystems.MidnightSplineGenerator;
 
-public class Point {
+public class MidnightSplinePoint {
     private double x, y, h;
 
-    public Point(double x, double y, double h) {
+    public MidnightSplinePoint(double x, double y, double h) {
         this.x = x;
         this.y = y;
         this.h = h;

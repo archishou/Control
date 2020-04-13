@@ -1,9 +1,9 @@
 package Library17822.MidnightControlSystems.MidnightSplineGenerator;
 
-public class Segment {
+public class MidnightCubicSegment {
     double a, b, c, d;
 
-    public Segment(double a, double b, double c, double d) {
+    public MidnightCubicSegment(double a, double b, double c, double d) {
         this.a = a;
         this.b = b;
         this.c = c;

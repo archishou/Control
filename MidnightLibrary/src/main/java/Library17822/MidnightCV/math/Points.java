@@ -24,7 +24,7 @@ public class Points {
     /**
      * Returns the mean position of a collection of points
      * @param points A List of Points
-     * @return A Point representing the average coordinates of the list
+     * @return A MidnightSplinePoint representing the average coordinates of the list
      */
     public static Point getMeanPoint(List<Point> points) {
         if (points.size() == 0) return null;

@@ -349,7 +349,7 @@ public abstract class MidnightRobot {
                 }
                 else driveTrain.setVelocity(leftPower, rightPower);
 
-                dash.create(current.setName("Current Point"));
+                dash.create(current.setName("Current MidnightSplinePoint"));
                 dash.create("Heading: ", Math.toDegrees(heading));
                 dash.create("Angular Correction Speed: ", MidnightMechanumDriveTrain.angleCorrectionController.getKp());
                 dash.create("Drive Correction Speed: ", pointsWithRobot.get(index).getDriveCorrectionSpeed());

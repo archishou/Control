@@ -5,11 +5,11 @@ import java.util.List;
 
 import Jama.Matrix;
 
-public class NPointGenerator {
-    private static List<Point> knots = new ArrayList<>();
+public class MidnightSplineGenerator {
+    private static List<MidnightSplinePoint> knots = new ArrayList<>();
     private static double resolution = 0.01;
 
-    public static void addKnot(Point p) {
+    public static void addKnot(MidnightSplinePoint p) {
         knots.add(p);
     }
 
@@ -75,8 +75,8 @@ public class NPointGenerator {
         return new Matrix(matrix);
     }
 
-    private static List<Segment> getSegments(List<Double> ns) {
-        List<Segment> segments = new ArrayList<>();
+    private static List<MidnightCubicSegment> getSegments(List<Double> ns) {
+        List<MidnightCubicSegment> midnightCubicSegments = new ArrayList<>();
         Matrix constraints = generateConstraintMatrix(ns);
         Matrix solutions = generateSolutionsMatrix(ns);
         if (constraints == null) return null;
@@ -84,27 +84,27 @@ public class NPointGenerator {
         int n = coeffs.getArray().length;
         int index = 0;
         while (index < n) {
-            segments.add(new Segment(coeffs.get(index + 3, 0), coeffs.get(index + 2, 0), coeffs.get(index + 1, 0), coeffs.get(index, 0)));
+            midnightCubicSegments.add(new MidnightCubicSegment(coeffs.get(index + 3, 0), coeffs.get(index + 2, 0), coeffs.get(index + 1, 0), coeffs.get(index, 0)));
             index += 4;
         }
-        return segments;
+        return midnightCubicSegments;
     }
 
-    public static List<Point> generatePoints() {
+    public static List<MidnightSplinePoint> generatePoints() {
         List<Double> xs = new ArrayList<>();
         List<Double> ys = new ArrayList<>();
         List<Double> hs = new ArrayList<>();
-        for (Point p : knots) {
+        for (MidnightSplinePoint p : knots) {
             xs.add(p.getX());
             ys.add(p.getY());
             hs.add(p.getH());
         }
 
-        List<Segment> xSegments = getSegments(xs);
-        List<Segment> ySegments = getSegments(ys);
-        List<Segment> hSegments = getSegments(hs);
-        if (xSegments == null || ySegments == null || hSegments == null) return null;
-        List<Point> points = new ArrayList<>();
+        List<MidnightCubicSegment> xMidnightCubicSegments = getSegments(xs);
+        List<MidnightCubicSegment> yMidnightCubicSegments = getSegments(ys);
+        List<MidnightCubicSegment> hMidnightCubicSegments = getSegments(hs);
+        if (xMidnightCubicSegments == null || yMidnightCubicSegments == null || hMidnightCubicSegments == null) return null;
+        List<MidnightSplinePoint> midnightSplinePoints = new ArrayList<>();
 
         double t = 0;
         // segments = knots - 1
@@ -112,13 +112,13 @@ public class NPointGenerator {
         int index = 0;
         while (index < n) {
             while (t < 1) {
-                points.add(new Point(xSegments.get(index).compute(t), ySegments.get(index).compute(t), hSegments.get(index).compute(t)));
+                midnightSplinePoints.add(new MidnightSplinePoint(xMidnightCubicSegments.get(index).compute(t), yMidnightCubicSegments.get(index).compute(t), hMidnightCubicSegments.get(index).compute(t)));
                 t += resolution;
             }
             t = 0;
             index++;
         }
-        return points;
+        return midnightSplinePoints;
     }
 
     private static void printMatrix(double[][] matrix) {

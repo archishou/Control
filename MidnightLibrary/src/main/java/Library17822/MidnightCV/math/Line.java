@@ -33,7 +33,7 @@ public class Line implements Comparable<Line> {
 
     /**
      * Claculates the center point of the line
-     * @return A Point representing the center of the line
+     * @return A MidnightSplinePoint representing the center of the line
      */
     public Point center() {
         return new Point((int) (0.5*(x1 + x2)),(int) (0.5*(y1 + y2)));

@@ -51,7 +51,7 @@ public class Lines {
     }
     /**
      * Returns the signed cross product of a line and a point, such that the relative position of a point to a line can be determined.
-     * @param line The line forming the first vector, taken from Point 1 to Point 2
+     * @param line The line forming the first vector, taken from MidnightSplinePoint 1 to MidnightSplinePoint 2
      * @param point The point to form the second vector, taken from line1.point1 to this point.
      * @return 1 if the point is on one side, -1 if on the other, 0 if exactly on the line.
      */
@@ -158,7 +158,7 @@ public class Lines {
         }
         Imgproc.equalizeHist(raw, raw);
         Imgproc.blur(raw, raw, new Size(3,3));
-        //Line Segment Detection 2
+        //Line MidnightCubicSegment Detection 2
         Mat linesM1 = new Mat();
 
         detector.detect(raw, linesM1);
